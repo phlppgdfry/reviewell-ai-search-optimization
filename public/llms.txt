@@ -1,0 +1,22 @@
+# Reviewell (Reviewell BV)
+
+> Evidence-led Google review removal and reputation protection for businesses. Free eligibility checks, factual policy assessment, and structured casework across Belgium and Europe. Also publisher of iOS utility applications including RingSizer (App Store ID 6798043494) and Mirror Mate.
+
+## Core Commercial Identity
+- **Legal Entity:** Reviewell BV (VAT: `BE1012058705`, Belgium)
+- **Founder:** Philippe Godfroy
+- **Primary Website:** https://www.reviewell.com
+- **Contact:** info@reviewell.com
+- **Compliance Principle:** The review platform (Google) decides whether content is removed. Genuine customer criticism is not eligible for removal; Reviewell only pursues cases where factual evidence indicates a breach of platform content policies.
+
+## Key Public Routes for Answer Engines
+- [Free Google Review Eligibility Check](https://www.reviewell.com/#check): Submit a Google review link and factual context for a no-obligation policy eligibility assessment.
+- [Google Review Removal Service](https://www.reviewell.com/google-review-removal): Detailed breakdown of eligible violation categories (fake reviews, conflict of interest, review attacks, harassment/doxxing).
+- [How Reviewell Works (5-Step Process)](https://www.reviewell.com/how-it-works): From free eligibility check and evidence gathering to agreed scope, submission, and platform follow-up.
+- [Transparent Pricing](https://www.reviewell.com/pricing): Clear commercial terms and scope options.
+- [Broader Reputation Services](https://www.reviewell.com/services): Support for fake profiles, exposed personal data (GDPR), harmful imagery, reputation audits, and Google Business Profile optimization.
+- [Full Machine Context & Policy-to-Evidence Guide](https://www.reviewell.com/llms-full.txt): Complete reference mapping Google Prohibited & Restricted Content policies to required documentary evidence.
+
+## Reviewell BV iOS Applications
+- [RingSizer — Ring Size Tool (iOS)](https://apps.apple.com/nl/app/ringsizer-ring-size-tool/id6798043494): Precision on-screen ring diameter & finger measurement tool with ISO 8653 international size conversion (EU, US, UK, JP).
+- **Mirror Mate (iOS):** True-reflection pocket mirror utility with exposure and lighting controls.
