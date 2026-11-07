@@ -1,0 +1,52 @@
+flowchart TD
+  subgraph DETECT["Stage 1: DETECT (Data)"]
+    N1["node_01_profound_visibility_ingest<br/><b>Profound Visibility & Topic Rank</b>"]
+    N2["node_02_profound_citation_ingest<br/><b>Profound Citation Share & Top Pages</b>"]
+  end
+
+  subgraph COMPARE["Stage 2: COMPARE (Data)"]
+    N3["node_03_historical_baseline_compare<br/><b>Knowledge Base Reader (Dual Baselines)</b>"]
+  end
+
+  subgraph ANALYZE["Stage 3: ANALYZE (Logic & LLM)"]
+    N4{"node_04_significance_noise_gate<br/><b>Detection LLM (Boolean Delta Evaluator)</b>"}
+    N5{"node_05_conditional_detection_branch<br/><b>Significance Gate (Delta >= 3.5%)</b>"}
+  end
+
+  subgraph RESEARCH["Stage 4: RESEARCH (Research)"]
+    N6["node_06_competitor_citation_crawler<br/><b>Web Scrape: Competitor Top Pages</b>"]
+    N7["node_07_owned_asset_aeo_auditor<br/><b>Web Scrape & Audit: Reviewell Target</b>"]
+  end
+
+  subgraph EVALUATE["Stage 5: EVALUATE & DECIDE (Logic & LLM)"]
+    N8["node_08_three_gates_diagnosis_llm<br/><b>Three Gates & SAGE Diagnostic LLM</b>"]
+    N9{"node_09_action_decision_router<br/><b>Confidence Gate (Conf >= 0.82)</b>"}
+  end
+
+  subgraph RECOMMEND["Stage 6: RECOMMEND & APPROVE"]
+    N10["node_10_structured_aeo_recommender<br/><b>AEO Patch & Billboard Generator</b>"]
+    N11{"node_11_human_approval_gate<br/><b>Human Approval Gate (Philippe Godfroy)</b>"}
+  end
+
+  subgraph EXECUTE["Stage 7: EXECUTE & MEASURE (Integration & KB)"]
+    N12["node_12_slack_stakeholder_notifier<br/><b>Slack / Email Executive Digest</b>"]
+    N13["node_13_github_cms_patch_publisher<br/><b>GitHub PR & CMS Patch Publisher</b>"]
+    N14["node_14_persistent_baseline_updater<br/><b>Knowledge Base Writer (Baseline Overwrite)</b>"]
+  end
+
+  N1 --> N4
+  N2 --> N4
+  N3 --> N4
+  N4 -->|significant_change_detected| N5
+  N5 -->|true| N6
+  N5 -->|true| N7
+  N5 -.->|false| HALT["Silent Exit (No Alert Fatigue)"]
+  N6 --> N8
+  N7 --> N8
+  N8 -->|actionable_fix_verified| N9
+  N9 -->|true| N10
+  N10 --> N11
+  N11 -->|APPROVED| N12
+  N11 -->|APPROVED| N13
+  N12 --> N14
+  N13 --> N14
