@@ -2,20 +2,28 @@
   "$schema": "https://university.tryprofound.com/schemas/agent-engineering-v1.json",
   "name": "Reviewell Autonomous AEO & Citation Intelligence Agent",
   "id": "agent_reviewell_autonomous_aeo_v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Philippe Godfroy",
     "organization": "Reviewell BV (BE1012058705)",
+    "agency": "Reviewell",
     "website": "https://www.reviewell.com",
     "github": "https://github.com/phlppgdfry"
   },
-  "architectureSummary": "A 14-node, 10-stage autonomous Answer Engine Optimization (AEO) agent spanning all 5 Profound node categories (Data, Research, LLM, Logic, Integration). It ingests Profound Visibility Score, Share of Voice, Citation Share, and Citation Pages across ChatGPT, Perplexity, Gemini, Claude, and Copilot for Reviewell (reviewell.com) and RingSizer (id6798043494), compares against persistent historical baselines, filters stochastic variance via a conditional significance gate, researches competitor citations, generates schema-validated AEO patches (llms.txt, FAQPage JSON-LD, evidence guides), enforces a human-in-the-loop approval gate, deploys approved patches, and updates longitudinal baselines.",
+  "architectureSummary": "A 14-node, 10-stage programmable AEO Marketing Engineering agent spanning all 5 Profound node categories (Data, Research, LLM, Logic, Integration). Implements the full Detection -> Analysis -> Delivery -> Baseline Advancement loop using dual persistent Knowledge Bases (separating Reviewell Internal Baselines from Competitor Citation Baselines), Profound Data nodes (Visibility Score, Citation Share, Citation Pages) filtered to the Big Four AI engines (ChatGPT, AI Overviews, AI Mode, Gemini) plus Perplexity, Boolean structured outputs driving conditional notification gates, and upstream-variable-wired prompts.",
   "profoundData": {
-    "provider": "Profound REST API & MCP (https://api.tryprofound.com / https://mcp.tryprofound.com/mcp)",
+    "provider": "Profound Data Nodes & REST API (https://api.tryprofound.com / https://mcp.tryprofound.com/mcp)",
+    "platformFilter": [
+      "ChatGPT",
+      "Google AI Overviews",
+      "Google AI Mode",
+      "Google Gemini",
+      "Perplexity"
+    ],
+    "dateRange": "last_7_days_vs_previous_7_days",
     "categories": [
       "cat_reviewell_reputation_eu",
-      "cat_reviewell_ringsizer_ios",
-      "cat_reviewell_mirrormate_ios"
+      "cat_reviewell_ringsizer_ios"
     ],
     "metrics": [
       "Visibility Score",
@@ -24,27 +32,18 @@
       "Citation Pages",
       "Average Position",
       "Prompt Answer Executions"
-    ],
-    "answerEngines": [
-      "ChatGPT (OpenAI Search)",
-      "Perplexity Sonar Pro",
-      "Google Gemini & AI Overviews",
-      "Claude Web Search",
-      "Microsoft Copilot"
     ]
   },
   "persistentKnowledge": {
     "enabled": true,
     "storeType": "hybrid_json_sqlite_state",
+    "pattern": "baseline_advancement_read_compare_deliver_overwrite",
+    "files": {
+      "internalBaseline": "reviewell_internal_visibility_baseline.json",
+      "competitorBaseline": "competitor_citation_supply_chain_baseline.json"
+    },
     "location": "~/.config/profound/persistent_knowledge.json",
-    "retentionDays": 365,
-    "trackedEntities": [
-      "historical_visibility_baselines",
-      "citation_leaderboard_snapshots",
-      "deployed_aeo_recommendations",
-      "alert_cooldown_windows",
-      "post_deployment_lift_measurements"
-    ]
+    "retentionDays": 365
   },
   "variables": {
     "SIGNIFICANCE_DELTA_THRESHOLD_PCT": 3.5,
@@ -56,31 +55,34 @@
   "nodes": [
     {
       "id": "node_01_profound_visibility_ingest",
-      "name": "Profound Visibility & SOV Ingestor",
+      "name": "Profound Visibility & Topic Rank Data Node",
       "stage": "DETECT",
       "category": "Data",
-      "description": "Queries Profound POST /v1/reports/visibility and /v2/prompts/answers for Reviewell and RingSizer across 5 answer engines.",
-      "inputs": ["category_id", "start_date", "end_date"],
-      "outputs": ["current_visibility_report", "engine_breakdown"],
+      "outputVariable": "Current_Profound_Visibility",
+      "description": "Pulls Profound Visibility Score, Topic Ranks, and Prompt-level executions filtered intentionally to ChatGPT, Google AI Overviews, Google AI Mode, Gemini, and Perplexity over the last 7 days.",
+      "inputs": ["category_id", "platform_filter", "date_range"],
+      "outputs": ["Current_Profound_Visibility"],
       "outputSchema": {
         "type": "object",
-        "required": ["category_id", "visibility_score", "share_of_voice", "by_engine"],
+        "required": ["category_id", "visibility_score", "share_of_voice", "by_engine", "topic_ranks"],
         "properties": {
           "category_id": { "type": "string" },
           "visibility_score": { "type": "number" },
           "share_of_voice": { "type": "number" },
-          "by_engine": { "type": "array" }
+          "by_engine": { "type": "array" },
+          "topic_ranks": { "type": "array" }
         }
       }
     },
     {
       "id": "node_02_profound_citation_ingest",
-      "name": "Profound Citation Share & Pages Ingestor",
+      "name": "Profound Citation Share & Top Citation Pages Node",
       "stage": "DETECT",
       "category": "Data",
-      "description": "Queries Profound POST /v1/reports/citations to extract owned-domain Citation Share and top competitor Citation Pages.",
-      "inputs": ["category_id", "start_date", "end_date"],
-      "outputs": ["citation_share", "cited_pages_leaderboard"],
+      "outputVariable": "Current_Profound_Citations",
+      "description": "Pulls Profound Citation Share and Top Citation Pages (URL, source category, Mentioned vs Not Mentioned, citation count, and citation share delta).",
+      "inputs": ["category_id", "platform_filter", "date_range"],
+      "outputs": ["Current_Profound_Citations"],
       "outputSchema": {
         "type": "object",
         "required": ["citation_share", "top_cited_pages"],
@@ -92,181 +94,181 @@
     },
     {
       "id": "node_03_historical_baseline_compare",
-      "name": "Persistent Knowledge Baseline Comparator",
+      "name": "Knowledge Base Reader (Internal & Competitor Baselines)",
       "stage": "COMPARE",
       "category": "Data",
-      "description": "Loads longitudinal 30-day rolling baselines and prior recommendation cooldown state from persistentKnowledge store and computes period-over-period deltas.",
-      "inputs": ["current_visibility_report", "citation_share", "persistent_state"],
-      "outputs": ["kpi_deltas", "topic_regressions", "cooldown_active"]
+      "outputVariable": "Previous_KB_Baselines",
+      "description": "Reads 'reviewell_internal_visibility_baseline.json' and 'competitor_citation_supply_chain_baseline.json' from the persistent Knowledge Base at the start of each run so downstream LLM nodes can compute longitudinal deltas.",
+      "inputs": ["kb_internal_file", "kb_competitor_file"],
+      "outputs": ["Reviewell_Internal_Baseline", "Competitor_Citation_Baseline"]
     },
     {
       "id": "node_04_significance_noise_gate",
-      "name": "Stochastic Variance & Significance Filter",
-      "stage": "ANALYZE",
-      "category": "Logic",
-      "description": "Applies conditional logic to separate multi-run statistically significant shifts from single-prompt AI answer variance.",
-      "conditions": [
-        "abs(kpi_deltas.visibility_delta) >= SIGNIFICANCE_DELTA_THRESHOLD_PCT OR abs(kpi_deltas.citation_delta) >= SIGNIFICANCE_DELTA_THRESHOLD_PCT",
-        "sample_size >= MIN_PROMPT_SAMPLE_SIZE",
-        "cooldown_active == false"
-      ],
-      "inputs": ["kpi_deltas", "topic_regressions", "cooldown_active"],
-      "outputs": ["significant_anomalies", "should_investigate"]
-    },
-    {
-      "id": "node_05_topic_cluster_analyzer",
-      "name": "LLM Topic & Intent Cluster Analyzer",
+      "name": "Detection LLM (Structured Boolean & Delta Evaluator)",
       "stage": "ANALYZE",
       "category": "LLM",
-      "description": "Clusters prompt executions where Reviewell was omitted or ranked below position #2 (e.g., Conflict-of-Interest Google reviews, EU GDPR defamation, iOS ring size ISO conversion).",
-      "inputs": ["significant_anomalies", "prompt_executions"],
-      "outputs": ["high_priority_topic_clusters"],
+      "outputVariable": "Detection_Evaluation",
+      "description": "Compares Current_Profound_Visibility and Current_Profound_Citations against Reviewell_Internal_Baseline and Competitor_Citation_Baseline. Emits a programmable Boolean 'significant_change_detected' to drive conditional branching.",
+      "prompt": "You are the Detection Marketing Engineer for Reviewell BV. Compare {{Current_Profound_Visibility}} and {{Current_Profound_Citations}} against the stored Knowledge Base snapshots {{Reviewell_Internal_Baseline}} and {{Competitor_Citation_Baseline}}. Identify whether any topic rank shifted by >= 1 position or Citation Share shifted by >= 3.5% across a sample size >= 15 prompts. Set Boolean 'significant_change_detected' to true ONLY if a meaningful movement or high-share 'Not Mentioned' citation gap exists; otherwise set it to false so we never spam stakeholders.",
+      "inputs": ["Current_Profound_Visibility", "Current_Profound_Citations", "Reviewell_Internal_Baseline", "Competitor_Citation_Baseline"],
+      "outputs": ["significant_change_detected", "priority_topic_slug", "detected_citation_gap_urls"],
       "outputSchema": {
         "type": "object",
-        "required": ["clusters"],
+        "required": ["significant_change_detected", "priority_topic_slug", "detected_citation_gap_urls", "delta_summary"],
         "properties": {
-          "clusters": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": ["topic", "missing_engines", "competitor_winner", "intent_type"]
-            }
-          }
+          "significant_change_detected": { "type": "boolean" },
+          "priority_topic_slug": { "type": "string" },
+          "detected_citation_gap_urls": { "type": "array", "items": { "type": "string" } },
+          "delta_summary": { "type": "string" }
         }
       }
+    },
+    {
+      "id": "node_05_conditional_detection_branch",
+      "name": "Conditional Gate: Significant Change Detected?",
+      "stage": "ANALYZE",
+      "category": "Logic",
+      "description": "Branches strictly on the Boolean structured output 'Detection_Evaluation.significant_change_detected'. If false, halts delivery and logs a silent heartbeat.",
+      "conditions": [
+        "Detection_Evaluation.significant_change_detected == true"
+      ],
+      "inputs": ["Detection_Evaluation"],
+      "outputs": ["branch_to_research"]
     },
     {
       "id": "node_06_competitor_citation_crawler",
-      "name": "Competitor Citation Page Scraper",
+      "name": "Web Page Scrape: Top Cited Competitor Pages",
       "stage": "RESEARCH",
       "category": "Research",
-      "description": "Fetches and parses top-cited competitor URLs (e.g., support.google.com, removify.com, erase.com) to inspect heading hierarchy, direct-answer tables, and JSON-LD schemas.",
-      "inputs": ["cited_pages_leaderboard", "high_priority_topic_clusters"],
-      "outputs": ["competitor_structural_patterns"]
+      "outputVariable": "Current_Competitor_Page_Structure",
+      "description": "Scrapes the exact URLs in {{Detection_Evaluation.detected_citation_gap_urls}} (e.g., support.google.com, removify.com, erase.com) to inspect their Billboard, H2 answer blocks, comparison tables, and JSON-LD schema.",
+      "inputs": ["Detection_Evaluation.detected_citation_gap_urls"],
+      "outputs": ["Current_Competitor_Page_Structure"]
     },
     {
       "id": "node_07_owned_asset_aeo_auditor",
-      "name": "Owned Asset & Codebase Technical AEO Auditor",
+      "name": "Web Page Scrape & Technical Audit: Owned Reviewell Page",
       "stage": "RESEARCH",
       "category": "Research",
-      "description": "Audits Reviewell's owned web properties (reviewell.com & local Next.js codebase) for llms.txt, AI crawler robots.txt rules, JSON-LD (Organization, Service, FAQPage, SoftwareApplication), and factual density.",
-      "inputs": ["owned_domains", "high_priority_topic_clusters"],
-      "outputs": ["technical_aeo_audit_report"]
+      "outputVariable": "Current_Reviewell_Page_Structure",
+      "description": "Scrapes Reviewell's corresponding target page and /llms.txt to evaluate the Three Gates (Fetchable, Chosen, Extractable).",
+      "inputs": ["Detection_Evaluation.priority_topic_slug"],
+      "outputs": ["Current_Reviewell_Page_Structure"]
     },
     {
-      "id": "node_08_evidence_uncertainty_verifier",
-      "name": "Evidence & Hallucination Guardrail Evaluator",
+      "id": "node_08_three_gates_diagnosis_llm",
+      "name": "Three Gates & SAGE Diagnostic Synthesizer LLM",
       "stage": "EVALUATE",
-      "category": "Logic",
-      "description": "Evaluates evidence strength, cross-engine reproducibility, and regulatory accuracy (never guaranteeing review removal; enforcing factual Google Policy alignment).",
-      "conditions": [
-        "confidence_score >= MIN_CONFIDENCE_SCORE",
-        "contains_unverified_guarantees == false"
-      ],
-      "inputs": ["competitor_structural_patterns", "technical_aeo_audit_report"],
-      "outputs": ["verified_root_causes", "confidence_score"]
+      "category": "LLM",
+      "outputVariable": "Three_Gates_Diagnosis",
+      "description": "Connects the dots across {{Detection_Evaluation.delta_summary}}, {{Current_Competitor_Page_Structure}}, and {{Current_Reviewell_Page_Structure}} to diagnose which Gate (Fetchable, Chosen, Extractable) is failing and whether the fix is reproducible.",
+      "prompt": "Connect the dots between the Profound metric shift in {{Detection_Evaluation.delta_summary}}, the winning competitor structure in {{Current_Competitor_Page_Structure}}, and Reviewell's current page structure in {{Current_Reviewell_Page_Structure}}. Determine which of the Three Gates (Fetchable, Chosen, Extractable) explains why the competitor page won the citation, verify that our evidence confidence is >= 0.82 without making any unverified review-removal guarantees, and set Boolean 'actionable_fix_verified' accordingly.",
+      "inputs": ["Detection_Evaluation", "Current_Competitor_Page_Structure", "Current_Reviewell_Page_Structure"],
+      "outputs": ["actionable_fix_verified", "failing_gate", "sage_phase", "root_cause_diagnosis"],
+      "outputSchema": {
+        "type": "object",
+        "required": ["actionable_fix_verified", "failing_gate", "sage_phase", "root_cause_diagnosis"],
+        "properties": {
+          "actionable_fix_verified": { "type": "boolean" },
+          "failing_gate": { "type": "string", "enum": ["Fetchable", "Chosen", "Extractable"] },
+          "sage_phase": { "type": "string", "enum": ["Setup", "Analyze", "Generate", "Engineer"] },
+          "root_cause_diagnosis": { "type": "string" }
+        }
+      }
     },
     {
       "id": "node_09_action_decision_router",
-      "name": "Conditional Action & Escalation Router",
+      "name": "Conditional Gate: Actionable Fix Verified?",
       "stage": "DECIDE",
       "category": "Logic",
-      "description": "Routes execution to recommendation generation only when verified_root_causes exist and expected citation lift exceeds threshold; otherwise logs a quiet heartbeat without spamming stakeholders.",
+      "description": "Branches on the Boolean field 'Three_Gates_Diagnosis.actionable_fix_verified' so only verified, high-confidence diagnoses proceed to patch generation and stakeholder notification.",
       "conditions": [
-        "len(verified_root_causes) > 0",
-        "confidence_score >= 0.82"
+        "Three_Gates_Diagnosis.actionable_fix_verified == true"
       ],
-      "inputs": ["verified_root_causes", "confidence_score"],
-      "outputs": ["action_decision", "route_target"]
+      "inputs": ["Three_Gates_Diagnosis"],
+      "outputs": ["route_to_patch_generator"]
     },
     {
       "id": "node_10_structured_aeo_recommender",
-      "name": "Structured AEO Patch & Schema Synthesizer",
+      "name": "AEO Patch & Billboard Generator LLM",
       "stage": "RECOMMEND",
       "category": "LLM",
-      "description": "Synthesizes concrete, ready-to-merge artifacts: /llms.txt updates, Schema.org FAQPage/Service JSON-LD blocks, and direct-answer comparison tables.",
-      "inputs": ["verified_root_causes", "technical_aeo_audit_report"],
-      "outputs": ["structured_recommendations", "deployable_artifacts"],
+      "outputVariable": "Generated_AEO_Patch_Bundle",
+      "description": "Uses {{Three_Gates_Diagnosis.root_cause_diagnosis}} and {{Current_Reviewell_Page_Structure}} to generate the exact replacement Billboard, structured Policy-to-Evidence Answer Block, FAQPage JSON-LD, and /llms-full.txt update.",
+      "prompt": "Using the root-cause diagnosis in {{Three_Gates_Diagnosis.root_cause_diagnosis}} (Failing Gate: {{Three_Gates_Diagnosis.failing_gate}}, SAGE Phase: {{Three_Gates_Diagnosis.sage_phase}}) and the existing page content in {{Current_Reviewell_Page_Structure}}, generate a ready-to-ship AEO upgrade: (1) an updated 150-word Billboard addressing the compound job, (2) a machine-extractable HTML/Markdown comparison table, and (3) a strict Schema.org FAQPage JSON-LD snippet.",
+      "inputs": ["Three_Gates_Diagnosis", "Current_Reviewell_Page_Structure"],
+      "outputs": ["Generated_AEO_Patch_Bundle"],
       "outputSchema": {
         "type": "object",
-        "required": ["recommendations", "artifacts"],
+        "required": ["target_url", "updated_billboard_markdown", "answer_block_table_markdown", "faq_json_ld", "expected_citation_lift_pct"],
         "properties": {
-          "recommendations": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": ["id", "target_url", "artifact_type", "expected_citation_lift_pct", "rationale"]
-            }
-          },
-          "artifacts": { "type": "array" }
+          "target_url": { "type": "string" },
+          "updated_billboard_markdown": { "type": "string" },
+          "answer_block_table_markdown": { "type": "string" },
+          "faq_json_ld": { "type": "string" },
+          "expected_citation_lift_pct": { "type": "number" }
         }
       }
     },
     {
-      "id": "node_11_executive_brief_composer",
-      "name": "Executive Decision Brief Composer",
-      "stage": "RECOMMEND",
-      "category": "LLM",
-      "description": "Formats a concise, evidence-linked executive digest for Reviewell leadership showing exact Profound metric deltas, competitor citations, and diff previews.",
-      "inputs": ["structured_recommendations", "kpi_deltas"],
-      "outputs": ["executive_approval_digest"],
-      "outputSchema": {
-        "type": "object",
-        "required": ["summary", "kpi_snapshot", "proposed_changes", "risk_assessment"],
-        "properties": {
-          "summary": { "type": "string" },
-          "kpi_snapshot": { "type": "object" },
-          "proposed_changes": { "type": "array" },
-          "risk_assessment": { "type": "string" }
-        }
-      }
-    },
-    {
-      "id": "node_12_human_approval_gate",
-      "name": "Human-in-the-Loop Approval Gate",
+      "id": "node_11_human_approval_gate",
+      "name": "Conditional Approval Gate (Human-in-the-Loop)",
       "stage": "APPROVAL",
       "category": "Logic",
       "requiresApproval": true,
-      "description": "Pauses autonomous execution until human reviewer (Philippe Godfroy) approves, edits, or rejects the proposed AEO patch bundle.",
+      "description": "Gates production publishing until the marketing engineer approves the generated patch bundle.",
       "conditions": [
         "approval_status == 'APPROVED'"
       ],
-      "inputs": ["executive_approval_digest", "deployable_artifacts"],
-      "outputs": ["approved_artifacts", "approval_metadata"]
+      "inputs": ["Generated_AEO_Patch_Bundle", "Three_Gates_Diagnosis"],
+      "outputs": ["Approved_AEO_Patch_Bundle"]
+    },
+    {
+      "id": "node_12_slack_stakeholder_notifier",
+      "name": "Slack / Email Executive Digest Delivery Node",
+      "stage": "EXECUTE",
+      "category": "Integration",
+      "outputVariable": "Notification_Receipt",
+      "description": "Delivers the gated Diagnosis Report and Approved_AEO_Patch_Bundle to the Reviewell growth channel ONLY when both conditional gates passed.",
+      "inputs": ["Detection_Evaluation.delta_summary", "Three_Gates_Diagnosis.root_cause_diagnosis", "Approved_AEO_Patch_Bundle"],
+      "outputs": ["Notification_Receipt"]
     },
     {
       "id": "node_13_github_cms_patch_publisher",
-      "name": "GitHub PR & AEO Bundle Publisher",
+      "name": "GitHub PR & CMS Patch Publisher Node",
       "stage": "EXECUTE",
       "category": "Integration",
-      "description": "Writes approved llms.txt, robots.txt, and JSON-LD schema components into the target Reviewell repository branch / deliverables directory and opens a tracked PR.",
-      "inputs": ["approved_artifacts", "approval_metadata"],
-      "outputs": ["deployment_receipt", "git_commit_ref"]
+      "outputVariable": "Deployment_Receipt",
+      "description": "Commits Approved_AEO_Patch_Bundle (/llms.txt, /llms-full.txt, FAQPage JSON-LD) to the Reviewell repository.",
+      "inputs": ["Approved_AEO_Patch_Bundle"],
+      "outputs": ["Deployment_Receipt"]
     },
     {
       "id": "node_14_persistent_baseline_updater",
-      "name": "Persistent Knowledge & Longitudinal Measurement Updater",
+      "name": "Knowledge Base Writer (Baseline Advancement Overwrite)",
       "stage": "MEASURE",
-      "category": "Integration",
-      "description": "Commits the new baseline, deployment timestamp, and +7d/+14d Profound re-measurement triggers to persistentKnowledge store.",
-      "inputs": ["deployment_receipt", "current_visibility_report", "citation_share"],
-      "outputs": ["updated_persistent_state", "scheduled_remeasurement_id"]
+      "category": "Data",
+      "outputVariable": "Updated_KB_State",
+      "description": "Overwrites 'reviewell_internal_visibility_baseline.json' with {{Current_Profound_Visibility}} and 'competitor_citation_supply_chain_baseline.json' with {{Current_Profound_Citations}} so the next run compares against the freshly advanced baseline rather than stale data.",
+      "inputs": ["Current_Profound_Visibility", "Current_Profound_Citations", "Deployment_Receipt"],
+      "outputs": ["Updated_KB_State"]
     }
   ],
   "edges": [
-    { "from": "node_01_profound_visibility_ingest", "to": "node_03_historical_baseline_compare", "label": "visibility_metrics" },
-    { "from": "node_02_profound_citation_ingest", "to": "node_03_historical_baseline_compare", "label": "citation_metrics" },
-    { "from": "node_03_historical_baseline_compare", "to": "node_04_significance_noise_gate", "label": "kpi_deltas" },
-    { "from": "node_04_significance_noise_gate", "to": "node_05_topic_cluster_analyzer", "condition": "should_investigate == true" },
-    { "from": "node_05_topic_cluster_analyzer", "to": "node_06_competitor_citation_crawler", "label": "priority_topics" },
-    { "from": "node_05_topic_cluster_analyzer", "to": "node_07_owned_asset_aeo_auditor", "label": "priority_topics" },
-    { "from": "node_06_competitor_citation_crawler", "to": "node_08_evidence_uncertainty_verifier", "label": "competitor_patterns" },
-    { "from": "node_07_owned_asset_aeo_auditor", "to": "node_08_evidence_uncertainty_verifier", "label": "owned_audit" },
-    { "from": "node_08_evidence_uncertainty_verifier", "to": "node_09_action_decision_router", "label": "verified_causes" },
-    { "from": "node_09_action_decision_router", "to": "node_10_structured_aeo_recommender", "condition": "action_decision == 'RECOMMEND'" },
-    { "from": "node_10_structured_aeo_recommender", "to": "node_11_executive_brief_composer", "label": "structured_patches" },
-    { "from": "node_11_executive_brief_composer", "to": "node_12_human_approval_gate", "label": "approval_request" },
-    { "from": "node_12_human_approval_gate", "to": "node_13_github_cms_patch_publisher", "condition": "approval_status == 'APPROVED'" },
-    { "from": "node_13_github_cms_patch_publisher", "to": "node_14_persistent_baseline_updater", "label": "deployment_receipt" }
+    { "from": "node_01_profound_visibility_ingest", "to": "node_04_significance_noise_gate", "label": "Current_Profound_Visibility" },
+    { "from": "node_02_profound_citation_ingest", "to": "node_04_significance_noise_gate", "label": "Current_Profound_Citations" },
+    { "from": "node_03_historical_baseline_compare", "to": "node_04_significance_noise_gate", "label": "Reviewell_Internal_Baseline & Competitor_Citation_Baseline" },
+    { "from": "node_04_significance_noise_gate", "to": "node_05_conditional_detection_branch", "label": "Detection_Evaluation.significant_change_detected (Boolean)" },
+    { "from": "node_05_conditional_detection_branch", "to": "node_06_competitor_citation_crawler", "condition": "significant_change_detected == true" },
+    { "from": "node_05_conditional_detection_branch", "to": "node_07_owned_asset_aeo_auditor", "condition": "significant_change_detected == true" },
+    { "from": "node_06_competitor_citation_crawler", "to": "node_08_three_gates_diagnosis_llm", "label": "Current_Competitor_Page_Structure" },
+    { "from": "node_07_owned_asset_aeo_auditor", "to": "node_08_three_gates_diagnosis_llm", "label": "Current_Reviewell_Page_Structure" },
+    { "from": "node_08_three_gates_diagnosis_llm", "to": "node_09_action_decision_router", "label": "Three_Gates_Diagnosis.actionable_fix_verified (Boolean)" },
+    { "from": "node_09_action_decision_router", "to": "node_10_structured_aeo_recommender", "condition": "actionable_fix_verified == true" },
+    { "from": "node_10_structured_aeo_recommender", "to": "node_11_human_approval_gate", "label": "Generated_AEO_Patch_Bundle" },
+    { "from": "node_11_human_approval_gate", "to": "node_12_slack_stakeholder_notifier", "condition": "approval_status == 'APPROVED'" },
+    { "from": "node_11_human_approval_gate", "to": "node_13_github_cms_patch_publisher", "condition": "approval_status == 'APPROVED'" },
+    { "from": "node_12_slack_stakeholder_notifier", "to": "node_14_persistent_baseline_updater", "label": "Notification_Receipt" },
+    { "from": "node_13_github_cms_patch_publisher", "to": "node_14_persistent_baseline_updater", "label": "Deployment_Receipt" }
   ]
 }

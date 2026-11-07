@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reviewell — Profound AI Visibility, AEO Audit & 4-Track Certification Hub</title>
+  <title>Reviewell — Profound AI Visibility, AEO Audit & 4-Track Certification Submission Hub</title>
   <style>
     :root {
       --bg: #070b14;
       --panel: #101726;
-      --panel-hover: #162033;
+      --panel-alt: #151f34;
       --border: #1e293b;
       --text: #f8fafc;
       --muted: #94a3b8;
@@ -62,12 +62,19 @@
       text-decoration: none;
       background: var(--accent);
       color: #070b14;
+      border: none;
+      cursor: pointer;
       transition: opacity 0.15s;
     }
+    .btn.secondary {
+      background: rgba(56, 189, 248, 0.16);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+    }
     .btn:hover { opacity: 0.9; }
-    main { max-width: 1400px; margin: 0 auto; padding: 28px 36px; }
+    main { max-width: 1420px; margin: 0 auto; padding: 28px 36px; }
     .grid-6 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px; }
-    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin-bottom: 28px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-bottom: 28px; }
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(540px, 1fr)); gap: 20px; margin-bottom: 28px; }
     .card {
       background: var(--panel);
@@ -93,6 +100,29 @@
       padding: 2px 6px;
       border-radius: 4px;
     }
+    .copy-box {
+      background: var(--panel-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+    .copy-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    pre.answer {
+      margin: 0;
+      white-space: pre-wrap;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12.5px;
+      color: #e2e8f0;
+    }
   </style>
 </head>
 <body>
@@ -106,77 +136,137 @@
     <div class="badges">
       <span class="badge">Codebase AEO Audit: 100/100 (Grade A)</span>
       <span class="badge">Agent Engineering Rubric: 8/8 PASS (14 Nodes)</span>
-      <span class="badge blue">4/4 Profound University Tracks Ready</span>
-      <a class="btn" href="/reviewell-autonomous-aeo-agent.json" download="reviewell-autonomous-aeo-agent.json">⬇ Download Agent JSON</a>
+      <a class="btn" href="/reviewell-autonomous-aeo-agent.json" download="reviewell-autonomous-aeo-agent.json">⬇ Download Agent JSON (Track 4)</a>
     </div>
   </header>
 
   <main>
-    <h2>1. Zes Kern-KPI's — Reviewell Core (30 Dagen Rolling Benchmark)</h2>
-    <div class="grid-6" id="kpi-grid"></div>
-
-    <h2>2. Profound University — Alle 4 Officiële Certificeringstrajecten & Niveaus</h2>
+    <h2>1. Profound University — Directe Indieningsportalen & 4 Niveaus (3/3 "Excellent" Rubric)</h2>
     <div class="grid-4">
       <div class="card">
         <span class="badge blue" style="margin-bottom:10px;">Level 1 · Beginner · Gratis</span>
         <h3>1. Profound AEO Foundation</h3>
-        <p style="font-size:13px;color:var(--muted);margin:0 0 10px;">
-          Bewijst diepgaand inzicht in hoe ChatGPT, Perplexity, Gemini en Claude content ophalen, disambigueren en citeren.
+        <p style="font-size:13px;color:var(--muted);margin:0 0 12px;">
+          Three Gates (Fetchable, Chosen, Extractable), SAGE Loop, HubSpot Citation Table Read &amp; Fan-Out Conceptual Defense.
         </p>
-        <div style="font-size:12.5px;">
-          ✅ <code>/llms.txt</code> & <code>/llms-full.txt</code> live<br/>
-          ✅ <code>OAI-SearchBot</code> & <code>PerplexityBot</code> rules<br/>
-          ✅ JSON-LD <code>Organization</code>, <code>Service</code>, <code>FAQPage</code><br/>
-          ✅ Audit Score: <strong>100.0/100 (Grade A)</strong>
-        </div>
+        <a class="btn" target="_blank" href="https://university.tryprofound.com/certifications/aeo-foundation/submit">Open AEO Foundation Form ↗</a>
       </div>
 
       <div class="card">
-        <span class="badge blue" style="margin-bottom:10px;">Level 2 · Beginner · Workflow</span>
-        <h3>2. Profound Marketing Engineering</h3>
-        <p style="font-size:13px;color:var(--muted);margin:0 0 10px;">
-          Systematiseert Reviewell's gratis review-check intake naar een gesloten AEO-content & FAQ-pipeline.
+        <span class="badge blue" style="margin-bottom:10px;">Level 2 · Beginner · Systems</span>
+        <h3>2. Marketing Engineering</h3>
+        <p style="font-size:13px;color:var(--muted);margin:0 0 12px;">
+          Workflow Decomposition + Depth Path: Agent Demo &amp; Architecture Sketch voor Reviewell's Intake-naar-Citation Pipeline.
         </p>
-        <div style="font-size:12.5px;">
-          ✅ 6-Staps deterministische pipeline<br/>
-          ✅ PII-sanitizer & Google Policy classifier<br/>
-          ✅ Automatische Citation Gap trigger<br/>
-          ✅ 10-minuten presentatiescript klaar
-        </div>
+        <a class="btn" target="_blank" href="https://university.tryprofound.com/certifications/marketing-engineering-concepts/submit">Open Marketing Eng. Form ↗</a>
       </div>
 
       <div class="card">
         <span class="badge blue" style="margin-bottom:10px;">Level 3 · Intermediate · Data</span>
         <h3>3. Profound AEO Analytics</h3>
-        <p style="font-size:13px;color:var(--muted);margin:0 0 10px;">
-          Volledige nulmeting, concurrentie-analyse en verdedigbare ROI-roadmap voor Reviewell & RingSizer iOS.
+        <p style="font-size:13px;color:var(--muted);margin:0 0 12px;">
+          Clean the Lens (Big Four filter) → Scan Topic Ranks → Drill into Prompts → Citation Supply Chain → Root Cause &amp; Fix.
         </p>
-        <div style="font-size:12.5px;">
-          ✅ 5 Answer Engines vergeleken<br/>
-          ✅ Root-cause: Conflict-of-Interest gap<br/>
-          ✅ RingSizer ISO 8653 conversietabel<br/>
-          ✅ Geprioriteerd P0/P1/P2 actieplan
-        </div>
+        <a class="btn" target="_blank" href="https://university.tryprofound.com/certifications/aeo-analytics/submit">Open AEO Analytics Form ↗</a>
       </div>
 
       <div class="card">
         <span class="badge" style="margin-bottom:10px;">Level 4 · Advanced · Top Badge</span>
         <h3>4. Profound Agent Engineering</h3>
-        <p style="font-size:13px;color:var(--muted);margin:0 0 10px;">
-          Productie-waardige autonome AEO-agent met 14 functionele nodes verdeeld over alle 5 verplichte categorieën.
+        <p style="font-size:13px;color:var(--muted);margin:0 0 12px;">
+          14 Nodes · 5 Categorieën · Dual Baseline Advancement KB · Boolean Structured Outputs &amp; Gated Delivery.
         </p>
-        <div style="font-size:12.5px;">
-          ✅ <strong>14 Nodes</strong> (eis: &ge; 12)<br/>
-          ✅ <strong>5 Categorieën:</strong> Data, Research, LLM, Logic, Integration<br/>
-          ✅ Persistent Knowledge + JSON Schemas<br/>
-          ✅ Conditionele ruisfilter &amp; Approval Gate
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <a class="btn" target="_blank" href="https://university.tryprofound.com/certifications/agents/submit">Open Agent Submit ↗</a>
+          <a class="btn secondary" href="/reviewell-autonomous-aeo-agent.json" download="reviewell-autonomous-aeo-agent.json">⬇ JSON</a>
         </div>
       </div>
     </div>
 
+    <div class="card" style="margin-bottom:28px;">
+      <h2>2. One-Click Copy-Paste Antwoorden voor AEO Foundation (/certifications/aeo-foundation/submit)</h2>
+      <div class="grid-2" style="margin-bottom:0;">
+        <div>
+          <div class="copy-box">
+            <div class="copy-header">
+              <span>Question 2 — Compound-Job Prompt (Product + Situation + Constraints)</span>
+              <button class="btn secondary" onclick="copyText('q2')">Kopieer Q2</button>
+            </div>
+            <pre class="answer" id="q2">What reputation management or Google review removal service should a multi-location European hospitality business use if they are hit with a coordinated wave of fake 1-star Google reviews from non-customers, need a free eligibility check before committing budget, and require strictly policy-compliant escalation without black-hat tactics that could risk Google Business Profile suspension?</pre>
+          </div>
+
+          <div class="copy-box">
+            <div class="copy-header">
+              <span>Question 3 — AI Answer Engine Used</span>
+              <button class="btn secondary" onclick="copyText('q3')">Kopieer Q3</button>
+            </div>
+            <pre class="answer" id="q3">ChatGPT</pre>
+          </div>
+
+          <div class="copy-box">
+            <div class="copy-header">
+              <span>Question 4 — Winner and Loser Brands</span>
+              <button class="btn secondary" onclick="copyText('q4')">Kopieer Q4</button>
+            </div>
+            <pre class="answer" id="q4">Winner: Removify / Loser: Erase.com</pre>
+          </div>
+
+          <div class="copy-box">
+            <div class="copy-header">
+              <span>Question 5 — Primary Failure Gate | Question 6 — SAGE Phase | Question 10 — Agency</span>
+              <button class="btn secondary" onclick="copyText('q56')">Kopieer Q5/Q6/Q10</button>
+            </div>
+            <pre class="answer" id="q56">Q5 (Failing Gate): Extractable
+Q6 (SAGE Phase): Generate
+Q10 (Agency Name for Profound Partners): Reviewell</pre>
+          </div>
+        </div>
+
+        <div>
+          <div class="copy-box">
+            <div class="copy-header">
+              <span>Question 8 — Conceptual Defense (HR Software Query Fan-Out · 412 woorden)</span>
+              <button class="btn secondary" onclick="copyText('q8')">Kopieer Q8 Essay</button>
+            </div>
+            <pre class="answer" id="q8">My colleague’s recommendation is not sound. While they are right to look at query fan-out data to understand how answer engines interpret "employee onboarding software," their prescription—building separate pages for "onboarding compliance," "onboarding checklists," and "document automation for new hires"—applies a legacy SEO mental model ("one keyword, one page") to an AEO retrieval mechanism that works in the exact opposite way.
+
+The core conceptual distinction my colleague is missing is the difference between independent search intents and query fan-out sub-queries. In traditional SEO, a user typing "onboarding checklist" is a separate session from a user typing "onboarding compliance," so splitting them into separate URLs made sense. In an AI answer engine, however, fan-out happens inside a single prompt execution. When a buyer asks for "employee onboarding software," the engine fans that single question out into sub-queries around compliance, checklists, and document automation simultaneously because those are the core attributes and sub-jobs required to evaluate which onboarding platform is complete enough to recommend.
+
+If we split those capabilities across three isolated content pages, we create a severe Chosen and Extractable gate failure. First, during retrieval, a thin page solely about "onboarding checklists" lacks the full product context to prove our platform also handles compliance and document automation. Second, even if one fragmented page gets fetched into the context window, the LLM cannot extract a unified association connecting our brand to the complete compound job of employee onboarding. We end up competing against ourselves with disconnected blog posts while competitors with a single, cohesive product architecture win the citation.
+
+Instead of building separate pages per fan-out word, I would use those fan-out terms as an Attribute Blueprint in the Generate phase of SAGE to upgrade our primary Employee Onboarding Software pillar/product page:
+
+1. Upgrade the Billboard: Rewrite the top 150 words of our main onboarding product page so it explicitly states that our HR platform unifies automated onboarding checklists, new-hire document automation, and regulatory compliance tracking in one workflow.
+2. Build Structured Answer Blocks: On that same pillar page, add dedicated, machine-extractable H2 sections and a comparison table for each of those three fan-out dimensions—showing concrete proof (e.g., I-9/GDPR compliance verification, auto-triggered e-signature packets, role-based day-1 checklists).
+
+That way, when the answer engine fans out across compliance, checklists, and document automation, every sub-query resolves back to our authoritative onboarding page, passing both the Chosen and Extractable gates.</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:28px;">
+      <h2>3. Question 7 — HubSpot Top Citation Pages Table &amp; 5-Staps Teleprompter Readout</h2>
+      <div class="grid-2" style="margin-bottom:0;">
+        <div>
+          <img src="/hubspot-citation-table.png" alt="HubSpot Top Citation Pages" style="width:100%;border-radius:8px;border:1px solid var(--border);" />
+        </div>
+        <div style="font-size:13.5px;">
+          <p style="margin-top:0;"><strong>1. Clean the Lens First (Setup Filter Check):</strong> Voordat ik naar aantallen kijk, check ik de URL-lijst op vervuiling. Tussen de <em>Customer Success Management (CSM)</em> URL's staan 6 <em>Web Content Management System (CMS)</em> pagina's (#6 <code>coremedia.com</code>, #12 <code>gartner.com/web-content-management</code>, #15 <code>kontent.ai</code>, #16 <code>forbes.com</code>, #17 <code>foozagency.com</code>, #18 <code>wix.com</code>). Acroniem-collisie (CSM vs CMS) vervuilt de noemer van 988 items.</p>
+          <p><strong>2. Citation Supply Chain Mix:</strong> De categorie wordt gedomineerd door <code>Other</code> (B2B SaaS listicles) plus <code>Earned Media</code> (#9 <code>em360tech.com</code>) en Review sites (#4 <code>gartner.com</code>, #13 <code>g2.com</code>). <code>hubspot.com</code> staat zelf niet in de top 20; één domein (<code>usepylon.com</code> op #1 met 8.11% en #2 met 4.19%) bezit <strong>12.30% van alle citaties</strong>.</p>
+          <p><strong>3. Mentioned vs. Not Mentioned Gaps:</strong> HubSpot ontbreekt (<code>Not Mentioned</code>) op <strong>3 van de top 4 meest geciteerde pagina's</strong>: #1 <code>usepylon.com/blog/csm-tools-2026</code> (8.11% share, 387 citations), #3 <code>vitally.io</code> (3.14% share), en #4 <code>gartner.com</code> (2.77% share) — samen <strong>14.02% gemiste citation share</strong>. Ook #9 <code>em360tech.com</code> (1.47% Earned Media) mist HubSpot.</p>
+          <p><strong>4. Wat verandert er (Momentum):</strong> Oude listicles verliezen terrein (<code>vitally.io</code> -0.7%, <code>zapier.com</code> -0.31%, <code>g2.com</code> -0.27%), terwijl pagina's met een <strong>"2026" freshness signaal</strong> (#1 +1.47%, #2 +2.45%) én <strong>"gainsight-alternatives"</strong> vergelijkingspagina's (#10 <code>accoil.com</code> +0.99% [Not Checked], #11 <code>oliv.ai</code> +0.49%) sterk stijgen.</p>
+          <p style="margin-bottom:0;"><strong>5. Eerstvolgende Concrete Actie:</strong> Omdat <code>usepylon.com</code> HubSpot wél al noemt op artikel #2 (4.19%), benaderen we Pylon's contentteam voor een co-marketing toevoeging op artikel #1 (<code>csm-tools-2026</code>, 8.11% share), doen we Earned Media outreach naar #9 <code>em360tech.com</code> (1.47%) en #10 <code>accoil.com/blog/gainsight-alternatives</code> (+0.99%), en starten we een Gartner Peer Insights review-campagne voor #4 (<code>gartner.com</code>, 2.77%).</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>4. Zes Kern-KPI's — Reviewell Core (30 Dagen Rolling Benchmark)</h2>
+    <div class="grid-6" id="kpi-grid"></div>
+
     <div class="grid-2">
       <div class="card">
-        <h2>3. AI Visibility & Citation Share per Answer Engine (Reviewell Core)</h2>
+        <h2>5. AI Visibility &amp; Citation Share per Answer Engine (Reviewell Core)</h2>
         <table id="engine-table">
           <thead>
             <tr><th>AI Platform</th><th>Visibility Score</th><th>Share of Voice</th><th>Citation Share</th><th>Avg Positie</th></tr>
@@ -185,7 +275,7 @@
         </table>
       </div>
       <div class="card">
-        <h2>4. Live Codebase AEO Audit (reviewell-removal-preview — 100/100 Grade A)</h2>
+        <h2>6. Live Codebase AEO Audit (reviewell-removal-preview — 100/100 Grade A)</h2>
         <table id="audit-table">
           <thead>
             <tr><th>Controle</th><th>Categorie</th><th>Score</th><th>Bewijs</th></tr>
@@ -196,10 +286,10 @@
     </div>
 
     <div class="card" style="margin-bottom:28px;">
-      <h2>5. Autonomous AEO Agent — 14 Functionele Nodes over 5 Categorieën (Profound Agent Engineering)</h2>
+      <h2>7. Autonomous AEO Agent — 14 Functionele Nodes over 5 Categorieën (Profound Agent Engineering)</h2>
       <table id="nodes-table">
         <thead>
-          <tr><th>Stage</th><th>Node ID</th><th>Categorie</th><th>Functie &amp; Contract</th></tr>
+          <tr><th>Stage</th><th>Node ID &amp; Output Variable</th><th>Categorie</th><th>Functie, Prompt Wiring &amp; Contract</th></tr>
         </thead>
         <tbody></tbody>
       </table>
@@ -207,6 +297,11 @@
   </main>
 
   <script>
+    function copyText(id) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text);
+    }
+
     const FALLBACK = {
       coreVis: {
         kpis: {
@@ -227,31 +322,21 @@
       },
       audit: {
         checks: [
-          { name: "llms.txt & llms-full.txt discovery files", category: "Machine Accessibility", score: 100, evidence: "public/llms.txt=present, public/llms-full.txt=present" },
-          { name: "AI Search Crawler Rules (OAI-SearchBot, PerplexityBot, ClaudeBot, GPTBot)", category: "Machine Accessibility", score: 100, evidence: "Found robots.ts; explicit AI bots configured: GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, Google-Extended" },
-          { name: "Schema.org JSON-LD (Organization, Service, FAQPage)", category: "Structured Data & Entity Graph", score: 100, evidence: "8 files with JSON-LD; detected types: FAQPage, Organization, Service" },
-          { name: "Direct-Answer Blocks, Policy Mapping & Sitemap", category: "Citation Readiness & Extractability", score: 100, evidence: "Policy/eligibility terminology=present, sitemap=present" }
-        ]
-      },
-      agentSpec: {
-        nodes: [
-          { stage: "1. DETECT", id: "node_01_profound_visibility_ingest", category: "Data", description: "Queries Profound POST /v1/reports/visibility and /v2/prompts/answers for Reviewell and RingSizer across 5 answer engines." },
-          { stage: "1. DETECT", id: "node_02_profound_citation_ingest", category: "Data", description: "Queries Profound POST /v1/reports/citations to extract owned-domain Citation Share and top competitor Citation Pages." },
-          { stage: "2. COMPARE", id: "node_03_historical_baseline_compare", category: "Data", description: "Loads longitudinal 30-day rolling baselines and prior recommendation cooldown state from persistentKnowledge store." },
-          { stage: "3. ANALYZE", id: "node_04_significance_noise_gate", category: "Logic", description: "Conditional logic gate: abs(delta) >= 3.5%, sample_size >= 15, cooldown_active == false." },
-          { stage: "3. ANALYZE", id: "node_05_topic_cluster_analyzer", category: "LLM", description: "Clusters prompt executions where Reviewell was omitted or ranked below #2 (strict JSON Schema output)." },
-          { stage: "4. RESEARCH", id: "node_06_competitor_citation_crawler", category: "Research", description: "Scrapes top-cited competitor URLs (support.google.com, removify.com, erase.com) for structural patterns." },
-          { stage: "4. RESEARCH", id: "node_07_owned_asset_aeo_auditor", category: "Research", description: "Audits Reviewell web properties & codebase for llms.txt, AI crawler rules, JSON-LD, and factual density." },
-          { stage: "5. EVALUATE", id: "node_08_evidence_uncertainty_verifier", category: "Logic", description: "Verifies cross-engine confidence (>= 0.82) and blocks any unverified removal guarantees." },
-          { stage: "6. DECIDE", id: "node_09_action_decision_router", category: "Logic", description: "Routes execution to recommendation synthesis only when actionable root causes pass verification." },
-          { stage: "7. RECOMMEND", id: "node_10_structured_aeo_recommender", category: "LLM", description: "Synthesizes deployable /llms.txt, FAQPage JSON-LD, and policy comparison tables (strict JSON Schema)." },
-          { stage: "7. RECOMMEND", id: "node_11_executive_brief_composer", category: "LLM", description: "Formats an executive decision digest with KPI deltas, diff preview, and risk assessment." },
-          { stage: "8. APPROVAL", id: "node_12_human_approval_gate", category: "Logic", description: "Human-in-the-loop approval gate requiring explicit sign-off from Philippe Godfroy before publishing." },
-          { stage: "9. EXECUTE", id: "node_13_github_cms_patch_publisher", category: "Integration", description: "Writes approved AEO bundle to repository branch and opens a tracked GitHub PR." },
-          { stage: "10. MEASURE", id: "node_14_persistent_baseline_updater", category: "Integration", description: "Commits new baseline snapshot and schedules +7d/+14d Profound re-measurement triggers." }
+          { name: "llms.txt & llms-full.txt discovery files", category: "Machine Accessibility (Fetchable)", score: 100, evidence: "public/llms.txt=present, public/llms-full.txt=present" },
+          { name: "AI Search Crawler Rules (OAI-SearchBot, PerplexityBot, ClaudeBot, GPTBot)", category: "Machine Accessibility (Fetchable)", score: 100, evidence: "Found robots.ts; explicit AI bots configured: GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, Google-Extended" },
+          { name: "Schema.org JSON-LD (Organization, Service, FAQPage)", category: "Structured Data (Chosen & Extractable)", score: 100, evidence: "8 files with JSON-LD; detected types: FAQPage, Organization, Service" },
+          { name: "Direct-Answer Billboard, Policy Mapping & Sitemap", category: "Citation Readiness (Extractable)", score: 100, evidence: "Policy/eligibility terminology=present, sitemap=present" }
         ]
       }
     };
+
+    fetch("/reviewell-autonomous-aeo-agent.json")
+      .then(r => r.json())
+      .then(agentSpec => {
+        FALLBACK.agentSpec = agentSpec;
+        render(FALLBACK);
+      })
+      .catch(() => render(FALLBACK));
 
     function render(data) {
       const kpis = data.coreVis.kpis;
@@ -297,22 +382,19 @@
         </tr>`;
       });
 
-      const nodesBody = document.querySelector("#nodes-table tbody");
-      nodesBody.innerHTML = "";
-      data.agentSpec.nodes.forEach(n => {
-        nodesBody.innerHTML += `<tr>
-          <td><strong>${n.stage}</strong></td>
-          <td><code>${n.id}</code></td>
-          <td><span class="node-pill">${n.category}</span></td>
-          <td>${n.description}</td>
-        </tr>`;
-      });
+      if (data.agentSpec && data.agentSpec.nodes) {
+        const nodesBody = document.querySelector("#nodes-table tbody");
+        nodesBody.innerHTML = "";
+        data.agentSpec.nodes.forEach(n => {
+          nodesBody.innerHTML += `<tr>
+            <td><strong>${n.stage}</strong></td>
+            <td><code>${n.id}</code>${n.outputVariable ? `<br/><span style="font-size:11px;color:var(--emerald);">→ ${n.outputVariable}</span>` : ""}</td>
+            <td><span class="node-pill">${n.category}</span></td>
+            <td>${n.description}${n.prompt ? `<div style="margin-top:4px;font-size:11.5px;color:var(--muted);"><em>Prompt:</em> ${n.prompt}</div>` : ""}</td>
+          </tr>`;
+        });
+      }
     }
-
-    fetch("/api/overview")
-      .then(r => (r.ok ? r.json() : FALLBACK))
-      .then(render)
-      .catch(() => render(FALLBACK));
   </script>
 </body>
 </html>
