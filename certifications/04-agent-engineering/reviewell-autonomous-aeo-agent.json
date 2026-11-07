@@ -1,0 +1,272 @@
+{
+  "$schema": "https://university.tryprofound.com/schemas/agent-engineering-v1.json",
+  "name": "Reviewell Autonomous AEO & Citation Intelligence Agent",
+  "id": "agent_reviewell_autonomous_aeo_v1",
+  "version": "1.0.0",
+  "author": {
+    "name": "Philippe Godfroy",
+    "organization": "Reviewell BV (BE1012058705)",
+    "website": "https://www.reviewell.com",
+    "github": "https://github.com/phlppgdfry"
+  },
+  "architectureSummary": "A 14-node, 10-stage autonomous Answer Engine Optimization (AEO) agent spanning all 5 Profound node categories (Data, Research, LLM, Logic, Integration). It ingests Profound Visibility Score, Share of Voice, Citation Share, and Citation Pages across ChatGPT, Perplexity, Gemini, Claude, and Copilot for Reviewell (reviewell.com) and RingSizer (id6798043494), compares against persistent historical baselines, filters stochastic variance via a conditional significance gate, researches competitor citations, generates schema-validated AEO patches (llms.txt, FAQPage JSON-LD, evidence guides), enforces a human-in-the-loop approval gate, deploys approved patches, and updates longitudinal baselines.",
+  "profoundData": {
+    "provider": "Profound REST API & MCP (https://api.tryprofound.com / https://mcp.tryprofound.com/mcp)",
+    "categories": [
+      "cat_reviewell_reputation_eu",
+      "cat_reviewell_ringsizer_ios",
+      "cat_reviewell_mirrormate_ios"
+    ],
+    "metrics": [
+      "Visibility Score",
+      "Share of Voice",
+      "Citation Share",
+      "Citation Pages",
+      "Average Position",
+      "Prompt Answer Executions"
+    ],
+    "answerEngines": [
+      "ChatGPT (OpenAI Search)",
+      "Perplexity Sonar Pro",
+      "Google Gemini & AI Overviews",
+      "Claude Web Search",
+      "Microsoft Copilot"
+    ]
+  },
+  "persistentKnowledge": {
+    "enabled": true,
+    "storeType": "hybrid_json_sqlite_state",
+    "location": "~/.config/profound/persistent_knowledge.json",
+    "retentionDays": 365,
+    "trackedEntities": [
+      "historical_visibility_baselines",
+      "citation_leaderboard_snapshots",
+      "deployed_aeo_recommendations",
+      "alert_cooldown_windows",
+      "post_deployment_lift_measurements"
+    ]
+  },
+  "variables": {
+    "SIGNIFICANCE_DELTA_THRESHOLD_PCT": 3.5,
+    "MIN_CONFIDENCE_SCORE": 0.82,
+    "MIN_PROMPT_SAMPLE_SIZE": 15,
+    "ALERT_COOLDOWN_HOURS": 72,
+    "REQUIRE_HUMAN_APPROVAL": true
+  },
+  "nodes": [
+    {
+      "id": "node_01_profound_visibility_ingest",
+      "name": "Profound Visibility & SOV Ingestor",
+      "stage": "DETECT",
+      "category": "Data",
+      "description": "Queries Profound POST /v1/reports/visibility and /v2/prompts/answers for Reviewell and RingSizer across 5 answer engines.",
+      "inputs": ["category_id", "start_date", "end_date"],
+      "outputs": ["current_visibility_report", "engine_breakdown"],
+      "outputSchema": {
+        "type": "object",
+        "required": ["category_id", "visibility_score", "share_of_voice", "by_engine"],
+        "properties": {
+          "category_id": { "type": "string" },
+          "visibility_score": { "type": "number" },
+          "share_of_voice": { "type": "number" },
+          "by_engine": { "type": "array" }
+        }
+      }
+    },
+    {
+      "id": "node_02_profound_citation_ingest",
+      "name": "Profound Citation Share & Pages Ingestor",
+      "stage": "DETECT",
+      "category": "Data",
+      "description": "Queries Profound POST /v1/reports/citations to extract owned-domain Citation Share and top competitor Citation Pages.",
+      "inputs": ["category_id", "start_date", "end_date"],
+      "outputs": ["citation_share", "cited_pages_leaderboard"],
+      "outputSchema": {
+        "type": "object",
+        "required": ["citation_share", "top_cited_pages"],
+        "properties": {
+          "citation_share": { "type": "number" },
+          "top_cited_pages": { "type": "array" }
+        }
+      }
+    },
+    {
+      "id": "node_03_historical_baseline_compare",
+      "name": "Persistent Knowledge Baseline Comparator",
+      "stage": "COMPARE",
+      "category": "Data",
+      "description": "Loads longitudinal 30-day rolling baselines and prior recommendation cooldown state from persistentKnowledge store and computes period-over-period deltas.",
+      "inputs": ["current_visibility_report", "citation_share", "persistent_state"],
+      "outputs": ["kpi_deltas", "topic_regressions", "cooldown_active"]
+    },
+    {
+      "id": "node_04_significance_noise_gate",
+      "name": "Stochastic Variance & Significance Filter",
+      "stage": "ANALYZE",
+      "category": "Logic",
+      "description": "Applies conditional logic to separate multi-run statistically significant shifts from single-prompt AI answer variance.",
+      "conditions": [
+        "abs(kpi_deltas.visibility_delta) >= SIGNIFICANCE_DELTA_THRESHOLD_PCT OR abs(kpi_deltas.citation_delta) >= SIGNIFICANCE_DELTA_THRESHOLD_PCT",
+        "sample_size >= MIN_PROMPT_SAMPLE_SIZE",
+        "cooldown_active == false"
+      ],
+      "inputs": ["kpi_deltas", "topic_regressions", "cooldown_active"],
+      "outputs": ["significant_anomalies", "should_investigate"]
+    },
+    {
+      "id": "node_05_topic_cluster_analyzer",
+      "name": "LLM Topic & Intent Cluster Analyzer",
+      "stage": "ANALYZE",
+      "category": "LLM",
+      "description": "Clusters prompt executions where Reviewell was omitted or ranked below position #2 (e.g., Conflict-of-Interest Google reviews, EU GDPR defamation, iOS ring size ISO conversion).",
+      "inputs": ["significant_anomalies", "prompt_executions"],
+      "outputs": ["high_priority_topic_clusters"],
+      "outputSchema": {
+        "type": "object",
+        "required": ["clusters"],
+        "properties": {
+          "clusters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["topic", "missing_engines", "competitor_winner", "intent_type"]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "node_06_competitor_citation_crawler",
+      "name": "Competitor Citation Page Scraper",
+      "stage": "RESEARCH",
+      "category": "Research",
+      "description": "Fetches and parses top-cited competitor URLs (e.g., support.google.com, removify.com, erase.com) to inspect heading hierarchy, direct-answer tables, and JSON-LD schemas.",
+      "inputs": ["cited_pages_leaderboard", "high_priority_topic_clusters"],
+      "outputs": ["competitor_structural_patterns"]
+    },
+    {
+      "id": "node_07_owned_asset_aeo_auditor",
+      "name": "Owned Asset & Codebase Technical AEO Auditor",
+      "stage": "RESEARCH",
+      "category": "Research",
+      "description": "Audits Reviewell's owned web properties (reviewell.com & local Next.js codebase) for llms.txt, AI crawler robots.txt rules, JSON-LD (Organization, Service, FAQPage, SoftwareApplication), and factual density.",
+      "inputs": ["owned_domains", "high_priority_topic_clusters"],
+      "outputs": ["technical_aeo_audit_report"]
+    },
+    {
+      "id": "node_08_evidence_uncertainty_verifier",
+      "name": "Evidence & Hallucination Guardrail Evaluator",
+      "stage": "EVALUATE",
+      "category": "Logic",
+      "description": "Evaluates evidence strength, cross-engine reproducibility, and regulatory accuracy (never guaranteeing review removal; enforcing factual Google Policy alignment).",
+      "conditions": [
+        "confidence_score >= MIN_CONFIDENCE_SCORE",
+        "contains_unverified_guarantees == false"
+      ],
+      "inputs": ["competitor_structural_patterns", "technical_aeo_audit_report"],
+      "outputs": ["verified_root_causes", "confidence_score"]
+    },
+    {
+      "id": "node_09_action_decision_router",
+      "name": "Conditional Action & Escalation Router",
+      "stage": "DECIDE",
+      "category": "Logic",
+      "description": "Routes execution to recommendation generation only when verified_root_causes exist and expected citation lift exceeds threshold; otherwise logs a quiet heartbeat without spamming stakeholders.",
+      "conditions": [
+        "len(verified_root_causes) > 0",
+        "confidence_score >= 0.82"
+      ],
+      "inputs": ["verified_root_causes", "confidence_score"],
+      "outputs": ["action_decision", "route_target"]
+    },
+    {
+      "id": "node_10_structured_aeo_recommender",
+      "name": "Structured AEO Patch & Schema Synthesizer",
+      "stage": "RECOMMEND",
+      "category": "LLM",
+      "description": "Synthesizes concrete, ready-to-merge artifacts: /llms.txt updates, Schema.org FAQPage/Service JSON-LD blocks, and direct-answer comparison tables.",
+      "inputs": ["verified_root_causes", "technical_aeo_audit_report"],
+      "outputs": ["structured_recommendations", "deployable_artifacts"],
+      "outputSchema": {
+        "type": "object",
+        "required": ["recommendations", "artifacts"],
+        "properties": {
+          "recommendations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "target_url", "artifact_type", "expected_citation_lift_pct", "rationale"]
+            }
+          },
+          "artifacts": { "type": "array" }
+        }
+      }
+    },
+    {
+      "id": "node_11_executive_brief_composer",
+      "name": "Executive Decision Brief Composer",
+      "stage": "RECOMMEND",
+      "category": "LLM",
+      "description": "Formats a concise, evidence-linked executive digest for Reviewell leadership showing exact Profound metric deltas, competitor citations, and diff previews.",
+      "inputs": ["structured_recommendations", "kpi_deltas"],
+      "outputs": ["executive_approval_digest"],
+      "outputSchema": {
+        "type": "object",
+        "required": ["summary", "kpi_snapshot", "proposed_changes", "risk_assessment"],
+        "properties": {
+          "summary": { "type": "string" },
+          "kpi_snapshot": { "type": "object" },
+          "proposed_changes": { "type": "array" },
+          "risk_assessment": { "type": "string" }
+        }
+      }
+    },
+    {
+      "id": "node_12_human_approval_gate",
+      "name": "Human-in-the-Loop Approval Gate",
+      "stage": "APPROVAL",
+      "category": "Logic",
+      "requiresApproval": true,
+      "description": "Pauses autonomous execution until human reviewer (Philippe Godfroy) approves, edits, or rejects the proposed AEO patch bundle.",
+      "conditions": [
+        "approval_status == 'APPROVED'"
+      ],
+      "inputs": ["executive_approval_digest", "deployable_artifacts"],
+      "outputs": ["approved_artifacts", "approval_metadata"]
+    },
+    {
+      "id": "node_13_github_cms_patch_publisher",
+      "name": "GitHub PR & AEO Bundle Publisher",
+      "stage": "EXECUTE",
+      "category": "Integration",
+      "description": "Writes approved llms.txt, robots.txt, and JSON-LD schema components into the target Reviewell repository branch / deliverables directory and opens a tracked PR.",
+      "inputs": ["approved_artifacts", "approval_metadata"],
+      "outputs": ["deployment_receipt", "git_commit_ref"]
+    },
+    {
+      "id": "node_14_persistent_baseline_updater",
+      "name": "Persistent Knowledge & Longitudinal Measurement Updater",
+      "stage": "MEASURE",
+      "category": "Integration",
+      "description": "Commits the new baseline, deployment timestamp, and +7d/+14d Profound re-measurement triggers to persistentKnowledge store.",
+      "inputs": ["deployment_receipt", "current_visibility_report", "citation_share"],
+      "outputs": ["updated_persistent_state", "scheduled_remeasurement_id"]
+    }
+  ],
+  "edges": [
+    { "from": "node_01_profound_visibility_ingest", "to": "node_03_historical_baseline_compare", "label": "visibility_metrics" },
+    { "from": "node_02_profound_citation_ingest", "to": "node_03_historical_baseline_compare", "label": "citation_metrics" },
+    { "from": "node_03_historical_baseline_compare", "to": "node_04_significance_noise_gate", "label": "kpi_deltas" },
+    { "from": "node_04_significance_noise_gate", "to": "node_05_topic_cluster_analyzer", "condition": "should_investigate == true" },
+    { "from": "node_05_topic_cluster_analyzer", "to": "node_06_competitor_citation_crawler", "label": "priority_topics" },
+    { "from": "node_05_topic_cluster_analyzer", "to": "node_07_owned_asset_aeo_auditor", "label": "priority_topics" },
+    { "from": "node_06_competitor_citation_crawler", "to": "node_08_evidence_uncertainty_verifier", "label": "competitor_patterns" },
+    { "from": "node_07_owned_asset_aeo_auditor", "to": "node_08_evidence_uncertainty_verifier", "label": "owned_audit" },
+    { "from": "node_08_evidence_uncertainty_verifier", "to": "node_09_action_decision_router", "label": "verified_causes" },
+    { "from": "node_09_action_decision_router", "to": "node_10_structured_aeo_recommender", "condition": "action_decision == 'RECOMMEND'" },
+    { "from": "node_10_structured_aeo_recommender", "to": "node_11_executive_brief_composer", "label": "structured_patches" },
+    { "from": "node_11_executive_brief_composer", "to": "node_12_human_approval_gate", "label": "approval_request" },
+    { "from": "node_12_human_approval_gate", "to": "node_13_github_cms_patch_publisher", "condition": "approval_status == 'APPROVED'" },
+    { "from": "node_13_github_cms_patch_publisher", "to": "node_14_persistent_baseline_updater", "label": "deployment_receipt" }
+  ]
+}

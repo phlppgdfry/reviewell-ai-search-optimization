@@ -1,0 +1,36 @@
+{
+  "name": "reviewell-ai-search-optimization",
+  "version": "1.0.0",
+  "description": "Reviewell AI Visibility & Growth Intelligence Platform — Profound AEO/GEO Toolkit, 14-Node Autonomous AEO Agent, and Profound University 4-Certification Portfolio",
+  "private": false,
+  "type": "module",
+  "bin": {
+    "reviewell-aeo": "./bin/reviewell-aeo.mjs"
+  },
+  "scripts": {
+    "start": "node ./bin/reviewell-aeo.mjs dashboard",
+    "status": "profound status",
+    "audit": "profound audit /Users/philippegodfroy/reviewell-removal-preview",
+    "agent:validate": "profound agent validate ./certifications/04-agent-engineering/reviewell-autonomous-aeo-agent.json",
+    "agent:run": "profound agent run --brand reviewell-core",
+    "certs": "profound certs status",
+    "test": "node --test ./tests/platform.test.mjs"
+  },
+  "dependencies": {
+    "@profoundai/client": "^0.51.0",
+    "@profoundai/mcp": "^0.47.0"
+  },
+  "keywords": [
+    "profound",
+    "aeo",
+    "geo",
+    "answer-engine-optimization",
+    "generative-engine-optimization",
+    "reviewell",
+    "ringsizer",
+    "ai-agents",
+    "mcp"
+  ],
+  "author": "Philippe Godfroy <info@reviewell.com> (https://www.reviewell.com)",
+  "license": "MIT"
+}

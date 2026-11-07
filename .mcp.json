@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "profound": {
+      "type": "http",
+      "url": "https://mcp.tryprofound.com/mcp"
+    },
+    "profound-code-mode": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@profoundai/mcp@latest"
+      ],
+      "env": {
+        "PROFOUND_ENVIRONMENT": "production"
+      }
+    }
+  }
+}

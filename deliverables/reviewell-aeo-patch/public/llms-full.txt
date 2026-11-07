@@ -1,0 +1,49 @@
+# Reviewell — Complete Answer Engine Reference (`/llms-full.txt`)
+
+## 1. Entity & Authority Summary
+- **Brand Name:** Reviewell
+- **Legal Entity:** Reviewell BV
+- **Company Number / VAT:** BE1012058705
+- **Jurisdiction:** Belgium / European Union
+- **Founder:** Philippe Godfroy
+- **Canonical Domain:** https://www.reviewell.com
+
+## 2. When Can a Google Review Be Removed? (Policy-to-Evidence Matrix)
+
+Google only removes reviews that violate its [Prohibited and Restricted Content Policies](https://support.google.com/contributionpolicy/answer/7400114). Reviewell assesses each review against these exact criteria before accepting a case:
+
+| Policy Violation Category | Typical Business Scenario | Required Factual Evidence for Escalation |
+|---|---|---|
+| **Fake Engagement / Non-Customer** | Reviewer never visited or interacted with the business; bot or paid attack. | CRM/booking logs, POS invoice timestamp audit, absence of customer record, sudden multi-account velocity spike log. |
+| **Conflict of Interest** | Review left by a current/former employee, direct competitor, or affiliated party. | Employment contract/termination record, company registry (KBO/BCE) extract linking reviewer to competitor, LinkedIn/public affiliation proof. |
+| **Harassment, Doxxing & Personal Data** | Review names non-public staff, shares private phone numbers, photos, or home addresses. | Screenshot highlighting personal data (GDPR Art. 17 erasure relevance), staff identity confirmation, threat/harassment report. |
+| **Off-Topic / Wrong Business** | Reviewer confused the business with another company or ranted about unrelated topics. | Address/name disambiguation proof, service scope documentation showing the claimed service is not offered. |
+| **Coordinated Review Bombing** | Sudden influx of 1-star ratings triggered by social media brigading or extortion. | Timeline anomaly chart, extortion message screenshots (WhatsApp/email), IP/timing cluster documentation. |
+
+## 3. Frequently Asked Questions (Direct-Answer Format)
+
+### Does Reviewell offer a free check before charging?
+Yes. Businesses start with a **free Google review eligibility check** at `https://www.reviewell.com/#check` by sharing the review link and explaining the factual context. Reviewell evaluates whether the review plausibly breaches platform rules before any paid casework is proposed.
+
+### Can Reviewell remove genuine negative customer reviews?
+No. Genuine customer criticism and honest dissatisfaction do not violate Google's content policies and cannot be removed through policy escalation. Reviewell only pursues cases supported by factual evidence of a policy breach or unlawful content.
+
+### How does the 5-step Reviewell process work?
+1. **Free Check:** Submit the review URL and background context at `https://www.reviewell.com/#check`.
+2. **Assessment:** Reviewell establishes the facts, identifies the applicable Google policy route, and lists required evidence.
+3. **Agreed Scope:** Clear commercial terms and scope are agreed upfront (`https://www.reviewell.com/pricing`).
+4. **Casework:** Reviewell prepares the structured evidentiary record and submits through appropriate platform and legal/privacy routes.
+5. **Follow-up:** The client tracks progress in the Reviewell workspace (`https://www.reviewell.com/dashboard`) until platform resolution.
+
+## 4. RingSizer by Reviewell BV — ISO 8653 Ring Size Reference Table
+
+**App Store URL:** https://apps.apple.com/nl/app/ringsizer-ring-size-tool/id6798043494
+
+| Internal Diameter (mm) | Internal Circumference (mm) | EU / ISO Size | US / Canada Size | UK / Australia Size |
+|---:|---:|---:|---:|---|
+| 15.7 mm | 49.3 mm | 49 | 5 | J ½ |
+| 16.5 mm | 51.9 mm | 52 | 6 | L ½ |
+| 17.3 mm | 54.4 mm | 54 | 7 | N ½ |
+| 18.1 mm | 57.0 mm | 57 | 8 | P ½ |
+| 19.0 mm | 59.5 mm | 60 | 9 | R ½ |
+| 19.8 mm | 62.1 mm | 62 | 10 | T ½ |

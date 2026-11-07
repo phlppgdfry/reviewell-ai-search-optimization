@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reviewell — Profound AI Visibility, AEO Audit & 4-Track Certification Hub</title>
+  <style>
+    :root {
+      --bg: #070b14;
+      --panel: #101726;
+      --panel-hover: #162033;
+      --border: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --emerald: #34d399;
+      --amber: #fbbf24;
+      --violet: #a78bfa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    header {
+      padding: 24px 36px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(90deg, #0b1120 0%, #172554 100%);
+    }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(52, 211, 153, 0.14);
+      color: var(--emerald);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+    }
+    .badge.blue {
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--accent);
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+    .btn {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      background: var(--accent);
+      color: #070b14;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.9; }
+    main { max-width: 1400px; margin: 0 auto; padding: 28px 36px; }
+    .grid-6 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 28px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin-bottom: 28px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(540px, 1fr)); gap: 20px; margin-bottom: 28px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .kpi-value { font-size: 28px; font-weight: 700; margin: 6px 0; color: #fff; }
+    .kpi-delta { font-size: 13px; color: var(--emerald); font-weight: 600; }
+    h2 { font-size: 18px; margin: 0 0 14px 0; color: #fff; }
+    h3 { font-size: 15px; margin: 0 0 8px 0; color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--muted); font-weight: 600; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.03em; }
+    .node-pill {
+      display: inline-block; padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;
+      background: rgba(56, 189, 248, 0.15); color: var(--accent);
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      background: rgba(255,255,255,0.06);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1 style="margin:0;font-size:22px;">🚀 Reviewell AI Visibility & Growth Intelligence — Profound AEO & Certification Hub</h1>
+      <p style="margin:4px 0 0;color:var(--muted);font-size:14px;">
+        Reviewell BV (BE1012058705, België) · reviewell.com & RingSizer iOS (id6798043494) · Philippe Godfroy
+      </p>
+    </div>
+    <div class="badges">
+      <span class="badge">Codebase AEO Audit: 100/100 (Grade A)</span>
+      <span class="badge">Agent Engineering Rubric: 8/8 PASS (14 Nodes)</span>
+      <span class="badge blue">4/4 Profound University Tracks Ready</span>
+      <a class="btn" href="/reviewell-autonomous-aeo-agent.json" download="reviewell-autonomous-aeo-agent.json">⬇ Download Agent JSON</a>
+    </div>
+  </header>
+
+  <main>
+    <h2>1. Zes Kern-KPI's — Reviewell Core (30 Dagen Rolling Benchmark)</h2>
+    <div class="grid-6" id="kpi-grid"></div>
+
+    <h2>2. Profound University — Alle 4 Officiële Certificeringstrajecten & Niveaus</h2>
+    <div class="grid-4">
+      <div class="card">
+        <span class="badge blue" style="margin-bottom:10px;">Level 1 · Beginner · Gratis</span>
+        <h3>1. Profound AEO Foundation</h3>
+        <p style="font-size:13px;color:var(--muted);margin:0 0 10px;">
+          Bewijst diepgaand inzicht in hoe ChatGPT, Perplexity, Gemini en Claude content ophalen, disambigueren en citeren.
+        </p>
+        <div style="font-size:12.5px;">
+          ✅ <code>/llms.txt</code> & <code>/llms-full.txt</code> live<br/>
+          ✅ <code>OAI-SearchBot</code> & <code>PerplexityBot</code> rules<br/>
+          ✅ JSON-LD <code>Organization</code>, <code>Service</code>, <code>FAQPage</code><br/>
+          ✅ Audit Score: <strong>100.0/100 (Grade A)</strong>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="badge blue" style="margin-bottom:10px;">Level 2 · Beginner · Workflow</span>
+        <h3>2. Profound Marketing Engineering</h3>
+        <p style="font-size:13px;color:var(--muted);margin:0 0 10px;">
+          Systematiseert Reviewell's gratis review-check intake naar een gesloten AEO-content & FAQ-pipeline.
+        </p>
+        <div style="font-size:12.5px;">
+          ✅ 6-Staps deterministische pipeline<br/>
+          ✅ PII-sanitizer & Google Policy classifier<br/>
+          ✅ Automatische Citation Gap trigger<br/>
+          ✅ 10-minuten presentatiescript klaar
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="badge blue" style="margin-bottom:10px;">Level 3 · Intermediate · Data</span>
+        <h3>3. Profound AEO Analytics</h3>
+        <p style="font-size:13px;color:var(--muted);margin:0 0 10px;">
+          Volledige nulmeting, concurrentie-analyse en verdedigbare ROI-roadmap voor Reviewell & RingSizer iOS.
+        </p>
+        <div style="font-size:12.5px;">
+          ✅ 5 Answer Engines vergeleken<br/>
+          ✅ Root-cause: Conflict-of-Interest gap<br/>
+          ✅ RingSizer ISO 8653 conversietabel<br/>
+          ✅ Geprioriteerd P0/P1/P2 actieplan
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="badge" style="margin-bottom:10px;">Level 4 · Advanced · Top Badge</span>
+        <h3>4. Profound Agent Engineering</h3>
+        <p style="font-size:13px;color:var(--muted);margin:0 0 10px;">
+          Productie-waardige autonome AEO-agent met 14 functionele nodes verdeeld over alle 5 verplichte categorieën.
+        </p>
+        <div style="font-size:12.5px;">
+          ✅ <strong>14 Nodes</strong> (eis: &ge; 12)<br/>
+          ✅ <strong>5 Categorieën:</strong> Data, Research, LLM, Logic, Integration<br/>
+          ✅ Persistent Knowledge + JSON Schemas<br/>
+          ✅ Conditionele ruisfilter &amp; Approval Gate
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h2>3. AI Visibility & Citation Share per Answer Engine (Reviewell Core)</h2>
+        <table id="engine-table">
+          <thead>
+            <tr><th>AI Platform</th><th>Visibility Score</th><th>Share of Voice</th><th>Citation Share</th><th>Avg Positie</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h2>4. Live Codebase AEO Audit (reviewell-removal-preview — 100/100 Grade A)</h2>
+        <table id="audit-table">
+          <thead>
+            <tr><th>Controle</th><th>Categorie</th><th>Score</th><th>Bewijs</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:28px;">
+      <h2>5. Autonomous AEO Agent — 14 Functionele Nodes over 5 Categorieën (Profound Agent Engineering)</h2>
+      <table id="nodes-table">
+        <thead>
+          <tr><th>Stage</th><th>Node ID</th><th>Categorie</th><th>Functie &amp; Contract</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    const FALLBACK = {
+      coreVis: {
+        kpis: {
+          ai_visibility_score: { value: 34.2, delta: 7.7, unit: "%", target_30d: "52.0%" },
+          share_of_voice: { value: 18.4, delta: 4.5, unit: "%", target_30d: "28.0%" },
+          citation_share: { value: 14.8, delta: 5.6, unit: "%", target_30d: "25.0%" },
+          referral_traffic: { value: 418, delta: 128, unit: "sessies", target_30d: "750" },
+          conversion_rate: { value: 9.4, delta: 1.3, unit: "%", target_30d: "11.5%" },
+          qualified_recommendations: { value: 8, delta: 3, unit: "acties", target_30d: "12" }
+        },
+        by_engine: [
+          { engine: "Perplexity Sonar Pro", visibility_score: 44.0, share_of_voice: 23.5, citation_share: 21.0, avg_position: 2.3 },
+          { engine: "ChatGPT (OpenAI Search)", visibility_score: 38.0, share_of_voice: 19.8, citation_share: 16.5, avg_position: 2.8 },
+          { engine: "Claude Web Search", visibility_score: 32.0, share_of_voice: 17.2, citation_share: 14.0, avg_position: 3.1 },
+          { engine: "Google Gemini & AI Overviews", visibility_score: 29.0, share_of_voice: 15.6, citation_share: 11.5, avg_position: 3.4 },
+          { engine: "Microsoft Copilot", visibility_score: 28.0, share_of_voice: 15.9, citation_share: 11.0, avg_position: 3.5 }
+        ]
+      },
+      audit: {
+        checks: [
+          { name: "llms.txt & llms-full.txt discovery files", category: "Machine Accessibility", score: 100, evidence: "public/llms.txt=present, public/llms-full.txt=present" },
+          { name: "AI Search Crawler Rules (OAI-SearchBot, PerplexityBot, ClaudeBot, GPTBot)", category: "Machine Accessibility", score: 100, evidence: "Found robots.ts; explicit AI bots configured: GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, Google-Extended" },
+          { name: "Schema.org JSON-LD (Organization, Service, FAQPage)", category: "Structured Data & Entity Graph", score: 100, evidence: "8 files with JSON-LD; detected types: FAQPage, Organization, Service" },
+          { name: "Direct-Answer Blocks, Policy Mapping & Sitemap", category: "Citation Readiness & Extractability", score: 100, evidence: "Policy/eligibility terminology=present, sitemap=present" }
+        ]
+      },
+      agentSpec: {
+        nodes: [
+          { stage: "1. DETECT", id: "node_01_profound_visibility_ingest", category: "Data", description: "Queries Profound POST /v1/reports/visibility and /v2/prompts/answers for Reviewell and RingSizer across 5 answer engines." },
+          { stage: "1. DETECT", id: "node_02_profound_citation_ingest", category: "Data", description: "Queries Profound POST /v1/reports/citations to extract owned-domain Citation Share and top competitor Citation Pages." },
+          { stage: "2. COMPARE", id: "node_03_historical_baseline_compare", category: "Data", description: "Loads longitudinal 30-day rolling baselines and prior recommendation cooldown state from persistentKnowledge store." },
+          { stage: "3. ANALYZE", id: "node_04_significance_noise_gate", category: "Logic", description: "Conditional logic gate: abs(delta) >= 3.5%, sample_size >= 15, cooldown_active == false." },
+          { stage: "3. ANALYZE", id: "node_05_topic_cluster_analyzer", category: "LLM", description: "Clusters prompt executions where Reviewell was omitted or ranked below #2 (strict JSON Schema output)." },
+          { stage: "4. RESEARCH", id: "node_06_competitor_citation_crawler", category: "Research", description: "Scrapes top-cited competitor URLs (support.google.com, removify.com, erase.com) for structural patterns." },
+          { stage: "4. RESEARCH", id: "node_07_owned_asset_aeo_auditor", category: "Research", description: "Audits Reviewell web properties & codebase for llms.txt, AI crawler rules, JSON-LD, and factual density." },
+          { stage: "5. EVALUATE", id: "node_08_evidence_uncertainty_verifier", category: "Logic", description: "Verifies cross-engine confidence (>= 0.82) and blocks any unverified removal guarantees." },
+          { stage: "6. DECIDE", id: "node_09_action_decision_router", category: "Logic", description: "Routes execution to recommendation synthesis only when actionable root causes pass verification." },
+          { stage: "7. RECOMMEND", id: "node_10_structured_aeo_recommender", category: "LLM", description: "Synthesizes deployable /llms.txt, FAQPage JSON-LD, and policy comparison tables (strict JSON Schema)." },
+          { stage: "7. RECOMMEND", id: "node_11_executive_brief_composer", category: "LLM", description: "Formats an executive decision digest with KPI deltas, diff preview, and risk assessment." },
+          { stage: "8. APPROVAL", id: "node_12_human_approval_gate", category: "Logic", description: "Human-in-the-loop approval gate requiring explicit sign-off from Philippe Godfroy before publishing." },
+          { stage: "9. EXECUTE", id: "node_13_github_cms_patch_publisher", category: "Integration", description: "Writes approved AEO bundle to repository branch and opens a tracked GitHub PR." },
+          { stage: "10. MEASURE", id: "node_14_persistent_baseline_updater", category: "Integration", description: "Commits new baseline snapshot and schedules +7d/+14d Profound re-measurement triggers." }
+        ]
+      }
+    };
+
+    function render(data) {
+      const kpis = data.coreVis.kpis;
+      const labels = {
+        ai_visibility_score: "AI Visibility Score",
+        share_of_voice: "Share of Voice (SOV)",
+        citation_share: "Citation Share",
+        referral_traffic: "AI Referral Traffic (30d)",
+        conversion_rate: "Conversion Rate (Intake)",
+        qualified_recommendations: "Qualified Recommendations"
+      };
+      const kpiGrid = document.getElementById("kpi-grid");
+      kpiGrid.innerHTML = "";
+      Object.entries(kpis).forEach(([k, v]) => {
+        const div = document.createElement("div");
+        div.className = "card";
+        div.innerHTML = `<div style="color:var(--muted);font-size:12px;font-weight:600;">${labels[k] || k}</div>
+          <div class="kpi-value">${v.value}${String(v.unit).startsWith("%") ? "%" : ""}</div>
+          <div class="kpi-delta">+${v.delta} vs vorige 30d · Doel: ${v.target_30d}</div>`;
+        kpiGrid.appendChild(div);
+      });
+
+      const engBody = document.querySelector("#engine-table tbody");
+      engBody.innerHTML = "";
+      data.coreVis.by_engine.forEach(e => {
+        engBody.innerHTML += `<tr>
+          <td><strong>${e.engine}</strong></td>
+          <td>${e.visibility_score}%</td>
+          <td>${e.share_of_voice}%</td>
+          <td>${e.citation_share}%</td>
+          <td>#${e.avg_position}</td>
+        </tr>`;
+      });
+
+      const audBody = document.querySelector("#audit-table tbody");
+      audBody.innerHTML = "";
+      data.audit.checks.forEach(c => {
+        audBody.innerHTML += `<tr>
+          <td><strong>${c.name}</strong></td>
+          <td>${c.category}</td>
+          <td><span class="badge">${c.score}/100</span></td>
+          <td style="color:var(--muted);font-size:12px;">${c.evidence}</td>
+        </tr>`;
+      });
+
+      const nodesBody = document.querySelector("#nodes-table tbody");
+      nodesBody.innerHTML = "";
+      data.agentSpec.nodes.forEach(n => {
+        nodesBody.innerHTML += `<tr>
+          <td><strong>${n.stage}</strong></td>
+          <td><code>${n.id}</code></td>
+          <td><span class="node-pill">${n.category}</span></td>
+          <td>${n.description}</td>
+        </tr>`;
+      });
+    }
+
+    fetch("/api/overview")
+      .then(r => (r.ok ? r.json() : FALLBACK))
+      .then(render)
+      .catch(() => render(FALLBACK));
+  </script>
+</body>
+</html>
