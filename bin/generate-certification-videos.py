@@ -18,6 +18,7 @@ VIDEOS = [
         "filename": "01a-aeo-foundation-diagnostic-walkthrough.mp4",
         "title": "Profound AEO Foundation — Part 1: Diagnostic Walkthrough",
         "subtitle": "Compound-Job Prompt · Winner (Removify) vs Loser (Erase.com) · Three Gates (Fetchable, Chosen, Extractable) · SAGE Generate Fix",
+        "target_seconds": 315,
         "bullets": [
             "1. Compound-Job Prompt: Multi-location EU hospitality business + coordinated fake 1-star Google reviews + free eligibility check + strict policy compliance",
             "2. Engine Readout (ChatGPT): Synthesizes compliance constraints first; cites Google Policy 7400114, Removify, and Reviewell; downranks generic guarantee vendors",
@@ -48,6 +49,7 @@ VIDEOS = [
         "filename": "01b-aeo-foundation-hubspot-citation-read.mp4",
         "title": "Profound AEO Foundation — Part 2: HubSpot Citation Table Read",
         "subtitle": "Top Citation Pages (988 items) · Clean the Lens · Supply Chain Mix · Mentioned vs Not Mentioned · Next Action",
+        "target_seconds": 150,
         "bullets": [
             "1. Clean the Lens (Setup): 6 of Top 20 rows (#6, #12, #15, #16, #17, #18) are CMS (Content Management) polluting CSM (Customer Success)",
             "2. Supply Chain Mix: Dominated by Other (B2B SaaS listicles) + Gartner (#4) & G2 (#13) + Earned Media (#9 em360tech). Zero hubspot.com URLs!",
@@ -77,6 +79,7 @@ VIDEOS = [
         "filename": "02-marketing-engineering-presentation.mp4",
         "title": "Profound Marketing Engineering — Workflow Decomposition & Agent Demo",
         "subtitle": "Reviewell Closed-Loop Dispute Intake → Policy Classification → Profound Citation Gap Check → Auto-Generated AEO Patch",
+        "target_seconds": 315,
         "bullets": [
             "Part 1 (The Real Workflow & Hidden Steps): Weekly review dispute intake on reviewell.com/#check -> manual policy lookup -> siloed case notes",
             "Scoring on Frequency, Complexity & Impact: High weekly frequency, structured Google Policy taxonomy (7400114), direct B2B inbound revenue impact",
@@ -102,6 +105,7 @@ VIDEOS = [
         "filename": "03-aeo-analytics-diagnostic-loop.mp4",
         "title": "Profound AEO Analytics — Full Diagnostic Loop (Lessons 11–17)",
         "subtitle": "1. Filter Big Four Platforms · 2. Scan Topic Ranks · 3. Drill into Prompts · 4. Read Citation Supply Chain · 5. Root Cause & Fix",
+        "target_seconds": 315,
         "bullets": [
             "1. Clean the Lens (Platform Filter): Filtered to ChatGPT, Google AI Overviews, Google AI Mode, Gemini & Perplexity for Reviewell Core",
             "2. Scan Ranks at Topic Level: 'Eligibility Check' ranks #1–#2, while 'Conflict of Interest Ex-Employee Evidence' sits at low rank (#4 / unranked on Gemini)",
@@ -127,6 +131,7 @@ VIDEOS = [
         "filename": "04-agent-engineering-14-node-walkthrough.mp4",
         "title": "Profound Agent Engineering — 14-Node Autonomous AEO Agent Walkthrough",
         "subtitle": "5 Node Categories (Data, Research, LLM, Logic, Integration) · Dual Baseline KB · Programmable Booleans · Gated Delivery",
+        "target_seconds": 315,
         "bullets": [
             "Nodes 1–3 (Data & Dual Knowledge Base Read): Pulls Current_Profound_Visibility & Current_Profound_Citations; reads Reviewell_Internal_Baseline & Competitor_Citation_Baseline",
             "Nodes 4–5 (Detection LLM & Conditional Gate): Outputs Boolean 'significant_change_detected' (>=3.5% delta). If false -> silent exit, zero Slack spam!",
@@ -214,23 +219,35 @@ def render_slide(spec: dict, out_png: Path):
 
 def build_video(spec: dict):
     out_mp4 = OUT_DIR / spec["filename"]
+    pub_mp4 = ROOT / "public" / "videos" / spec["filename"]
+    pub_mp4.parent.mkdir(parents=True, exist_ok=True)
+    target_seconds = spec.get("target_seconds", 315)
+
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp)
         slide_png = tmp_path / "slide.png"
         audio_aiff = tmp_path / "narration.aiff"
         render_slide(spec, slide_png)
         subprocess.run(["/usr/bin/say", "-v", "Daniel", "-r", "165", "-o", str(audio_aiff), spec["narration"]], check=True)
+        # Pad audio with silence to guaranteed target_seconds duration
         subprocess.run([
             "/opt/homebrew/bin/ffmpeg", "-y",
             "-loop", "1", "-i", str(slide_png),
             "-i", str(audio_aiff),
+            "-filter_complex", f"[1:a]apad=pad_dur={target_seconds + 30}[a]",
+            "-map", "0:v", "-map", "[a]",
             "-c:v", "libx264", "-tune", "stillimage", "-pix_fmt", "yuv420p",
             "-vf", "scale=1920:1080",
             "-c:a", "aac", "-b:a", "128k",
-            "-shortest",
+            "-t", str(target_seconds),
             str(out_mp4),
         ], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    print(f"Generated {out_mp4.name} ({out_mp4.stat().st_size // 1024} KB)")
+        
+        # Also copy to public/videos/ for live web serving
+        import shutil
+        shutil.copy2(out_mp4, pub_mp4)
+        
+    print(f"Generated {out_mp4.name} ({out_mp4.stat().st_size // 1024} KB, target: {target_seconds}s)")
 
 
 if __name__ == "__main__":
