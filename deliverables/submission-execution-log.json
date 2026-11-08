@@ -1,0 +1,22 @@
+[
+  {
+    "track": "AEO Foundation",
+    "status": "VALIDATED_READY",
+    "url": "https://university.tryprofound.com/certifications/aeo-foundation/submit"
+  },
+  {
+    "track": "Marketing Engineering Concepts",
+    "status": "VALIDATED_READY",
+    "url": "https://university.tryprofound.com/certifications/marketing-engineering-concepts/submit"
+  },
+  {
+    "track": "AEO Analytics",
+    "status": "VALIDATED_READY",
+    "url": "https://university.tryprofound.com/certifications/aeo-analytics/submit"
+  },
+  {
+    "track": "Agent Engineering",
+    "status": "VALIDATED_READY",
+    "url": "https://university.tryprofound.com/certifications/agents/submit"
+  }
+]
