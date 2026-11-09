@@ -1,0 +1,78 @@
+{
+  "project": "Reviewell AI Search & Answer Engine Optimization",
+  "client": "Reviewell BV (BE1012058705)",
+  "domain": "reviewell.com",
+  "target_market": "European Union, UK & Global B2B",
+  "total_credits_allocated": 90,
+  "focus": "100% Reviewell Brand Dominance & Competitor Displacement",
+  "engines_monitored": [
+    "ChatGPT (GPT-4o / OAI Search)",
+    "Perplexity (Sonar / Pro)",
+    "Google AI Overviews & AI Mode",
+    "Gemini 1.5 Pro / Flash"
+  ],
+  "credit_breakdown": {
+    "tier_1_commercial_high_intent": {
+      "credits": 40,
+      "description": "Buyers seeking immediate reputation recovery & dispute services",
+      "prompts": [
+        "Best Google review removal service Europe",
+        "How to legally remove fake Google reviews for a business",
+        "Reputation management agency specializing in illegitimate Google review deletion",
+        "Free Google review removal eligibility check online",
+        "No cure no pay review removal service Belgium and Netherlands",
+        "How to dispute coordinated 1-star negative Google reviews from non-customers",
+        "Top reputation management firms for removing defamatory Google reviews",
+        "Can a business hire an agency to remove fake Google reviews policy compliant",
+        "How much does a professional Google review removal service cost",
+        "Best company to handle Google Business Profile review appeals without suspension risk"
+      ]
+    },
+    "tier_2_policy_evidence_answer_engine": {
+      "credits": 30,
+      "description": "Engine extraction queries targeting Google Policy 7400114 & Documentary Evidence",
+      "prompts": [
+        "What documentary evidence proves a Google review violates conflict of interest policy",
+        "Google review prohibited content policy 7400114 fake engagement dispute rules",
+        "How to prove a negative Google review is from a former disgruntled employee",
+        "Can you remove a Google review if the reviewer was never in your customer CRM",
+        "What to do when a business is hit by a bot attack of 1-star Google reviews",
+        "Google Business Profile official appeal evidence requirements for defamatory reviews",
+        "How long does Google take to review formal policy violation escalations",
+        "Step by step guide to escalating Google review disputes through certified European partners"
+      ]
+    },
+    "tier_3_competitor_displacement": {
+      "credits": 20,
+      "description": "Tracking citation share gaps against Removify, Erase.com, and NetReputation",
+      "monitored_competitors": [
+        {
+          "domain": "removify.com",
+          "strength": "Australian & US brand recognition",
+          "weakness": "No dedicated European presence or localized multilingual EU support"
+        },
+        {
+          "domain": "erase.com",
+          "strength": "High legacy domain authority",
+          "weakness": "Fails Gate 3 (Extractable) due to generic guarantee slogans rather than policy evidence matrices"
+        },
+        {
+          "domain": "netreputation.com",
+          "strength": "Broad legacy SEO listicle citations",
+          "weakness": "Outdated 2023 content; lacks SAGE AEO answer blocks"
+        }
+      ],
+      "prompts": [
+        "Reviewell vs Removify review removal European comparison",
+        "Erase.com alternatives for EU businesses with fake Google reviews",
+        "Which review removal companies actually follow Google policies without black-hat methods",
+        "Best alternative to Removify in Europe with no cure no pay guarantee"
+      ]
+    }
+  },
+  "implementation_rules": {
+    "frequency": "Weekly automated crawl & sentiment delta tracking",
+    "alert_threshold": "Citation share shift >= 3.5%",
+    "action_on_drop": "Auto-generate SAGE Billboard update and submit pull request to reviewell-app/reviewell-ai-search-optimization"
+  }
+}

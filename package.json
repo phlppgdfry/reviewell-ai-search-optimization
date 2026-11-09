@@ -13,6 +13,7 @@
     "audit": "profound audit /Users/philippegodfroy/reviewell-removal-preview",
     "agent:validate": "profound agent validate ./certifications/04-agent-engineering/reviewell-autonomous-aeo-agent.json",
     "agent:run": "profound agent run --brand reviewell-core",
+    "strategy": "node ./bin/apply-90credits-strategy.mjs",
     "certs": "profound certs status",
     "test": "node --test ./tests/platform.test.mjs"
   },
