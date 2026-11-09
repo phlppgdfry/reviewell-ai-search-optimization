@@ -4,6 +4,10 @@
   "domain": "reviewell.com",
   "target_market": "European Union, UK & Global B2B",
   "total_credits_allocated": 90,
+  "status": "proposal_not_activated",
+  "credit_costs_verified": false,
+  "platform_project_url": "https://platform.tryprofound.com/projects/p/95bfc884-a9fa-45db-8f90-f366ee349b07",
+  "measurement_note": "Budget ceiling only. No verified conversion from credits to prompt measurements. Engine availability and competitor hypotheses require live verification.",
   "focus": "100% Reviewell Brand Dominance & Competitor Displacement",
   "engines_monitored": [
     "ChatGPT (GPT-4o / OAI Search)",
@@ -49,17 +53,17 @@
         {
           "domain": "removify.com",
           "strength": "Australian & US brand recognition",
-          "weakness": "No dedicated European presence or localized multilingual EU support"
+          "research_question": "Verify European presence and localized multilingual support from current primary sources."
         },
         {
           "domain": "erase.com",
           "strength": "High legacy domain authority",
-          "weakness": "Fails Gate 3 (Extractable) due to generic guarantee slogans rather than policy evidence matrices"
+          "research_question": "Compare current page extractability and evidence coverage; no failing gate established."
         },
         {
           "domain": "netreputation.com",
           "strength": "Broad legacy SEO listicle citations",
-          "weakness": "Outdated 2023 content; lacks SAGE AEO answer blocks"
+          "research_question": "Verify publication dates, citations and answer coverage from current sources."
         }
       ],
       "prompts": [

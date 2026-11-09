@@ -43,27 +43,11 @@ const allPrompts = [
 ];
 console.table(allPrompts.slice(0, 15));
 
-// Update persistent knowledge baselines in ~/.config/profound
-const pkDir = '/Users/philippegodfroy/.config/profound';
-const pkPath = path.join(pkDir, 'persistent_knowledge.json');
-try {
-  let pk = { runs: [], baselines: {} };
-  if (fs.existsSync(pkPath)) {
-    pk = JSON.parse(fs.readFileSync(pkPath, 'utf8'));
-  }
-  pk.baselines["reviewell-core"] = {
-    ...pk.baselines["reviewell-core"],
-    allocated_credits: 90,
-    active_monitored_prompts: allPrompts.length,
-    target_visibility_score_30d: 58.0,
-    strategy_version: "2026.11.reviewell_100pct_focus"
-  };
-  fs.writeFileSync(pkPath, JSON.stringify(pk, null, 2));
-  console.log(`\n✅ Local baseline state updated at ${pkPath}`);
-} catch (e) {
-  console.warn("Could not update local pk state:", e.message);
-}
+// This command prints a proposal. It has no authenticated platform write path.
+// Never turn a planned prompt count or credit budget into a measured baseline.
+console.log(`\nProposed prompts: ${allPrompts.length}. No prompts were activated.`);
+console.log('Credit amounts are planning limits, not verified per-prompt costs.');
 
 console.log("\n==================================================================");
-console.log("🚀 Strategy successfully staged and synchronized with Reviewell platform!");
+console.log("Local strategy preview only. No platform changes or credit spending performed.");
 console.log("==================================================================");
