@@ -1,6 +1,8 @@
 # 🚀 Reviewell AI Visibility & Growth Intelligence (`reviewell-ai-search-optimization`)
 
-Het complete **Answer Engine Optimization (AEO)** & **Generative Engine Optimization (GEO)** platform voor **Reviewell BV** ([reviewell.com](https://www.reviewell.com), **RingSizer** `id6798043494` en **Mirror Mate**), gebouwd op de officiële **Profound MCP-server, REST API, TypeScript/Python SDK's** en inclusief alle **vier de Profound University-certificeringsinzendingen**.
+**Gecontroleerde status:** zie [PROFOUND_LIVE_STATUS.md](./PROFOUND_LIVE_STATUS.md) voor echte Profound-projectlinks, meetresultaten en beperkingen. De lokale CLI draait zonder API-credentials in voorbeeldmodus. De oude 14-node JSON is bij een echte import afgewezen (`nodes.0.type: Invalid input`). Een lokale rubriekcontrole bewijst geen platformcompatibiliteit of behaald certificaat.
+
+Dit repository bevat een **AEO/GEO-prototype** voor Reviewell BV, lokale voorbeeldgegevens, technische audittools en voorbereide certificeringsmaterialen. Het actuele Profound-project richt zich uitsluitend op [reviewell.com](https://www.reviewell.com); oudere RingSizer- en Mirror Mate-materialen blijven als historische artefacten bewaard.
 
 ---
 
@@ -12,7 +14,7 @@ Het complete **Answer Engine Optimization (AEO)** & **Generative Engine Optimiza
 - **Module B — Technical AEO & Citation Readiness Auditor (`profound audit` & `deliverables/reviewell-aeo-patch/`)**
   - Controleert lokale Next.js-repositories (`/Users/philippegodfroy/reviewell-removal-preview`) en live URL's (`https://www.reviewell.com`) op `/llms.txt`, `/llms-full.txt`, AI-crawler `robots.txt`-regels (`OAI-SearchBot`, `PerplexityBot`, `ClaudeBot`, `GPTBot`, `Google-Extended`), en Schema.org JSON-LD (`Organization`, `Service`, `FAQPage`, `SoftwareApplication`).
 - **Module C — 14-Node Autonomous AEO Agent (`certifications/04-agent-engineering/`)**
-  - Voldoet aan **8/8 eisen** van de officiële **Profound Agent Engineering**-certificering: 14 functionele nodes verdeeld over alle 5 verplichte categorieën (`Data`, `Research`, `LLM`, `Logic`, `Integration`), persistente kennis (`~/.config/profound/persistent_knowledge.json`), strikte JSON Schema structured outputs, conditionele ruisfiltering (`|delta| >= 3.5%`), Profound-metrics en een menselijke goedkeuringsgate (`APPROVAL`).
+  - Architectuurvoorstel met 14 beschreven nodes. De lokale validator controleert acht structurele criteria; dit is geen officiële beoordeling. De JSON is nog niet compatibel met de platformimport en is geen bewijs van een werkende agent of certificeringsgereedheid.
 
 ---
 
