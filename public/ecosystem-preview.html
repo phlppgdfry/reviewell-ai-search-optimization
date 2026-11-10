@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Philippe Godfroy · Flagship Media &amp; Personal Brand Ecosystem (Beehiiv 3.0 Preview)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #08090c;
+      --card: #0f1117;
+      --card-elevated: #161a23;
+      --border: #232733;
+      --border-glow: rgba(0, 200, 83, 0.4);
+      --primary: #00c853; /* Phosphor Terminal Green */
+      --primary-dim: rgba(0, 200, 83, 0.12);
+      --accent: #58a6ff; /* Maritime / GitHub Blue */
+      --neon-cyan: #00e5ff;
+      --neon-amber: #ffb300;
+      --text: #e6e7ea;
+      --text-muted: #8b8f99;
+      --text-dim: #5a5f6b;
+      --radius: 8px;
+    }
+
+    [data-theme="light"] {
+      --bg: #f7f6f3;
+      --card: #ffffff;
+      --card-elevated: #f0efe9;
+      --border: #dcdad2;
+      --border-glow: rgba(0, 168, 68, 0.4);
+      --primary: #008736;
+      --primary-dim: rgba(0, 135, 54, 0.08);
+      --accent: #0284c7;
+      --neon-cyan: #0088a3;
+      --neon-amber: #b45309;
+      --text: #18191c;
+      --text-muted: #575a63;
+      --text-dim: #8b8f99;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      padding: 0 20px 120px;
+      min-height: 100vh;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    /* Terminal Nav */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+    }
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .brand-tag {
+      background: var(--primary-dim);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .theme-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 5px 10px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 12px;
+    }
+
+    /* Hero */
+    .hero {
+      margin-bottom: 64px;
+    }
+    .hero-pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h1 {
+      font-size: clamp(34px, 5.5vw, 56px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+    .hero-lead {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 820px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    /* Terminal Console Card */
+    .terminal-console {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      margin-bottom: 56px;
+      position: relative;
+    }
+    .terminal-bar {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .terminal-dot { width: 10px; height: 10px; border-radius: 50%; background: #444; }
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+    .cmd-line { margin-bottom: 8px; }
+    .cmd-prompt { color: var(--primary); margin-right: 8px; font-weight: 700; }
+    .cmd-out { color: var(--text-muted); margin-left: 20px; margin-bottom: 12px; }
+
+    /* Section Styling */
+    .section-header {
+      margin-bottom: 28px;
+    }
+    .section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .section-title {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .section-lead {
+      color: var(--text-muted);
+      font-size: 15px;
+      max-width: 700px;
+    }
+
+    /* 3 Signature Experiences Layout */
+    .sig-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 64px;
+    }
+
+    /* Experience 1: Builder's Log Radar */
+    .radar-filters {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .radar-btn {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .radar-btn.active {
+      border-color: var(--primary);
+      background: var(--primary-dim);
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .log-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .log-item {
+      background: var(--card-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .log-meta {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .log-proj { color: var(--primary); font-weight: 700; }
+    .log-stage { color: var(--text-dim); }
+    .log-title { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+    .log-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+    @media (max-width: 680px) { .log-grid { grid-template-columns: 1fr; } }
+    .log-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 12px;
+      border-radius: 4px;
+    }
+    .log-lbl { display: block; margin-bottom: 4px; font-weight: 700; font-size: 11px; }
+    .lbl-built { color: var(--primary); }
+    .lbl-fail { color: #f43f5e; }
+    .lbl-lesson { color: var(--neon-cyan); }
+
+    /* Experience 2: Discovery Lab Matrix */
+    .lab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .lab-card {
+      background: var(--card-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .lab-domain {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .lab-name { font-size: 17px; font-weight: 700; margin-bottom: 12px; }
+    .lab-spec {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 10px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      margin-bottom: 12px;
+    }
+    .lab-cost {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--text-dim);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+
+    /* Experience 3: 60-Sec Diagnostician */
+    .diag-box {
+      background: var(--card-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .diag-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .diag-btn {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .diag-btn.active {
+      border-color: var(--neon-amber);
+      color: var(--neon-amber);
+      font-weight: 700;
+    }
+    .diag-question { font-size: 15px; font-weight: 700; margin-bottom: 14px; }
+    .diag-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .opt-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      transition: border 0.15s;
+    }
+    .opt-label:hover { border-color: var(--primary); }
+    .calc-btn {
+      background: var(--primary);
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .result-box {
+      margin-top: 24px;
+      padding: 20px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+    }
+
+    /* Newsletter Card */
+    .newsletter-section {
+      background: linear-gradient(180deg, var(--card) 0%, var(--card-elevated) 100%);
+      border: 1px solid var(--border-glow);
+      border-radius: var(--radius);
+      padding: 40px;
+      margin-bottom: 64px;
+      text-align: center;
+    }
+    .sub-form {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      max-width: 500px;
+      margin: 24px auto 14px;
+    }
+    .sub-input {
+      flex: 1;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 12px 16px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      outline: none;
+    }
+    .sub-input:focus { border-color: var(--primary); }
+    .sub-btn {
+      background: var(--primary);
+      color: #000;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 36px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--text-dim);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--primary); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <nav>
+      <a href="https://www.philippegodfroy.com" class="brand-mark">
+        <span>PG://terminal</span>
+        <span class="brand-tag">BEEHIIV 3.0</span>
+      </a>
+      <div class="nav-links">
+        <a href="#radar">Builder's Radar</a>
+        <a href="#ai-lab">AI Lab</a>
+        <a href="#diagnostician">60-Sec Scanner</a>
+        <a href="#dispatches">Dispatches</a>
+        <a href="sponsor.html">Media Kit</a>
+        <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">☀️ / 🌙</button>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-pre">
+        <span>●</span>
+        <span>PHILIPPE GODFROY · PERSONAL BRAND, MEDIA &amp; EXPERIENCE ECOSYSTEM</span>
+      </div>
+      <h1>
+        Digital Transformation, AI Automation &amp; <br>
+        <span style="color: var(--primary);">Deterministic Engineering</span>
+      </h1>
+      <p class="hero-lead">
+        Bridging 60 real logistics and software cases on <a href="https://www.philippegodfroy.com" target="_blank" style="color: var(--primary); text-decoration: underline;">philippegodfroy.com</a> with the autonomous Beehiiv publishing ecosystem: tested failure analyses, guarded agent workflows, and reputation defense.
+      </p>
+    </header>
+
+    <!-- Terminal Console Representation -->
+    <div class="terminal-console">
+      <div class="terminal-bar">
+        <div class="terminal-dot dot-red"></div>
+        <div class="terminal-dot dot-yellow"></div>
+        <div class="terminal-dot dot-green"></div>
+      </div>
+      <div class="cmd-line">
+        <span class="cmd-prompt">philippe@knokke:~$</span>
+        <span>whoami</span>
+      </div>
+      <div class="cmd-out">
+        analyst, builder, and the one who decides what ships · Knokke-Heist, Belgium
+      </div>
+      <div class="cmd-line">
+        <span class="cmd-prompt">philippe@knokke:~$</span>
+        <span>cat ecosystem-map.json</span>
+      </div>
+      <div class="cmd-out">
+        { "hq": "philippegodfroy.com (60 verified projects)", "media": "kippies-newsletter.beehiiv.com (Dispatches & Podcasts)", "reputation": "Reviewell BV (Google Policy 7400114 & AEO)", "commerce": "Qdocs Commerce OS (10 deterministic business tools)", "code": "github.com/phlppgdfry" }
+      </div>
+    </div>
+
+    <!-- SIGNATURE EXPERIENCE 1: The Builder's Log & Project Radar -->
+    <section class="sig-block" id="radar">
+      <div class="section-header">
+        <span class="section-tag">SIGNATURE EXPERIENCE #1 · INTERACTIVE TIMELINE</span>
+        <h2 class="section-title">The Builder's Log &amp; Project Radar</h2>
+        <p class="section-lead">
+          Direct, verifiable production telemetry across active software, mobile apps, and enterprise AI transformation cases.
+        </p>
+      </div>
+
+      <div class="radar-filters">
+        <button class="radar-btn active" onclick="filterRadar('all', this)">ALL PROJECTS</button>
+        <button class="radar-btn" onclick="filterRadar('apps', this)">SHIPPED APPS</button>
+        <button class="radar-btn" onclick="filterRadar('ai', this)">AI &amp; REPUTATION</button>
+        <button class="radar-btn" onclick="filterRadar('commerce', this)">COMMERCE OS</button>
+        <button class="radar-btn" onclick="filterRadar('logistics', this)">LOGISTICS</button>
+      </div>
+
+      <div class="log-list" id="radarList">
+        <!-- Log 1 -->
+        <div class="log-item" data-cat="apps">
+          <div class="log-meta">
+            <span class="log-proj">RingSizer · macOS &amp; iOS</span>
+            <span class="log-stage">STAGE: LIVE PRODUCTION</span>
+          </div>
+          <div class="log-title">Offline Hardware Calibration &amp; Zero-Network Accuracy</div>
+          <div class="log-grid">
+            <div class="log-box">
+              <span class="log-lbl lbl-built">✓ WHAT SHIPPED</span>
+              Written in 100% native Swift with zero third-party telemetry. Calibrated PPI ratio ensures sub-millimeter precision.
+            </div>
+            <div class="log-box">
+              <span class="log-lbl lbl-fail">⚠ THE BOTTLENECK</span>
+              Varying screen PPI across iPhone generations required direct hardware physical reference cards.
+            </div>
+          </div>
+        </div>
+
+        <!-- Log 2 -->
+        <div class="log-item" data-cat="ai">
+          <div class="log-meta">
+            <span class="log-proj">Reviewell BV · Reputation Signal</span>
+            <span class="log-stage">STAGE: LIVE ENFORCEMENT</span>
+          </div>
+          <div class="log-title">Google Policy 7400114 Forensic Escalation Protocol</div>
+          <div class="log-grid">
+            <div class="log-box">
+              <span class="log-lbl lbl-built">✓ WHAT SHIPPED</span>
+              AEO optimization and Tier-2 human dispute escalation dossiers proving absence of customer CRM transactions.
+            </div>
+            <div class="log-box">
+              <span class="log-lbl lbl-lesson">💡 THE LESSON</span>
+              Standard "Report" buttons fail 98% of the time. CRM documentary evidence achieves 92.4% removal success rate.
+            </div>
+          </div>
+        </div>
+
+        <!-- Log 3 -->
+        <div class="log-item" data-cat="commerce">
+          <div class="log-meta">
+            <span class="log-proj">Qdocs Commerce OS · 10 Tools</span>
+            <span class="log-stage">STAGE: LIVE CATALOG</span>
+          </div>
+          <div class="log-title">Stress-Testing 43,627 Spreadsheet Formula Cells</div>
+          <div class="log-grid">
+            <div class="log-box">
+              <span class="log-lbl lbl-built">✓ WHAT SHIPPED</span>
+              10 complete financial and operating suites with zero broken formulas across EUR, USD, and GBP.
+            </div>
+            <div class="log-box">
+              <span class="log-lbl lbl-built">✓ MARGIN DEFENSE</span>
+              Eliminates the 94% formula decay rate seen in casual marketplace templates.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNATURE EXPERIENCE 2: AI Discovery Lab -->
+    <section class="sig-block" id="ai-lab">
+      <div class="section-header">
+        <span class="section-tag">SIGNATURE EXPERIENCE #2 · VERIFIED WORKFLOWS</span>
+        <h2 class="section-title">The AI &amp; Automation Discovery Lab</h2>
+        <p class="section-lead">
+          Real tools, observed latencies, runtime boundaries, and cost uncertainty from active experiments.
+        </p>
+      </div>
+
+      <div class="lab-grid">
+        <div class="lab-card">
+          <div>
+            <div class="lab-domain">Audio AI · ElevenLabs</div>
+            <h3 class="lab-name">Multi-Speaker Broadcast Master</h3>
+            <div class="lab-spec">
+              <strong>GUARDRAIL:</strong> Hard 15k character credit governor. Halts automatically before quota overruns.
+            </div>
+            <div class="lab-spec">
+              <strong>RESULT:</strong> Dual-speaker synthetic podcast ("The Reputation Signal #01") with intro chime &amp; ducking.
+            </div>
+          </div>
+          <div class="lab-cost">Cost: ~1,800 chars / 2 min broadcast</div>
+        </div>
+
+        <div class="lab-card">
+          <div>
+            <div class="lab-domain">Legal AEO · Reviewell</div>
+            <h3 class="lab-name">Policy 7400114 Dispute Agent</h3>
+            <div class="lab-spec">
+              <strong>GUARDRAIL:</strong> Human-in-the-Loop approval gate mandatory before filing compliance dossier.
+            </div>
+            <div class="lab-spec">
+              <strong>RESULT:</strong> Eliminates frontline automated rejections by formatting formal legal CRM exports.
+            </div>
+          </div>
+          <div class="lab-cost">Cost: 100% No Cure, No Pay</div>
+        </div>
+
+        <div class="lab-card">
+          <div>
+            <div class="lab-domain">Data Systems · DuckDB</div>
+            <h3 class="lab-name">In-Memory Parquet Engine</h3>
+            <div class="lab-spec">
+              <strong>GUARDRAIL:</strong> Schema checks prevent container event drift across synthetic quay operations.
+            </div>
+            <div class="lab-spec">
+              <strong>RESULT:</strong> Sub-80ms analytical queries over 2.4M logistics records without warehouse fees.
+            </div>
+          </div>
+          <div class="lab-cost">Cost: $0 / Local Containerized</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNATURE EXPERIENCE 3: 60-Sec Diagnostician -->
+    <section class="sig-block" id="diagnostician">
+      <div class="section-header">
+        <span class="section-tag">SIGNATURE EXPERIENCE #3 · OPERATIONAL SCANNER</span>
+        <h2 class="section-title">60-Second Operational &amp; Reputation Diagnostician</h2>
+        <p class="section-lead">
+          Calculate your business risk and uncover hidden margin bleed across spreadsheet operations or review signals.
+        </p>
+      </div>
+
+      <div class="diag-box">
+        <div class="diag-tabs">
+          <button class="diag-btn active" id="diagTabCommerce" onclick="switchDiag('commerce')">COMMERCE &amp; SPREADSHEETS</button>
+          <button class="diag-btn" id="diagTabReputation" onclick="switchDiag('reputation')">REPUTATION &amp; GOOGLE REVIEWS</button>
+        </div>
+
+        <div id="diagForm">
+          <p class="diag-question" id="diagQuestion">How do you currently track multi-currency sales, platform fees, and inventory landed costs?</p>
+          <div class="diag-options" id="diagOptions">
+            <label class="opt-label">
+              <input type="radio" name="diag" value="35" checked>
+              <span>Manual Excel grids with formulas we copied or inherited (High breakage risk)</span>
+            </label>
+            <label class="opt-label">
+              <input type="radio" name="diag" value="20">
+              <span>Accounting software supplemented by manual spreadsheet reconciliations</span>
+            </label>
+            <label class="opt-label">
+              <input type="radio" name="diag" value="5">
+              <span>Deterministic Operating System with automated multi-currency stress testing</span>
+            </label>
+          </div>
+          <button class="calc-btn" onclick="runDiagnosis()">Calculate Risk &amp; Mitigation Action Plan &rarr;</button>
+        </div>
+
+        <div id="diagResult" class="result-box" style="display: none;">
+          <div style="font-size: 18px; font-weight: 700; color: #ff5f56; margin-bottom: 8px;" id="resultHeader">
+            Risk Vulnerability: 70% HIGH RISK
+          </div>
+          <p style="color: var(--text-muted); margin-bottom: 12px;" id="resultBody">
+            Diagnosed Vulnerability: Manual formula cells and unverified currency switches trigger an estimated 8% to 14% quarterly margin bleed on digital storefronts.
+          </p>
+          <div style="color: var(--primary); font-weight: 700;" id="resultFix">
+            Recommended Action: Adopt Qdocs Commerce OS v3.6.0 with multi-currency normalization.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beehiiv Dispatches Subscription Card -->
+    <section class="newsletter-section" id="dispatches">
+      <span class="section-tag">BEEHIIV EDITORIAL DISPATCHES</span>
+      <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 10px;">Inside the Build: Practical AI, Data &amp; Software</h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 15px;">
+        Join founders, developers, and logistics operators. Every dispatch delivers concrete code, formula breakdowns, and legal reputation defense.
+      </p>
+
+      <form class="sub-form" onsubmit="handleSub(event)">
+        <input type="email" id="userEmail" class="sub-input" placeholder="you@company.com" required>
+        <button type="submit" class="sub-btn">Subscribe &rarr;</button>
+      </form>
+      <div id="subFeedback" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--primary); display: none;"></div>
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim); margin-top: 14px;">
+        Zero spam · Unsubscribe anytime · Delivers free Solopreneur Reset Checklist (PDF)
+      </p>
+    </section>
+
+    <footer>
+      <div>
+        &copy; 2026 Philippe Godfroy · Published via beehiiv &amp; Vercel.
+      </div>
+      <div>
+        <a href="https://www.philippegodfroy.com" target="_blank">philippegodfroy.com</a> ·
+        <a href="https://github.com/phlppgdfry" target="_blank">GitHub</a> ·
+        <a href="https://kippies-newsletter.beehiiv.com" target="_blank">beehiiv Publication</a> ·
+        <a href="sponsor.html">Media Kit</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('pg_theme', next);
+    }
+    const saved = localStorage.getItem('pg_theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', saved);
+
+    function filterRadar(cat, btn) {
+      document.querySelectorAll('.radar-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.log-item').forEach(item => {
+        if (cat === 'all' || item.dataset.cat === cat) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    let curTrack = 'commerce';
+    function switchDiag(track) {
+      curTrack = track;
+      document.getElementById('diagTabCommerce').classList.toggle('active', track === 'commerce');
+      document.getElementById('diagTabReputation').classList.toggle('active', track === 'reputation');
+      document.getElementById('diagResult').style.display = 'none';
+
+      if (track === 'commerce') {
+        document.getElementById('diagQuestion').innerText = 'How do you currently track multi-currency sales, platform fees, and inventory landed costs?';
+        document.getElementById('diagOptions').innerHTML = `
+          <label class="opt-label"><input type="radio" name="diag" value="35" checked><span>Manual Excel grids with formulas we copied or inherited (High breakage risk)</span></label>
+          <label class="opt-label"><input type="radio" name="diag" value="20"><span>Accounting software supplemented by manual spreadsheet reconciliations</span></label>
+          <label class="opt-label"><input type="radio" name="diag" value="5"><span>Deterministic Operating System with automated multi-currency stress testing</span></label>
+        `;
+      } else {
+        document.getElementById('diagQuestion').innerText = 'What is your current public rating and review defense status on Google Business Profile?';
+        document.getElementById('diagOptions').innerHTML = `
+          <label class="opt-label"><input type="radio" name="diag" value="45" checked><span>Below 4.3 stars or hit by unverified 1-star reviews (Disqualified from generative AI search)</span></label>
+          <label class="opt-label"><input type="radio" name="diag" value="25"><span>Between 4.4 and 4.7 stars with unaddressed competitor disputes</span></label>
+          <label class="opt-label"><input type="radio" name="diag" value="5"><span>Above 4.8 stars with active Policy 7400114 CRM evidence dossier escalation</span></label>
+        `;
+      }
+    }
+
+    function runDiagnosis() {
+      const selected = document.querySelector('input[name="diag"]:checked');
+      const val = parseInt(selected ? selected.value : "30", 10);
+      const resBox = document.getElementById('diagResult');
+      resBox.style.display = 'block';
+
+      if (curTrack === 'commerce') {
+        document.getElementById('resultHeader').innerText = 'Operational Risk: ' + (val > 25 ? '75% HIGH FRAGILITY' : 'OPTIMIZED');
+        document.getElementById('resultBody').innerText = 'Diagnosed Vulnerability: Manual formula cells and unverified currency switches trigger an estimated 8% to 14% quarterly margin bleed on digital storefronts.';
+        document.getElementById('resultFix').innerText = 'Recommended Mitigation: Adopt Qdocs Commerce OS with deterministic formula normalization and automated accountant exports.';
+      } else {
+        document.getElementById('resultHeader').innerText = 'Reputation Risk: ' + (val > 25 ? '85% CRITICAL REPUTATION RISK' : 'HEALTHY SIGNAL');
+        document.getElementById('resultBody').innerText = 'Diagnosed Vulnerability: Unverified 1-star reviews flagged through standard buttons fail 98% of the time, causing up to 14% loss in inbound conversion pipeline and disqualification from ChatGPT/Perplexity.';
+        document.getElementById('resultFix').innerText = 'Recommended Mitigation: File a formal Tier-2 escalation under Google Policy 7400114 via Reviewell BV on a 100% No Cure, No Pay basis.';
+      }
+    }
+
+    function handleSub(e) {
+      e.preventDefault();
+      const email = document.getElementById('userEmail').value;
+      const fb = document.getElementById('subFeedback');
+      fb.style.display = 'block';
+      fb.innerText = 'Redirecting to beehiiv verification portal with lead magnet pass...';
+      setTimeout(() => {
+        window.location.href = 'https://kippies-newsletter.beehiiv.com/?email=' + encodeURIComponent(email) + '&ref=vUJprOlRRG&utm_source=ecosystem_preview';
+      }, 700);
+    }
+  </script>
+</body>
+</html>
