@@ -1,0 +1,6 @@
+file '/Users/philippegodfroy/reviewell-ai-search-optimization/deliverables/podcasts/sfx_futur_20261109_220922.mp3'
+file '/Users/philippegodfroy/reviewell-ai-search-optimization/deliverables/podcasts/episodes/ep01_part_01_alex.mp3'
+file '/Users/philippegodfroy/reviewell-ai-search-optimization/deliverables/podcasts/episodes/ep01_part_02_sarah.mp3'
+file '/Users/philippegodfroy/reviewell-ai-search-optimization/deliverables/podcasts/episodes/ep01_part_03_alex.mp3'
+file '/Users/philippegodfroy/reviewell-ai-search-optimization/deliverables/podcasts/episodes/ep01_part_04_sarah.mp3'
+file '/Users/philippegodfroy/reviewell-ai-search-optimization/deliverables/podcasts/episodes/ep01_part_05_alex.mp3'
