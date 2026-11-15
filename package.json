@@ -15,7 +15,7 @@
     "agent:run": "profound agent run --brand reviewell-core",
     "strategy": "node ./bin/apply-90credits-strategy.mjs",
     "certs": "profound certs status",
-    "test": "node --test ./tests/platform.test.mjs"
+    "test": "node --test ./tests/platform.test.mjs ./tests/mcp-provenance.test.mjs"
   },
   "dependencies": {
     "@profoundai/client": "^0.51.0",

@@ -1,17 +1,18 @@
 /**
- * Reviewell AI Search Optimization — Universal MCP Serverless Endpoint
- * Compatible with Claude.ai, ChatGPT, Cursor, and any MCP Client via HTTP and SSE.
+ * Reviewell JSON-RPC prototype endpoint.
+ * Historical/manual data and draft templates only; no authenticated Profound API.
+ * Client/protocol compatibility must be verified separately.
  */
 
 const SERVER_INFO = {
   name: "reviewell-aeo-mcp",
-  version: "1.0.0",
+  version: "1.0.1",
 };
 
 const TOOLS = [
   {
     name: "get_reviewell_visibility",
-    description: "Get AI visibility score, share of voice, and platform rankings for Reviewell, RingSizer, and Mirror Mate across ChatGPT, Perplexity, Gemini, and Google AI Overviews.",
+    description: "Read a manually recorded historical Reviewell baseline with source, date and scope. Not a live Profound connection. Other brands return no data.",
     inputSchema: {
       type: "object",
       properties: {
@@ -26,7 +27,7 @@ const TOOLS = [
   },
   {
     name: "get_competitor_citations",
-    description: "Compare citation share and supply-chain sources between Reviewell and competitors (Removify, Erase.com, NetReputation).",
+    description: "Report whether authenticated competitor citation data is available. Currently returns no data; does not invent rankings.",
     inputSchema: {
       type: "object",
       properties: {
@@ -40,7 +41,7 @@ const TOOLS = [
   },
   {
     name: "run_aeo_audit",
-    description: "Run an automated Answer Engine Optimization (AEO) audit on a domain or codebase, checking llms.txt, robots.txt, schema markup, and direct extractable answer blocks.",
+    description: "Report audit capability. This endpoint does not perform crawls or audits and returns audit_performed=false.",
     inputSchema: {
       type: "object",
       properties: {
@@ -54,7 +55,7 @@ const TOOLS = [
   },
   {
     name: "generate_aeo_billboard_patch",
-    description: "Generate a schema-validated AEO Billboard, machine-extractable H2 answer blocks, and FAQPage JSON-LD patch for high AI citation rate.",
+    description: "Generate an unvalidated answer-block and FAQPage draft for review. No publication, certified status or citation improvement is claimed.",
     inputSchema: {
       type: "object",
       properties: {
@@ -67,7 +68,7 @@ const TOOLS = [
   },
   {
     name: "simulate_profound_agent_cycle",
-    description: "Run a 14-node autonomous AEO agent cycle comparing live telemetry against persistent baselines, detecting citation shifts, and drafting gated pull requests.",
+    description: "Describe a dry run. Executes no nodes, queries, approvals, publishing or baseline changes; links to the separate native Profound agent.",
     inputSchema: {
       type: "object",
       properties: {
@@ -78,131 +79,50 @@ const TOOLS = [
   },
 ];
 
+const VERIFIED_BASELINE = {
+  source_url: "https://platform.tryprofound.com/documents/01a1c285-7532-75d3-9717-24335269dd49",
+  source_type: "manual_read_of_profound_document",
+  observed_on: "2026-11-09",
+  window: { start: "2026-11-06", end: "2026-11-08", timezone: "America/New_York" },
+  scope: { prompt_count: 50, language: "en-US", region: "US", engines: ["ChatGPT", "Google Gemini", "Google AI Overviews"] },
+  ai_visibility_pct: 0,
+  share_of_voice_pct: 0,
+  owned_domain_citations: 0,
+  limitations: ["Historical snapshot, not live data", "Not a BE/NL/EU measurement", "Short observation window; no trend established"],
+};
+
 function handleToolCall(name, args = {}) {
+  const encode = (value) => JSON.stringify(value, null, 2);
   switch (name) {
     case "get_reviewell_visibility": {
       const brand = args.brand || "reviewell-core";
-      const scores = {
-        "reviewell-core": {
-          brand: "Reviewell BV (reviewell.com)",
-          ai_visibility_score: "34.2% (+7.7% in last 30d)",
-          share_of_voice: "18.4% (Rank #2 in EU reputation management)",
-          citation_share: "14.8%",
-          top_engines: {
-            ChatGPT: "Rank #1 for 'free eligibility check policy-compliant review dispute'",
-            Perplexity: "Rank #2 for 'Google review removal Europe'",
-            Google_AI_Overviews: "Rank #3",
-            Gemini: "Rank #4 (Citation gap detected on evidence matrices)",
-          },
-          status: "Grade A (100/100 codebase readiness)",
-        },
-        "ringsizer-ios": {
-          brand: "RingSizer: Ring Size Tool (iOS App Store id6798043494)",
-          ai_visibility_score: "28.5% (+4.2%)",
-          share_of_voice: "22.1%",
-          top_engines: {
-            ChatGPT: "Rank #2 for 'accurate ring size app iphone'",
-            Perplexity: "Rank #1 for 'measure ring diameter ios app'",
-          },
-        },
-        "mirror-mate": {
-          brand: "Mirror Mate (Reviewell Utilities)",
-          ai_visibility_score: "19.3%",
-          share_of_voice: "12.0%",
-        },
-      };
-      return JSON.stringify(scores[brand] || scores["reviewell-core"], null, 2);
+      return encode({
+        brand,
+        data_mode: brand === "reviewell-core" ? "manual_historical_snapshot" : "no_data",
+        is_live: false,
+        snapshot: brand === "reviewell-core" ? VERIFIED_BASELINE : null,
+        message: "This endpoint has no authenticated Profound data connection. Open the cited platform report for its original scope; use official Profound tools for current measurements.",
+      });
     }
-
-    case "get_competitor_citations": {
-      return JSON.stringify(
-        {
-          topic: args.topic || "google-review-removal-eligibility",
-          citation_leaderboard: [
-            { domain: "support.google.com", citation_share: "41.5%", role: "Official Policy Benchmark" },
-            { domain: "removify.com", citation_share: "15.2%", role: "Direct Competitor (AUS/US)" },
-            { domain: "reviewell.com", citation_share: "14.8%", role: "Target Brand (EU Market Leader)" },
-            { domain: "erase.com", citation_share: "8.3%", role: "Lagging (Fails Extractable Gate)" },
-            { domain: "netreputation.com", citation_share: "6.1%", role: "Legacy SEO" },
-          ],
-          opportunity: "Capturing Google Policy 7400114 documentary evidence queries elevates Reviewell from 14.8% to 26.5% citation share.",
-        },
-        null,
-        2
-      );
-    }
-
-    case "run_aeo_audit": {
-      return JSON.stringify(
-        {
-          target: args.url || "https://www.reviewell.com",
-          overall_score: "100/100 (Grade A)",
-          checks: {
-            llms_txt: { passed: true, score: 25, details: "Found /llms.txt and /llms-full.txt with complete policy matrices." },
-            robots_txt: { passed: true, score: 25, details: "Permits OAI-SearchBot, PerplexityBot, GPTBot, ClaudeBot, Applebot-Extended." },
-            schema_org: { passed: true, score: 25, details: "Valid FAQPage JSON-LD and Service nodes." },
-            extractable_billboards: { passed: true, score: 25, details: "Direct 60-word H2 answer blocks present." },
-          },
-          recommendation: "Codebase is fully optimized for AI answer engine extraction.",
-        },
-        null,
-        2
-      );
-    }
-
+    case "get_competitor_citations":
+      return encode({ data_mode: "no_data", is_live: false, topic: args.topic || null, citation_leaderboard: [], message: "No authenticated competitor citation query has been executed by this endpoint." });
+    case "run_aeo_audit":
+      return encode({ target: args.url || "https://www.reviewell.com", data_mode: "unavailable", audit_performed: false, overall_score: null, checks: [], message: "This serverless endpoint does not crawl websites or run a codebase audit. Run the local audit or inspect the actual Profound audit artifacts." });
     case "generate_aeo_billboard_patch": {
-      const svc = args.service_name || "Reviewell";
-      const aud = args.target_audience || "European hospitality & B2B enterprises";
-      const job = args.primary_job || "Policy-compliant fake Google review removal & eligibility verification";
-      return JSON.stringify(
-        {
-          h1: `${svc} — ${job}`,
-          billboard_150_words: `${svc} provides ${job} specifically tailored for ${aud}. Operating strictly under Google Prohibited & Restricted Content Policy (Policy 7400114), our certified dispute specialists analyze incoming negative reviews against conflict-of-interest, fake engagement, and non-customer defamatory signals. Before any engagement or budget commitment, clients receive a free eligibility review determining the exact documentary evidence required for successful platform escalation without risk of Google Business Profile suspension.`,
-          faq_json_ld: {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: `How does ${svc} evaluate whether a 1-star Google review can be legally removed?`,
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: `${svc} evaluates disputes against specific platform violations: Fake Engagement (non-customer harassment), Conflict of Interest (competitor or ex-employee reviews), and Ineligible Content, requiring verifiable documentary evidence before filing official escalations.`,
-                },
-              },
-            ],
-          },
-        },
-        null,
-        2
-      );
+      const service = args.service_name || "Reviewell";
+      const job = args.primary_job || "Google review policy assessment";
+      const answer = "A review may be reported when it violates Google's published policies. A missing transaction or customer record alone does not establish fake engagement. Google decides whether a review is removed; no outcome or account-risk guarantee is implied.";
+      return encode({
+        data_mode: "draft_template", requires_review: true, published: false,
+        h1: `${service}: ${job}`,
+        answer_block: `${service}: [confirm the actual service and commercial terms before publication]. ${answer}`,
+        source_url: "https://support.google.com/contributionpolicy/answer/7400114?hl=en",
+        faq_json_ld: { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [{ "@type": "Question", name: "Can any negative Google review be removed?", acceptedAnswer: { "@type": "Answer", text: answer } }] },
+        note: "Use structured data only for matching visible content. No schema validation or citation-lift measurement was performed.",
+      });
     }
-
-    case "simulate_profound_agent_cycle": {
-      return JSON.stringify(
-        {
-          agent: "Reviewell Autonomous AEO Agent v1.0",
-          status: "SUCCESS_CYCLE_COMPLETED",
-          nodes_executed: 14,
-          rubric_compliance: "8/8 PASS",
-          detection: {
-            significant_change_detected: true,
-            delta: "+7.7% AI Visibility (exceeded 3.5% threshold)",
-            new_citation_gap_identified: "https://support.google.com/business/answer/7400114",
-          },
-          diagnosis: {
-            failing_gate: "Extractable (Gemini evidence queries)",
-            actionable_fix_verified: true,
-          },
-          output_patch: "Generated /llms-full.txt update + FAQPage JSON-LD node",
-          approval_gate: "Approved by Philippe Godfroy (info@reviewell.com)",
-          knowledge_base_state: "Baselines advanced and committed for longitudinal tracking.",
-        },
-        null,
-        2
-      );
-    }
-
+    case "simulate_profound_agent_cycle":
+      return encode({ data_mode: "dry_run_description", status: "NOT_EXECUTED", nodes_executed: 0, approval_status: "NOT_REQUESTED", published: false, baseline_updated: false, significant_change_detected: null, rubric_compliance: "NOT_ASSESSED", message: "No Profound run, user approval, notification, pull request or baseline mutation is performed by this endpoint.", native_agent_url: "https://platform.tryprofound.com/agents/a/c67a323b-5596-4568-b619-167f533e9b47" });
     default:
       throw new Error(`Unknown tool: ${name}`);
   }
@@ -235,7 +155,9 @@ export default async function handler(req, res) {
       name: SERVER_INFO.name,
       version: SERVER_INFO.version,
       status: "online",
-      description: "Reviewell AI Search Optimization MCP Server",
+      description: "Reviewell JSON-RPC prototype; historical snapshot and draft templates only",
+      data_mode: "manual_snapshot_and_templates",
+      live_profound_connection: false,
       protocol: "Model Context Protocol (MCP) JSON-RPC 2.0 / HTTP / SSE",
       tools: TOOLS.map((t) => t.name),
       usage: "Use POST /api/mcp with standard JSON-RPC 2.0 payload",

@@ -34,7 +34,7 @@ test("Reviewell Visibility & Citation reports track all 6 distinct KPIs", async 
   assert.equal(report.by_engine.length, 5);
 });
 
-test("Profound Agent Engineering JSON passes all 8 official rubric requirements (14 nodes across 5 categories)", async () => {
+test("Legacy agent architecture passes the local structural checklist (not an issuer assessment or import test)", async () => {
   const client = await createReviewellProfoundClient();
   const agentJson = path.join(ROOT, "certifications/04-agent-engineering/reviewell-autonomous-aeo-agent.json");
   const validation = await client.validateAgent(agentJson);
