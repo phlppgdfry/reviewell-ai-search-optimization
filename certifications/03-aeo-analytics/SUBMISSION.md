@@ -1,19 +1,21 @@
-# 🏆 Profound University — Track 3: AEO Analytics Certification Submission
+# 🏆 Profound University — Track 3: AEO Analytics Historical Analytics Exercise — Draft
 
 **Candidate:** Philippe Godfroy  
 **Organization:** Reviewell BV (`BE1012058705`, Belgium)  
-**Measurement Window:** 30-Day Rolling Benchmark (`2026-10-08` to `2026-11-07`)  
+**Fictional exercise window (not an observed measurement):** 30-Day Rolling Benchmark (`2026-10-08` to `2026-11-07`)
 **Categories Analyzed:**  
 1. `cat_reviewell_reputation_eu` — **Reviewell Core** (`reviewell.com`)  
 2. `cat_reviewell_ringsizer_ios` — **RingSizer iOS App** (`id6798043494`)
 
+**Evidence status — 2026-11-16:** All numerical KPI tables, engine rankings, competitor shares, deltas, targets and projected lifts below are fictional local examples, not current or historical measured business results. Root causes are hypotheses and no causal effect is established. RingSizer is preserved only as historical exercise material and is outside the current Reviewell task. See [actual platform status](../../PROFOUND_LIVE_STATUS.md) for the separate, limited US baseline; it does not validate these example figures. AI-assisted draft; not approved by Profound.
+
 ---
 
-## 1. Executive KPI Scorecard (6 Core Indicators)
+## 1. Fictional KPI Scorecard (6 Core Indicators)
 
-*Note: Each KPI is measured over the same 30-day window and within its specific category. Indicators are distinct and never conflated.*
+*Exercise design: compare distinct KPIs within matching windows and categories when actual measurements become available. The numbers below are fixtures.*
 
-| KPI | Reviewell Core (Current) | 30d Delta | 30d Target | RingSizer iOS (Current) | 30d Target |
+| KPI | Reviewell Core (Example) | 30d Delta | 30d Target | RingSizer iOS (Example) | 30d Target |
 |---|---:|---:|---:|---:|---:|
 | **1. AI Visibility Score** | **34.2%** | +7.7% | 52.0% | **19.5%** | 38.0% |
 | **2. Share of Voice (SOV)** | **18.4%** | +4.5% | 28.0% | **11.2%** | 22.0% |
@@ -24,7 +26,7 @@
 
 ---
 
-## 2. Multi-Engine Visibility & Citation Diagnosis (`reviewell-core`)
+## 2. Fictional Multi-Engine Visibility & Citation Diagnosis (`reviewell-core`)
 
 | Answer Engine | Visibility Score | Share of Voice | Citation Share | Avg Position | Primary Diagnostic Finding |
 |---|---:|---:|---:|---:|---|
@@ -36,28 +38,28 @@
 
 ---
 
-## 3. Root-Cause Gap Analysis: Why Competitors Are Cited Over Reviewell
+## 3. Hypothetical Gap Analysis (requires answer and citation evidence)
 
 ### Gap 1 — Conflict-of-Interest & Ex-Employee Evidence Queries (Gemini & ChatGPT)
-- **Observation:** On prompts asking *"What evidence do I need to remove a 1-star Google review from an ex-employee or competitor?"*, `support.google.com` captures **41.5% Citation Share** and `removify.com` captures **15.2%**, while Reviewell is omitted on Gemini.
-- **Root Cause:** Competitor pages contain a structured HTML table + `FAQPage` JSON-LD directly matching Google's policy taxonomy (*Conflict of Interest*, *Impersonation*, *Fake Engagement*) to concrete documentary evidence (employment termination records, competing company registry extracts, timestamped threat logs).
+- **Fictional scenario:** On prompts asking *"What evidence do I need to remove a 1-star Google review from an ex-employee or competitor?"*, `support.google.com` captures **41.5% Citation Share** and `removify.com` captures **15.2%**, while Reviewell is omitted on Gemini.
+- **Hypothesis, not established cause:** Competitor pages contain a structured HTML table + `FAQPage` JSON-LD directly matching Google's policy taxonomy (*Conflict of Interest*, *Impersonation*, *Fake Engagement*) to concrete documentary evidence (employment termination records, competing company registry extracts, timestamped threat logs).
 - **Fix:** Deploy `ReviewellAeoSchema.tsx` (`FAQPage` + `Service`) and the Policy-to-Evidence table in `/llms-full.txt`.
 
 ### Gap 2 — Machine Discovery & Token Efficiency (`/llms.txt` & Crawler Directives)
-- **Observation:** AI retrieval agents have strict token budgets per cited domain.
-- **Root Cause:** `reviewell-removal-preview` lacked `/public/llms.txt` and explicit `OAI-SearchBot` / `PerplexityBot` directives in `robots.txt`.
+- **Fictional scenario:** AI retrieval agents have strict token budgets per cited domain.
+- **Hypothesis, not established cause:** `reviewell-removal-preview` lacked `/public/llms.txt` and explicit `OAI-SearchBot` / `PerplexityBot` directives in `robots.txt`.
 - **Fix:** Deploy `/public/llms.txt`, `/public/llms-full.txt`, and updated `/public/robots.txt`.
 
 ### Gap 3 — RingSizer (`id6798043494`) Web Citation Surface
-- **Observation:** RingSizer relies almost exclusively on its Apple App Store URL (`apps.apple.com/nl/app/ringsizer-ring-size-tool/id6798043494`), giving it only **8.4% Citation Share** vs. Jason Withers (38.0%) and Blue Nile (31.0%).
-- **Root Cause:** Answer engines cite web pages containing **ISO 8653 ring size conversion tables (mm diameter ↔ circumference ↔ EU/US/UK sizes)** and calibration instructions, then recommend the app linked on that page.
+- **Fictional scenario:** RingSizer relies almost exclusively on its Apple App Store URL (`apps.apple.com/nl/app/ringsizer-ring-size-tool/id6798043494`), giving it only **8.4% Citation Share** vs. Jason Withers (38.0%) and Blue Nile (31.0%).
+- **Hypothesis, not established cause:** Answer engines cite web pages containing **ISO 8653 ring size conversion tables (mm diameter ↔ circumference ↔ EU/US/UK sizes)** and calibration instructions, then recommend the app linked on that page.
 - **Fix:** Publish a dedicated `/ringsizer` reference guide with an embeddable ISO conversion table and `SoftwareApplication` JSON-LD pointing to App Store ID `6798043494`.
 
 ---
 
-## 4. Prioritized Action Plan & Defendable Business ROI
+## 4. Illustrative Action Plan (no validated lift or ROI forecast)
 
-| Priority | Action Item | Effort | Expected Citation Lift | Commercial Justification |
+| Priority | Action Item | Effort | Fictional lift assumption | Commercial Justification |
 |---|---|---|---|---|
 | **P0** | Deploy `/llms.txt`, `/llms-full.txt`, and AI-crawler `robots.txt` on `reviewell.com` | 1 hour | **+6% to +9% Citation Share** | Zero recurring cost; makes all core intake and policy pages immediately machine-digestible. |
 | **P0** | Add `Organization`, `Service`, and `FAQPage` JSON-LD (`ReviewellAeoSchema.tsx`) | 2 hours | **+10% to +14% Visibility on Gemini & ChatGPT** | Directly targets high-intent B2B buyers searching for review dispute evidence requirements (9.4% conversion rate to free check). |

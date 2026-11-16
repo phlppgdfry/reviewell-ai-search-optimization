@@ -1,0 +1,1343 @@
+{
+  "checked_at_utc": "2026-11-16T00:41:35.497425+00:00",
+  "method": "curl GET followed redirects; server HTML parsed with Python html.parser, all live sitemap entries; no browser rendering, search-console coverage or Profound credits",
+  "sitemap": {
+    "requested_url": "https://reviewell.com/sitemap.xml",
+    "status": 200,
+    "final_url": "https://www.reviewell.com/sitemap.xml",
+    "redirect_count": 1,
+    "sha256": "8a68f4142fc0a9032bc56e1ef923e5530ac8ce5fff593c06396f4b8886ba1b66",
+    "url_count": 66
+  },
+  "pages": [
+    {
+      "requested_url": "https://reviewell.com",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/",
+      "redirect_count": 1,
+      "sha256": "413327c245fe74248930321d0c020d762abde99edbd23c6474b4cbb9839d484f",
+      "title": "Reviewell — Review Removal. No Removal, No Fee.",
+      "canonical": [
+        "https://reviewell.com"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Unfair review?Get it removed."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/google-review-removal",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/google-review-removal",
+      "redirect_count": 1,
+      "sha256": "bae3b49e8eca254ee57664ab674db41309c32f5b9c5d316b37b8de42342a27b0",
+      "title": "Google Review Removal — No Removal, No Fee | Reviewell",
+      "canonical": [
+        "https://reviewell.com/google-review-removal"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Fight Google reviewsthat break the rules."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/trustpilot-review-removal",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/trustpilot-review-removal",
+      "redirect_count": 1,
+      "sha256": "a4f298ffbb63d81c121c12fe1836359c3e3a328d9424636b8c341d155a64bd94",
+      "title": "Trustpilot Review Removal — No Removal, No Fee | Reviewell",
+      "canonical": [
+        "https://reviewell.com/trustpilot-review-removal"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Unfair Trustpilot review?Get it removed."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/airbnb-review-removal",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/airbnb-review-removal",
+      "redirect_count": 1,
+      "sha256": "73b5473700c08fce98cf4f8109e6e5d9febfd864c3fd6dd26b0e58f06288ce23",
+      "title": "Airbnb Review Removal for Hosts — No Removal, No Fee | Reviewell",
+      "canonical": [
+        "https://reviewell.com/airbnb-review-removal"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Unfair Airbnb review?Get it removed."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/google-review-extortion",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/google-review-extortion",
+      "redirect_count": 1,
+      "sha256": "fdbdd90ea09c89eddf5399f7bdff84aa6844582b48fdecb73a7abde22d713146",
+      "title": "Fake Google Reviews Used for Extortion — What to Do | Reviewell",
+      "canonical": [
+        "https://reviewell.com/google-review-extortion"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Fake reviews anda demand for money?"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/review-scan",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/review-scan",
+      "redirect_count": 1,
+      "sha256": "688d763a0ba95bd03746099ff5746ffef2b11129b3be79838f738c2f5d9f98de",
+      "title": "Free Google Review Scan — Which Reviews Could Be Removed? | Reviewell",
+      "canonical": [
+        "https://reviewell.com/review-scan"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Which of your reviewscould be removed?"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/services",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/services",
+      "redirect_count": 1,
+      "sha256": "f5c4a1518fb558fde9333d4a288427491da168efc6f95f2f9648a92dd7260b5b",
+      "title": "Content Removal & Privacy Services | Reviewell",
+      "canonical": [
+        "https://reviewell.com/services"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Something onlinethat shouldn't be there?"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/add-us-as-manager",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/add-us-as-manager",
+      "redirect_count": 1,
+      "sha256": "f0bcd802e22b3adfc3e633e3e41d76b7ffb6ca7411ab66c91d9c5d520d56626c",
+      "title": "Add Reviewell as a Manager on Google | Reviewell",
+      "canonical": [
+        "https://reviewell.com/add-us-as-manager"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Add Reviewellas a manager."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/pricing",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/pricing",
+      "redirect_count": 1,
+      "sha256": "12603ab8f04e9ed7236e58aeefbd4dbe37d096587e9d05d1c02cbe1e54c44113",
+      "title": "Pricing | Reviewell",
+      "canonical": [
+        "https://reviewell.com/pricing"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "No removal,no fee."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/how-it-works",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/how-it-works",
+      "redirect_count": 1,
+      "sha256": "7286639dde1a1086aa614525bb29fe66c2b3bd34444a05d8a77102bb66821324",
+      "title": "How It Works | Reviewell",
+      "canonical": [
+        "https://reviewell.com/how-it-works"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Four steps.You only pay at the end."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/faq",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/faq",
+      "redirect_count": 1,
+      "sha256": "a8bcf2abc7eeb83a0a493ee5e9c8ecc8024e01240a18d9bcadadd6bf92cbf53c",
+      "title": "FAQ | Reviewell",
+      "canonical": [
+        "https://reviewell.com/faq"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Questions aboutreview removal."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/how-we-assess-cases",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/how-we-assess-cases",
+      "redirect_count": 1,
+      "sha256": "d99423c7c8570427b5bf98c748eddda1a3b05fa8d42fbf29b4d8c2d6819aa3ac",
+      "title": "How We Assess Cases | Reviewell",
+      "canonical": [
+        "https://reviewell.com/how-we-assess-cases"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "We assess the route.Not just the rating."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/what-we-cannot-remove",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/what-we-cannot-remove",
+      "redirect_count": 1,
+      "sha256": "627ceb945b9bddd3b37f82d513415030911b5ca45774ecf6fdcabaa6e0c582b5",
+      "title": "What We Can't Remove | Reviewell",
+      "canonical": [
+        "https://reviewell.com/what-we-cannot-remove"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Some content shouldnot be removed."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources",
+      "redirect_count": 1,
+      "sha256": "fe4a2199a274ed630b7a0c996f4373d8b23fa55cc59a66fa4605ba5349984a7e",
+      "title": "Guides | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Clear information.Better first decisions."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/about",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/about",
+      "redirect_count": 1,
+      "sha256": "535aa8b674ec73bfb4246d6bd0a2daee2dbd293307e3e066b248ea128d7ade2c",
+      "title": "About | Reviewell",
+      "canonical": [
+        "https://reviewell.com"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "A small team, workingone case at a time."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": false,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/contact",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/contact",
+      "redirect_count": 1,
+      "sha256": "eaa2cc0c59d19afd4165b2b20c3f71731540ca555d4beff0c25281f709653213",
+      "title": "Contact | Reviewell",
+      "canonical": [
+        "https://reviewell.com"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Not about a specific review?Let's talk anyway."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": false,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/google-review-removal/for/dentists-and-clinics",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/google-review-removal/for/dentists-and-clinics",
+      "redirect_count": 1,
+      "sha256": "72e4215db0cb23f7bb4da110496da9c936d25247db01dcb41d080f85b5e2542b",
+      "title": "Review Removal for Dentists | Reviewell",
+      "canonical": [
+        "https://reviewell.com/google-review-removal/for/dentists-and-clinics"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "A review can decidewho books the consult."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/google-review-removal/for/hotels-and-vacation-rentals",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/google-review-removal/for/hotels-and-vacation-rentals",
+      "redirect_count": 1,
+      "sha256": "c1f435f4ceb37e31d56410462d524c9a6dd584cb5882f3f6a4d45ef83173ba6e",
+      "title": "Review Removal for Hotels, Airbnb Hosts | Reviewell",
+      "canonical": [
+        "https://reviewell.com/google-review-removal/for/hotels-and-vacation-rentals"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "One review movesyour ranking, not just your rating."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/google-review-removal/for/marketing-agencies",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/google-review-removal/for/marketing-agencies",
+      "redirect_count": 1,
+      "sha256": "1ba8c060c9f5918f5840e851ce7730e1b5df4fcac34849dd89b7a77beac67dd8",
+      "title": "Review Removal for Marketing | Reviewell",
+      "canonical": [
+        "https://reviewell.com/google-review-removal/for/marketing-agencies"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Your client's review problemis now your problem."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/google-review-removal/for/franchises-and-multi-location",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/google-review-removal/for/franchises-and-multi-location",
+      "redirect_count": 1,
+      "sha256": "6317f1f84ad25f7861962607d33aa0fbfc25ddc38d50480e01c4ee4fc911cf00",
+      "title": "Review Removal for Franchises | Reviewell",
+      "canonical": [
+        "https://reviewell.com/google-review-removal/for/franchises-and-multi-location"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "One location's reviewis every location's problem."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/google-review-removal/for/restaurants",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/google-review-removal/for/restaurants",
+      "redirect_count": 1,
+      "sha256": "b98e3b329fe62472886314879012b9f3e530d09eaed7c039ee66dd80bebe7c88",
+      "title": "Review Removal for Restaurants | Reviewell",
+      "canonical": [
+        "https://reviewell.com/google-review-removal/for/restaurants"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "A slow Tuesday reviewoutlives the Tuesday."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/google-review-removal/for/webshops-and-ecommerce",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/google-review-removal/for/webshops-and-ecommerce",
+      "redirect_count": 1,
+      "sha256": "c888bb6342089a5527e68526dcf6669fc107e0fd42ac0fe04dc908656652f498",
+      "title": "Review Removal for Webshops | Reviewell",
+      "canonical": [
+        "https://reviewell.com/google-review-removal/for/webshops-and-ecommerce"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "One bad-faith reviewoutranks a thousand good orders."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/google-review-removal/for/law-firms",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/google-review-removal/for/law-firms",
+      "redirect_count": 1,
+      "sha256": "cbaaa3483db6ac56bfa2f54a2d5a2056a0c69b06aeebc2029c010765aff5b027",
+      "title": "Review Removal for Law Firms | Reviewell",
+      "canonical": [
+        "https://reviewell.com/google-review-removal/for/law-firms"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "A former opposing partyisn't a former client."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/remove-fake-profile",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/remove-fake-profile",
+      "redirect_count": 1,
+      "sha256": "40d790e1c310f678390039effb38dde0a0c1cc9d23e1c3b46505e648ab799992",
+      "title": "Remove a Fake Profile | Reviewell",
+      "canonical": [
+        "https://reviewell.com/remove-fake-profile"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Remove a Fake Profile.Start with the facts."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/social-media-content-removal",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/social-media-content-removal",
+      "redirect_count": 1,
+      "sha256": "5738c2fec0af383914244dbf1b71696f6b74ff49719b8182f72a75673147e144",
+      "title": "Social Media Content Removal | Reviewell",
+      "canonical": [
+        "https://reviewell.com/social-media-content-removal"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Social Media Content Removal.Start with the facts."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/remove-fake-website",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/remove-fake-website",
+      "redirect_count": 1,
+      "sha256": "547f75e587c973072d575d462ae0cf8359486d830faec60c73a27e4047ced3a6",
+      "title": "Remove a Fake Website | Reviewell",
+      "canonical": [
+        "https://reviewell.com/remove-fake-website"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Remove a Fake Website.Start with the facts."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/remove-photo-online",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/remove-photo-online",
+      "redirect_count": 1,
+      "sha256": "22b80e5b88c07ed675b71bd3ab94633d11d56a7d95c3438cf8f56c7045056454",
+      "title": "Remove a Photo Online | Reviewell",
+      "canonical": [
+        "https://reviewell.com/remove-photo-online"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Remove a Photo Online.Start with the facts."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/remove-video-online",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/remove-video-online",
+      "redirect_count": 1,
+      "sha256": "25ac21b1f3f792b141c8b8c4316114fe5a0986c3a4340387d2298a5f49fe1b7e",
+      "title": "Remove a Video Online | Reviewell",
+      "canonical": [
+        "https://reviewell.com/remove-video-online"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Remove a Video Online.Start with the facts."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/remove-deepfake",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/remove-deepfake",
+      "redirect_count": 1,
+      "sha256": "76a7d06b8104e37cb625dd3c31d70feebf717529f47f1cd22acbb8af6acc2be3",
+      "title": "Remove a Deepfake | Reviewell",
+      "canonical": [
+        "https://reviewell.com/remove-deepfake"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Remove a Deepfake.Start with the facts."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/remove-fake-news",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/remove-fake-news",
+      "redirect_count": 1,
+      "sha256": "0c78e8c3d6b18a9cb5566fd3bf93522b1d7946d6d7c4d558b7752ab00640c41e",
+      "title": "Remove Fake News or Harmful Articles | Reviewell",
+      "canonical": [
+        "https://reviewell.com/remove-fake-news"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Remove Fake News or Harmful Articles.Start with the facts."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/copyright-content-removal",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/copyright-content-removal",
+      "redirect_count": 1,
+      "sha256": "c2aa85edad3cef6bffdf64f7b371a38da5b379421d79634e1a29fa689c518342",
+      "title": "Copyright & Author Rights | Reviewell",
+      "canonical": [
+        "https://reviewell.com/copyright-content-removal"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Copyright & Author Rights.Start with the facts."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/defamation-reputation-harm",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/defamation-reputation-harm",
+      "redirect_count": 1,
+      "sha256": "012ea61bc99d7738cfb13a1933f5b4a783c22e2fe4d879347371dde16d6d8fe0",
+      "title": "Defamation & Reputation Harm | Reviewell",
+      "canonical": [
+        "https://reviewell.com/defamation-reputation-harm"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Defamation & Reputation Harm.Start with the facts."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/remove-personal-data",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/remove-personal-data",
+      "redirect_count": 1,
+      "sha256": "8d00b5aafa3116017fd8f782dcbbd68374772c7baa14cd63a0fdf3a5e303c6e5",
+      "title": "Remove Personal Data | Reviewell",
+      "canonical": [
+        "https://reviewell.com/remove-personal-data"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Remove Personal Data.Start with the facts."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/right-to-be-forgotten",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/right-to-be-forgotten",
+      "redirect_count": 1,
+      "sha256": "9a11c5c667dc617198f2f4ca766f76033d0f9a3cdef0052236a36eb82e68cbeb",
+      "title": "Google Search Result Removal / Right to Be Forgotten | Reviewell",
+      "canonical": [
+        "https://reviewell.com/right-to-be-forgotten"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Google Search Result Removal / Right to Be Forgotten.Start with the facts."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/cyberbullying-red-button",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/cyberbullying-red-button",
+      "redirect_count": 1,
+      "sha256": "a5fdf16e4fa71d8d68b04fac7286ca788e7074816f0a42f4e4e6a57203209b27",
+      "title": "Cyberbullying & Red Button | Reviewell",
+      "canonical": [
+        "https://reviewell.com/cyberbullying-red-button"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Cyberbullying & Red Button.Start with the facts."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/privacy-protection-doxxing",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/privacy-protection-doxxing",
+      "redirect_count": 1,
+      "sha256": "0c33cbea3bbfa624bf802bff3595097def5e3fb081723ae71f3f386d37604f1b",
+      "title": "Privacy Protection & Doxxing | Reviewell",
+      "canonical": [
+        "https://reviewell.com/privacy-protection-doxxing"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Privacy Protection & Doxxing.Start with the facts."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/reputation-audit",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/reputation-audit",
+      "redirect_count": 1,
+      "sha256": "abd0c291d3834eec4734056de59a3575e97e2e7480e24eaaa43ca187af9de92f",
+      "title": "Reputation Audit | Reviewell",
+      "canonical": [
+        "https://reviewell.com/reputation-audit"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Reputation Audit.Start with the facts."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/how-to-report-a-fake-trustpilot-review",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/how-to-report-a-fake-trustpilot-review",
+      "redirect_count": 1,
+      "sha256": "c2feffac38e0b917665d84688a18a1b226934c63e586b48162a7121f114ddacb",
+      "title": "How to Report a Fake Trustpilot Review | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/how-to-report-a-fake-trustpilot-review"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "How to Report a Fake Trustpilot Review"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/trustpilot-flag-rejected-what-now",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/trustpilot-flag-rejected-what-now",
+      "redirect_count": 1,
+      "sha256": "da143b7218742bc523714bd2691683f7af72f0e4b3d654d3b49e9eb984e165bb",
+      "title": "Trustpilot Flag Rejected: What Now? | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/trustpilot-flag-rejected-what-now"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Trustpilot Flag Rejected: What Now?"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/competitor-reviews-on-trustpilot",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/competitor-reviews-on-trustpilot",
+      "redirect_count": 1,
+      "sha256": "698a3e86fb461c9b8c125f7770597e76d48e5b69121894af27346870d02e9a32",
+      "title": "Can a Competitor Review You on Trustpilot? | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/competitor-reviews-on-trustpilot"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Can a Competitor Review You on Trustpilot?"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/how-to-get-an-airbnb-review-removed",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/how-to-get-an-airbnb-review-removed",
+      "redirect_count": 1,
+      "sha256": "1f600e816c66fbbe84ace8868abfa0742e8fd8d40c70044f906ad3873b6d9a1e",
+      "title": "How to Get an Airbnb Review Removed | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/how-to-get-an-airbnb-review-removed"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "How to Get an Airbnb Review Removed"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/airbnb-guest-extortion-bad-review-for-refund",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/airbnb-guest-extortion-bad-review-for-refund",
+      "redirect_count": 1,
+      "sha256": "0a89972e723642f70544410fe312f14f8cc6e6de5c2d410b3278f4ce6ad90963",
+      "title": "Guest Threatens a Bad Review for a Refund | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/airbnb-guest-extortion-bad-review-for-refund"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Guest Threatens a Bad Review for a Refund"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/airbnb-review-guest-never-stayed",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/airbnb-review-guest-never-stayed",
+      "redirect_count": 1,
+      "sha256": "370bd34677df3f48d917745b7be9ea4821d118effeb2f60d26d3d7d76dd46791",
+      "title": "Airbnb Review From a Guest Who Never Stayed | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/airbnb-review-guest-never-stayed"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Airbnb Review From a Guest Who Never Stayed"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/can-you-remove-a-google-review",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/can-you-remove-a-google-review",
+      "redirect_count": 1,
+      "sha256": "278c0d9ccaab854e2e4c452bbdfb546fc618a53928d377b038b57d7894296f51",
+      "title": "Can You Remove a Google Review? | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/can-you-remove-a-google-review"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Can You Remove a Google Review?"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/how-to-report-a-fake-google-review",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/how-to-report-a-fake-google-review",
+      "redirect_count": 1,
+      "sha256": "b39d463e34b4f64601bce932d5c4595890c36c9281025e162c463fedfd866a76",
+      "title": "How to Assess a Fake Google Review | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/how-to-report-a-fake-google-review"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "How to Assess a Fake Google Review"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/what-to-do-during-google-review-bombing",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/what-to-do-during-google-review-bombing",
+      "redirect_count": 1,
+      "sha256": "7321088068c25aa53629aa073c3a5fe6b5d086043a96ee065570ddeab3dda4c3",
+      "title": "What to Do During Google Review Bombing | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/what-to-do-during-google-review-bombing"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "What to Do During Google Review Bombing"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/remove-personal-information-from-google",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/remove-personal-information-from-google",
+      "redirect_count": 1,
+      "sha256": "c6dbed9f8d2a9956ccaf465ca3a247368f33ba6d7b94108eb40f6f38c31884e9",
+      "title": "How to Reduce Personal Information Online | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/remove-personal-information-from-google"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "How to Reduce Personal Information Online"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/right-to-be-forgotten-belgium",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/right-to-be-forgotten-belgium",
+      "redirect_count": 1,
+      "sha256": "5fd6476ad9b57cafe664cb24a47b3f6828f5f803aecf9ee8e1bfa2f1f198fbcf",
+      "title": "Right to be Forgotten: A Starting Guide | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/right-to-be-forgotten-belgium"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Right to be Forgotten: A Starting Guide"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/how-to-remove-a-deepfake",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/how-to-remove-a-deepfake",
+      "redirect_count": 1,
+      "sha256": "582a8f829a36c04c75e8bc9632b3a48b03d599d11d1b417738e900741cd42bf9",
+      "title": "How to Respond to a Deepfake | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/how-to-remove-a-deepfake"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "How to Respond to a Deepfake"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/how-to-reply-to-a-negative-google-review",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/how-to-reply-to-a-negative-google-review",
+      "redirect_count": 1,
+      "sha256": "d1f04f3752c17cefaf7eb9b0308ebdf661097325ec96d85bb6767e94a2819d4d",
+      "title": "How to Reply to a Negative Google Review | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/how-to-reply-to-a-negative-google-review"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "How to Reply to a Negative Google Review"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/remove-a-duplicate-google-business-profile",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/remove-a-duplicate-google-business-profile",
+      "redirect_count": 1,
+      "sha256": "d38d3de541fab7a3b2ae836be44f6743e839749ff4d1305d377919990a8e17d7",
+      "title": "How to Handle a Duplicate Google Business Profile | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/remove-a-duplicate-google-business-profile"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "How to Handle a Duplicate Google Business Profile"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/what-to-do-when-someone-impersonates-you-online",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/what-to-do-when-someone-impersonates-you-online",
+      "redirect_count": 1,
+      "sha256": "bf9ec3b4c4788205ac98564b2806682c68f75c80b6cc3ca2c4150d5607828900",
+      "title": "What to Do When Someone Impersonates You Online | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/what-to-do-when-someone-impersonates-you-online"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "What to Do When Someone Impersonates You Online"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/how-to-report-a-fake-website",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/how-to-report-a-fake-website",
+      "redirect_count": 1,
+      "sha256": "fb910923c5392cbd4333b87eb5952eaf6de72eec0ae8884156de4e86961af357",
+      "title": "How to Respond to a Fake Website | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/how-to-report-a-fake-website"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "How to Respond to a Fake Website"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/what-to-do-about-an-unwanted-photo-online",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/what-to-do-about-an-unwanted-photo-online",
+      "redirect_count": 1,
+      "sha256": "08781ac549699e38142cf879d3ad6c67343e0559bd3798764aa6234a5c565f58",
+      "title": "What to Do About an Unwanted Photo Online | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/what-to-do-about-an-unwanted-photo-online"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "What to Do About an Unwanted Photo Online"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/how-data-broker-removal-works",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/how-data-broker-removal-works",
+      "redirect_count": 1,
+      "sha256": "2d561e39f7b6d5b802faae470f9389f123104ec678b32fd0a307c8f1ec175d16",
+      "title": "How Data Broker Removal Works | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/how-data-broker-removal-works"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "How Data Broker Removal Works"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/social-media-report-rejected-what-now",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/social-media-report-rejected-what-now",
+      "redirect_count": 1,
+      "sha256": "0789c15114c909cfd928d15d87f004fd3559ef21248dab702318e1ae6455f535",
+      "title": "Social Media Report Rejected: What Now? | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/social-media-report-rejected-what-now"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Social Media Report Rejected: What Now?"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/how-to-get-a-video-removed",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/how-to-get-a-video-removed",
+      "redirect_count": 1,
+      "sha256": "5c8684db2c256e8fc0974a6cae45d9d2dddb69c3e9fe23dfb1aa0c44e9339c81",
+      "title": "How to Get a Video Removed | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/how-to-get-a-video-removed"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "How to Get a Video Removed"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/harmful-article-correction-or-reply",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/harmful-article-correction-or-reply",
+      "redirect_count": 1,
+      "sha256": "cf1f0bf72b5a86bf6b60b7a28e3998662630a1d1b450fc6dd618817fbbc42c80",
+      "title": "A Harmful Article About You: Correction, Reply or Removal | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/harmful-article-correction-or-reply"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "A Harmful Article About You: Correction, Reply or Removal"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/how-to-file-a-copyright-takedown",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/how-to-file-a-copyright-takedown",
+      "redirect_count": 1,
+      "sha256": "aabf1595b081d713cc91d3f5c8ccd118fb90f960fbf69c5284b5ec1d3e926f8d",
+      "title": "How to File a Copyright Takedown | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/how-to-file-a-copyright-takedown"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "How to File a Copyright Takedown"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/resources/first-steps-online-harassment",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/resources/first-steps-online-harassment",
+      "redirect_count": 1,
+      "sha256": "50d585feb77ac4452e8149d1e60897924cc9614bd2aa63722b8fd7aa9b46307c",
+      "title": "Online Harassment or Doxxing: First Steps | Reviewell",
+      "canonical": [
+        "https://reviewell.com/resources/first-steps-online-harassment"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Online Harassment or Doxxing: First Steps"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/privacy",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/privacy",
+      "redirect_count": 1,
+      "sha256": "27b9e8f5681dbfe3f5224403b77d6ba5718d701d92f13bf62671f667231694aa",
+      "title": "Privacy Notice | Reviewell",
+      "canonical": [
+        "https://reviewell.com/privacy"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Privacy is part ofthe case standard."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/gdpr",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/gdpr",
+      "redirect_count": 1,
+      "sha256": "be3d0fb3239684c6f33a7fd4c8f3d840bc1f0edc173958cf56965e31ae572f80",
+      "title": "GDPR Rights | Reviewell",
+      "canonical": [
+        "https://reviewell.com/gdpr"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Control overyour personal data."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/cookies",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/cookies",
+      "redirect_count": 1,
+      "sha256": "2468d07872da8ff33e97df7e1f9de625c6632e74549c612f35881387f5b6b3de",
+      "title": "Cookie Policy | Reviewell",
+      "canonical": [
+        "https://reviewell.com/cookies"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Cookies withoutguesswork."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/imprint",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/imprint",
+      "redirect_count": 1,
+      "sha256": "13665dbb5340b25875463ce071a9a21b3585efd8bb1a824fb67558af65c03a7c",
+      "title": "Imprint | Reviewell",
+      "canonical": [
+        "https://reviewell.com/imprint"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Who isReviewell?"
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/engagement-policy",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/engagement-policy",
+      "redirect_count": 1,
+      "sha256": "8b806eb2c9bc01d52b9d065067b3f54eaa7d75b2beb2dea381e9e7a7340a1639",
+      "title": "Engagement & Refund Policy | Reviewell",
+      "canonical": [
+        "https://reviewell.com/engagement-policy"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "A clear process.Never a false guarantee."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    },
+    {
+      "requested_url": "https://reviewell.com/terms",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/terms",
+      "redirect_count": 1,
+      "sha256": "eb9a48267dc551c855f225c0ce78f0e46905ced04436729755af05324847f0c9",
+      "title": "Terms of Service | Reviewell",
+      "canonical": [
+        "https://reviewell.com/terms"
+      ],
+      "robots": "index, follow",
+      "h1": [
+        "Clear scope.No false promises."
+      ],
+      "absolute_internal_link_hosts": [],
+      "canonical_matches_final_url": false,
+      "canonical_path_matches_final_path": true,
+      "canonical_host_matches_final_host": false
+    }
+  ],
+  "redirect_checks": [
+    {
+      "requested_url": "https://www.reviewell.com/",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/",
+      "redirect_count": 0,
+      "sha256": "413327c245fe74248930321d0c020d762abde99edbd23c6474b4cbb9839d484f"
+    },
+    {
+      "requested_url": "https://www.reviewell.com/about",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/about",
+      "redirect_count": 0,
+      "sha256": "535aa8b674ec73bfb4246d6bd0a2daee2dbd293307e3e066b248ea128d7ade2c"
+    },
+    {
+      "requested_url": "https://www.reviewell.com/contact",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/contact",
+      "redirect_count": 0,
+      "sha256": "eaa2cc0c59d19afd4165b2b20c3f71731540ca555d4beff0c25281f709653213"
+    },
+    {
+      "requested_url": "http://reviewell.com/",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/",
+      "redirect_count": 2,
+      "sha256": "413327c245fe74248930321d0c020d762abde99edbd23c6474b4cbb9839d484f"
+    },
+    {
+      "requested_url": "http://www.reviewell.com/",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/",
+      "redirect_count": 1,
+      "sha256": "413327c245fe74248930321d0c020d762abde99edbd23c6474b4cbb9839d484f"
+    }
+  ],
+  "resources": [
+    {
+      "requested_url": "https://reviewell.com/robots.txt",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/robots.txt",
+      "redirect_count": 1,
+      "sha256": "ae02b33bc2b09c71d1424344b031690e2f18d503f9c3d381ca8fcc7475ca698a",
+      "body": "User-Agent: *\nAllow: /\nAllow: /llms.txt\nAllow: /llms-full.txt\nDisallow: /dashboard/\nDisallow: /admin/\nDisallow: /api/\nDisallow: /login\nDisallow: /link\nDisallow: /invite\nDisallow: /reset-password\n\nUser-Agent: OAI-SearchBot\nUser-Agent: ChatGPT-User\nUser-Agent: GPTBot\nUser-Agent: PerplexityBot\nUser-Agent: ClaudeBot\nUser-Agent: Google-Extended\nUser-Agent: Applebot-Extended\nAllow: /\nAllow: /llms.txt\nAllow: /llms-full.txt\nDisallow: /dashboard/\nDisallow: /admin/\nDisallow: /api/\nDisallow: /login\nDisallow: /link\nDisallow: /invite\nDisallow: /reset-password\n\nSitemap: https://reviewell.com/sitemap.xml\n"
+    },
+    {
+      "requested_url": "https://reviewell.com/llms.txt",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/llms.txt",
+      "redirect_count": 1,
+      "sha256": "ab4423c7525039cf43c07074098f13c2c65d21410bdd2215c0e917da1c99c5d9",
+      "body": "# Reviewell (Reviewell BV)\n\n> Review removal for businesses on Google, Trustpilot and Airbnb. Free human check first, a fixed price per review from €99 (excl. VAT), and the fee is only payable once the review is confirmed removed (\"no removal, no fee\"). Based in Belgium, serving Belgium, the Netherlands and the rest of Europe.\n\n## Key facts\n- Legal entity: Reviewell BV, VAT BE1012058705, Brussels, Belgium\n- Contact: info@reviewell.com\n- Platforms: Google (Maps / Business Profile), Trustpilot, Airbnb\n- Price: from €99 per review; complex cases quoted higher upfront; from 5 reviews −20% each; urgent same-day filing +€49 per review\n- Payment: only after removal is confirmed (checked twice, 24 hours apart); invoice due within 14 days\n- 30-day re-post guarantee: if a removed review comes back within 30 days, it is handled again at no cost, or refunded\n- Reviewell never needs account passwords and only uses each platform's own reporting and appeal routes\n- The platform decides on every removal; genuine negative reviews are not removed\n\n## Main pages\n- [Home and free check](https://www.reviewell.com/)\n- [Google review removal](https://www.reviewell.com/google-review-removal)\n- [Trustpilot review removal](https://www.reviewell.com/trustpilot-review-removal)\n- [Airbnb review removal for hosts](https://www.reviewell.com/airbnb-review-removal)\n- [Fake reviews used for extortion](https://www.reviewell.com/google-review-extortion)\n- [Pricing](https://www.reviewell.com/pricing)\n- [How it works](https://www.reviewell.com/how-it-works)\n- [FAQ](https://www.reviewell.com/faq)\n- [Guides](https://www.reviewell.com/resources)\n- [Engagement policy (terms of the no-removal-no-fee promise)](https://www.reviewell.com/engagement-policy)\n\n## Full reference\n- [llms-full.txt](https://www.reviewell.com/llms-full.txt)\n"
+    },
+    {
+      "requested_url": "https://reviewell.com/llms-full.txt",
+      "status": 200,
+      "final_url": "https://www.reviewell.com/llms-full.txt",
+      "redirect_count": 1,
+      "sha256": "801bac4120018c7d43ebac26ecce58ce153118a54209da52ff2489ffd383cf4f",
+      "body": "# Reviewell — full reference (`/llms-full.txt`)\n\n## 1. Who we are\n- Brand: Reviewell — Legal entity: Reviewell BV — VAT: BE1012058705 — Brussels, Belgium\n- Website: https://www.reviewell.com — Contact: info@reviewell.com\n- Service: policy-based removal requests for unfair reviews on Google, Trustpilot and Airbnb, for businesses and hosts.\n- Independent: not affiliated with Google, Trustpilot or Airbnb. The platform decides on every removal.\n\n## 2. Offer and price\n| Item | Terms |\n|---|---|\n| Free check | €0. A person checks the review against the platform's rules within one business day. |\n| Standard | From €99 per review (excl. VAT): one review with a clear breach and evidence the client already has. |\n| Several reviews | From 5 reviews in one request: −20% on every review. |\n| Urgent | +€49 per review: assessed and filed the same business day (requests in by 15:00). |\n| Complex | Quoted upfront (extensive evidence, several appeal rounds, review waves, extortion, legal angle). |\n| When payable | Only after removal is confirmed — checked on the review link and public page at two moments at least 24 hours apart. Invoice due within 14 days. |\n| If the review stays | Nothing is owed for that review. |\n| 30-day re-post guarantee | A removal only counts if the review stays gone for 30 days. If it is re-posted within 30 days (same reviewer, same experience), Reviewell handles it again at no cost; if it can't be removed again, the fee is refunded. |\n\n## 3. What can be removed (per platform's own rules)\n- **Google** ([policy](https://support.google.com/contributionpolicy/answer/7400114)): not a real experience / fake, conflict of interest (competitor, ex-employee), harassment or hate, personal data, off-topic or wrong business.\n- **Trustpilot** ([guidelines](https://corporate.trustpilot.com/legal/for-reviewers/guidelines-for-reviewers)): not a genuine experience, conflict of interest, personal information, harmful or illegal content (defamation can only be reported by the business), promotional content, review about another business. Trustpilot only assesses a flagged review for the selected reason.\n- **Airbnb** ([reviews policy](https://www.airbnb.com/help/article/2673)): extortion or pressure for compensation, guest never stayed / not first-hand, fake (not based on a real reservation), competitor or affiliated reviews, certain retaliatory reviews, content-policy violations. Airbnb accepts a removal request for the same review up to two times.\n- **Not removable anywhere:** a real customer's honest negative opinion.\n\n## 4. Process\n1. Send the review link, or just the business name (Google business search built in).\n2. Free check and a fixed price; nothing is filed before the client accepts.\n3. Reviewell files the request with matching evidence and handles follow-ups and appeals. The client follows the case via a personal link in their email — no account or password.\n4. Removal confirmed twice, 24 hours apart; only then the invoice.\n\n## 5. Principles\n- No passwords or account access, no mass-flagging, no fake counter-reviews, no bought reviews.\n- Evidence is never invented or edited.\n- Fake reviews used for extortion: don't pay, keep the messages, report to the police (Belgium: local police zone; Netherlands: police), then request removal as an extortion pattern.\n"
+    }
+  ],
+  "summary": {
+    "sitemap_urls": 66,
+    "final_http_200": 66,
+    "hostname_canonical_mismatches": 66,
+    "path_canonical_mismatches": [
+      "https://reviewell.com/about",
+      "https://reviewell.com/contact"
+    ],
+    "missing_titles": [],
+    "h1_count_not_one": [],
+    "noindex_pages": []
+  }
+}

@@ -1,22 +1,24 @@
-# 🏆 Profound University — Track 2: Marketing Engineering Certification Submission
+# 🏆 Profound University — Track 2: Marketing Engineering Certification Draft
 
 **Candidate:** Philippe Godfroy  
 **Organization:** Reviewell BV (`BE1012058705`, Belgium)  
 **Operational Workflow Selected:** *Closed-Loop Review Dispute Intake → Anonymized Policy Pattern Extraction → Self-Updating AEO Citation Content Pipeline*
 
+**Evidence status — 2026-11-16:** AI-assisted workflow proposal and rehearsal script. This document does not prove a deployed intake pipeline, working sanitizer, live API integration, automatic publication or measured business impact. Local CLI output without API credentials is example mode. Candidate review and real implementation evidence are required.
+
 ---
 
 ## 1. Problem Identification: Why Manual Content Marketing Fails in the AI Search Era
 
-At **Reviewell**, every week businesses submit real Google review removal requests via [reviewell.com/#check](https://www.reviewell.com/#check) (suspected fake reviews, ex-employee conflicts of interest, coordinated review attacks, doxxing/harassment).
+The proposed **Reviewell** workflow starts when a business submits a Google review removal request via [reviewell.com/#check](https://www.reviewell.com/#check) (suspected fake reviews, ex-employee conflicts of interest, coordinated review attacks, doxxing/harassment).
 
 **Before Marketing Engineering (Manual & Siloed):**
 1. Casework specialists assess eligibility and map the review against Google's Prohibited & Restricted Content policies (`support.google.com/contributionpolicy/answer/7400114`).
 2. Those high-value, real-world policy insights stay locked inside private case notes.
 3. Marketing writes generic blog posts manually once a month—disconnected from the exact questions business owners are asking ChatGPT, Perplexity, and Gemini right now.
 
-**After Marketing Engineering (Systemized & Autonomous Closed Loop):**
-Every anonymized eligibility pattern automatically feeds our **AEO Citation & FAQ Pipeline**, ensuring Reviewell's public documentation, `FAQPage` JSON-LD, and `/llms-full.txt` continuously answer the exact policy edge cases AI search engines are synthesizing.
+**Proposed future workflow:**
+After implementation and validation, reviewed anonymized eligibility patterns would feed an **AEO Citation & FAQ Pipeline**, with the aim of updating Reviewell's public documentation, `FAQPage` JSON-LD, and `/llms-full.txt` to answer the exact policy edge cases AI search engines are synthesizing.
 
 ---
 
@@ -29,9 +31,9 @@ Business submits review concern on reviewell.com/#check
         ▼
 [2. PII Sanitizer & Policy Classifier (Deterministic Node)]
 Strips all customer/business PII -> Maps to canonical Google Policy Code:
-  • POL_FAKE_ENGAGEMENT (Non-customer / bot spike)
+  • POL_FAKE_ENGAGEMENT (Evidence of fabricated experience / bot spike; no CRM match alone is insufficient)
   • POL_CONFLICT_INTEREST (Competitor / ex-staff)
-  • POL_HARASSMENT_DOXXING (Named staff / personal phone/photo)
+  • POL_HARASSMENT_DOXXING (Policy assessment of personal information / harassment; a name alone is not conclusive)
   • POL_OFF_TOPIC (Wrong business / rant unrelated to service)
         │
         ▼
@@ -60,12 +62,12 @@ Publishes to reviewell.com + Updates Profound Topic Watchlist + Tracks AI Referr
 
 ---
 
-## 3. 10-Minute Presentation Walkthrough Script (Ready to Record)
+## 3. Draft Presentation Walkthrough Script (requires implementation evidence)
 
-- **00:00 – 01:30 | The Business Bottleneck:** Introduce Reviewell BV and show why B2B reputation clients increasingly discover review removal workflows via ChatGPT and Perplexity rather than paid Google Ads (where CPCs exceed €12/click).
+- **00:00 – 01:30 | The Business Bottleneck:** Introduce Reviewell BV and show why B2B reputation clients increasingly discover review removal workflows via ChatGPT and Perplexity alongside other acquisition channels; compare actual attributed acquisition data before claiming channel or cost advantages.
 - **01:30 – 03:30 | Systems Thinking & Decomposition:** Walk through the 6-stage pipeline diagram above, contrasting ad-hoc copywriting with deterministic event-driven Marketing Engineering.
 - **03:30 – 06:30 | Live Deep-Path Code & CLI Demonstration:**
   - Run `profound audit /Users/philippegodfroy/reviewell-removal-preview` in terminal.
-  - Run `profound agent run --brand reviewell-core` to show how a detected gap on *"Conflict of Interest ex-employee Google review evidence"* automatically produces the validated JSON-LD `FAQPage` and `/llms.txt` patch.
-- **06:30 – 08:30 | Guardrails & Data Hygiene:** Demonstrate the PII sanitizer and legal compliance validator that guarantees no customer case record is ever exposed and no false removal guarantees are published.
+  - Label `profound agent run --brand reviewell-core` as a local simulation without API credentials. In the proposed implementation, a detected gap on *"Conflict of Interest ex-employee Google review evidence"* would produce reviewed JSON-LD `FAQPage` and `/llms.txt` patch.
+- **06:30 – 08:30 | Guardrails & Data Hygiene:** Describe the proposed PII sanitizer and claim checks; demonstrate only implemented checks with test evidence. Do not claim a guarantee that no sensitive data can ever be exposed.
 - **08:30 – 10:00 | Business Impact & Attribution:** Present the 6 KPIs tracked in the Reviewell Dashboard (`AI Visibility Score`, `Share of Voice`, `Citation Share`, `Referral Traffic`, `Conversion Rate`, `Qualified Recommendations`).

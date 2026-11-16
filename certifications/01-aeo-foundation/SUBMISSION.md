@@ -1,37 +1,41 @@
-# 🏆 Profound University — Track 1: AEO Foundation (Exact Form Answers & Walkthrough Scripts)
+# 🏆 Profound University — Track 1: AEO Foundation (Draft Form Answers & Walkthrough Scripts)
+
+**Award verified 16 November 2026:** Philippe Godfroy holds a valid [AEO Foundation diploma](https://university.tryprofound.com/diplomas/08c0cfe5-4bea-4843-a9d7-46adcc2de92f), issued 9 November 2026 and valid until 9 November 2027. Draft/provenance qualifications below describe these repository materials; they do not negate the issuer's award.
 
 **Submit URL:** [https://university.tryprofound.com/certifications/aeo-foundation/submit](https://university.tryprofound.com/certifications/aeo-foundation/submit)  
 **Candidate:** Philippe Godfroy  
-**Agency Name (Question 10 — Qualifies Reviewell for Profound Partners):** `Reviewell`
+**Agency Name (Question 10 — no partner status established):** `Reviewell`
 
 ---
 
-## Exact Copy-Paste Form Answers (`Questions 2, 3, 4, 5, 6, 8, 9, 10`)
+**Evidence status — 2026-11-16:** AI-assisted draft, not an approved or graded submission. Questions 2–6 require a dated prompt execution, full answer and inspected source pages before their winner/loser and gate conclusions can be presented as observations. The HubSpot script interprets the local reference image; its dataset scope, arithmetic and causal interpretations need verification against the source. No predicted rubric score is an issuer grade.
 
-### Question 2 — What compound-job prompt did you use? *(Copy-Paste)*
+## Draft Form Answers (`Questions 2, 3, 4, 5, 6, 8, 9, 10`)
+
+### Question 2 — What compound-job prompt did you use? *(Draft; verify before use)*
 ```text
 What reputation management or Google review removal service should a multi-location European hospitality business use if they are hit with a coordinated wave of fake 1-star Google reviews from non-customers, need a free eligibility check before committing budget, and require strictly policy-compliant escalation without black-hat tactics that could risk Google Business Profile suspension?
 ```
-*(Why this scores 3/3 "Excellent" on Prompt Construction [10% weight]: It includes a clear **product category** [reputation management / Google review removal service], a specific **situation** [multi-location European hospitality business hit with a coordinated wave of fake 1-star reviews from non-customers], and **two concrete constraints** [free eligibility check upfront + strictly policy-compliant escalation that won't risk GBP suspension] that force the answer engine to reason rather than return a generic list.)*
+*(Draft rationale for prompt construction; no official score assigned: It includes a clear **product category** [reputation management / Google review removal service], a specific **situation** [multi-location European hospitality business hit with a coordinated wave of fake 1-star reviews from non-customers], and **two concrete constraints** [free eligibility check upfront + strictly policy-compliant escalation that won't risk GBP suspension] that force the answer engine to reason rather than return a generic list.)*
 
-### Question 3 — Which AI answer engine did you use? *(Copy-Paste)*
+### Question 3 — Which AI answer engine did you use? *(Draft; verify before use)*
 ```text
 ChatGPT
 ```
 
-### Question 4 — Name the two brands you diagnosed and which was the winner and loser. *(Copy-Paste)*
+### Question 4 — Name the two brands you diagnosed and which was the winner and loser. *(Draft; verify before use)*
 ```text
 Winner: Removify / Loser: Erase.com
 ```
-*(Note: You can also use `Winner: Reviewell / Loser: Erase.com` when showing our updated `reviewell.com` page.)*
+*(Provisional example only. Confirm the brands and ordering from the preserved actual answer; do not substitute Reviewell based on website changes.)*
 
-### Question 5 — Which gate is the primary failure point for the losing brand? *(Copy-Paste)*
+### Question 5 — Which gate is the primary failure point for the losing brand? *(Draft; verify before use)*
 ```text
 Extractable
 ```
-*(Explanation: The losing brand passes **Fetchable** [crawlers can access the HTML] and **Chosen** [its domain authority gets it retrieved into the candidate set for generic review removal], but fails **Extractable** on the compound-job constraints because its landing page buries policy-compliance mechanisms under vague marketing slogans ["Guaranteed Removal"] and lacks a clear above-the-fold Billboard and structured Answer Blocks addressing multi-location EU compliance and free pre-assessment.)*
+*(Hypothesis requiring source and answer evidence: The losing brand passes **Fetchable** [crawlers can access the HTML] and **Chosen** [its domain authority gets it retrieved into the candidate set for generic review removal], but fails **Extractable** on the compound-job constraints because its landing page buries policy-compliance mechanisms under vague marketing slogans ["Guaranteed Removal"] and lacks a clear above-the-fold Billboard and structured Answer Blocks addressing multi-location EU compliance and free pre-assessment.)*
 
-### Question 6 — Which SAGE phase does your proposed fix belong to? *(Copy-Paste)*
+### Question 6 — Which SAGE phase does your proposed fix belong to? *(Draft; verify before use)*
 ```text
 Generate
 ```
@@ -43,7 +47,7 @@ Generate
 
 **Reference Image:** [`hubspot-citation-table.png`](./hubspot-citation-table.png) *(Top 20 of 988 total citation items across Google AI Overviews, ChatGPT, Gemini, and Google AI Mode, viewed as **HubSpot**).*
 
-### Step-by-Step Narration Sequence (Scores 3/3 "Excellent" on Strategic Reading & Prescription)
+### Draft Narration Sequence (not officially graded)
 
 1. **Step 1 — Clean the Lens First (What I look at before reading ranks):**
    - *"Before treating this table as a scoreboard, I check whether the data lens is clean. Looking down the URLs, I immediately spot a Setup/taxonomy contamination problem: while most rows are about **Customer Success Management (CSM)** (`csm-tools-2026`, `customer-success-software`), rows **#6 (`coremedia.com` - best CMS platforms)**, **#12 (`gartner.com/reviews/market/web-content-management`)**, **#15 (`kontent.ai` - enterprise CMS)**, **#16 (`forbes.com` - content management software)**, **#17 (`foozagency.com` - CMS for enterprise)**, and **#18 (`wix.com` - content management systems)** are about **Web Content Management Systems (CMS)**. Because HubSpot sells both CMS Hub and Service/Customer Success tools, acronym collision (`CSM` vs. `CMS`) is polluting the denominator of our 988 items. Step zero is separating CMS prompts from CSM prompts in Setup."*
@@ -73,7 +77,7 @@ Generate
 
 ---
 
-## Question 8 — The Conceptual Defense (`Written · 300–500 Words` — Exact Copy-Paste)
+## Question 8 — The Conceptual Defense (`Written · 300–500 Words` — AI-assisted draft)
 
 *Word count: **412 words** (strictly within the 300–500 word limit, using Profound 101 frameworks).*
 
@@ -94,6 +98,6 @@ That way, when the answer engine fans out across compliance, checklists, and doc
 
 ---
 
-## Question 9 & Question 10 (`Copy-Paste`)
-- **Question 9 (AI Disclosure):** `No, I wrote it primarily myself` *(or `Yes, I substantially used AI to help draft or refine it` — Profound notes "No penalty either way", and the response above explicitly names the exact fan-out vs. single-page attribute synthesis distinction).*
+## Question 9 & Question 10 (Draft)
+- **Question 9 (AI Disclosure):** `Yes, I substantially used AI to help draft or refine it`. The candidate must review the final wording and disclose the assistance truthfully.
 - **Question 10 (Agency Name):** `Reviewell`

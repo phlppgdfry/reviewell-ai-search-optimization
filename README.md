@@ -31,7 +31,7 @@ profound audit /Users/philippegodfroy/reviewell-removal-preview
 profound reports visibility --category reviewell-core
 profound reports visibility --category reviewell-ringsizer
 
-# 4. Valideer en draai de 14-node Autonomous AEO Agent
+# 4. Controleer de lokale architectuur en bekijk de voorbeeldsimulatie
 profound agent validate
 profound agent run --brand reviewell-core
 
@@ -47,7 +47,9 @@ npm start
 
 ## 3. De 4 Profound University Certificeringen (`certifications/`)
 
-1. [**Track 1 — AEO Foundation**](./certifications/01-aeo-foundation/SUBMISSION.md) *(Geen betaald abonnement nodig — direct in te dienen)*
+Gecontroleerd op 16 november 2026: **AEO Foundation en Agent Engineering officieel behaald**, beide geldig tot 9 november 2027. Marketing Engineering en AEO Analytics: inzending ontvangen, uitslag nog niet gevonden. [Diplomaverificatie en e-mailbewijs](./deliverables/certification-verification-2026-11-16.md). De onderstaande historische materialen behouden hun eigen labels en beperkingen.
+
+1. [**Track 1 — AEO Foundation**](./certifications/01-aeo-foundation/SUBMISSION.md) *(Conceptantwoorden; actuele vereisten en bewijsstukken nog controleren)*
 2. [**Track 2 — Marketing Engineering**](./certifications/02-marketing-engineering/SUBMISSION.md) *(Systeemarchitectuur + 10-minuten presentatiescript)*
-3. [**Track 3 — AEO Analytics**](./certifications/03-aeo-analytics/SUBMISSION.md) *(Volledige nulmeting, gap-analyse en geprioriteerde ROI-roadmap voor Reviewell & RingSizer)*
-4. [**Track 4 — Agent Engineering**](./certifications/04-agent-engineering/SUBMISSION.md) + [`reviewell-autonomous-aeo-agent.json`](./certifications/04-agent-engineering/reviewell-autonomous-aeo-agent.json) *(14 nodes, 5 categorieën, 8/8 rubric-checks geslaagd)*
+3. [**Track 3 — AEO Analytics**](./certifications/03-aeo-analytics/SUBMISSION.md) *(Historisch oefenrapport met fictieve KPI’s; geen actuele nulmeting)*
+4. [**Track 4 — Agent Engineering**](./certifications/04-agent-engineering/SUBMISSION.md) + [`reviewell-autonomous-aeo-agent.json`](./certifications/04-agent-engineering/reviewell-autonomous-aeo-agent.json) *(14 beschreven nodes; lokale structuurcontrole, platformimport afgewezen)*

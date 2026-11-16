@@ -1,0 +1,33 @@
+{
+  "checked_on": "2026-11-16",
+  "source_url": "https://platform.tryprofound.com/sheets/s/01a1df95-e074-7530-8adb-534c2502e59e?reviewellqa=20261116",
+  "observed_shape": "20 rows, 17 columns",
+  "unique_owned_urls": [
+    "https://www.reviewell.com",
+    "https://www.reviewell.com/about",
+    "https://www.reviewell.com/add-us-as-manager",
+    "https://www.reviewell.com/airbnb-review-removal",
+    "https://www.reviewell.com/contact",
+    "https://www.reviewell.com/engagement-policy",
+    "https://www.reviewell.com/google-review-removal/for/dentists-and-clinics",
+    "https://www.reviewell.com/google-review-removal/for/hotels-and-vacation-rentals",
+    "https://www.reviewell.com/google-review-removal/for/law-firms",
+    "https://www.reviewell.com/google-review-removal/for/restaurants",
+    "https://www.reviewell.com/how-it-works",
+    "https://www.reviewell.com/how-we-assess-cases",
+    "https://www.reviewell.com/pricing",
+    "https://www.reviewell.com/remove-fake-profile",
+    "https://www.reviewell.com/remove-photo-online",
+    "https://www.reviewell.com/remove-video-online",
+    "https://www.reviewell.com/review-scan",
+    "https://www.reviewell.com/services",
+    "https://www.reviewell.com/social-media-content-removal",
+    "https://www.reviewell.com/what-we-cannot-remove"
+  ],
+  "status_counts": {
+    "verified": 14,
+    "verified_with_limited_claim": 4,
+    "partly_verified": 1
+  },
+  "limitations": "Read-only UI observation before final full-cell QA. Some cell previews are truncated, so this does not establish a complete readback of all cell contents. See final Profound QA for full-cell changes."
+}

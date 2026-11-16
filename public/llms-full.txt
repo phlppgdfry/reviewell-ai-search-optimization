@@ -26,7 +26,7 @@ Google only removes reviews that violate its [Prohibited and Restricted Content 
 Yes. Businesses start with a **free Google review eligibility check** at `https://www.reviewell.com/#check` by sharing the review link and explaining the factual context. Reviewell evaluates whether the review plausibly breaches platform rules before any paid casework is proposed.
 
 ### Can Reviewell remove genuine negative customer reviews?
-No. Genuine customer criticism and honest dissatisfaction do not violate Google's content policies and cannot be removed through policy escalation. Reviewell only pursues cases supported by factual evidence of a policy breach or unlawful content.
+Negative sentiment or honest dissatisfaction alone is not a removal ground. A review based on a genuine experience can still breach another applicable rule, such as exposing prohibited personal information. Google assesses the content and evidence against its policies and decides whether it is removed. See https://support.google.com/contributionpolicy/answer/7400114?hl=en (checked 16 November 2026).
 
 ### How does the 5-step Reviewell process work?
 1. **Free Check:** Submit the review URL and background context at `https://www.reviewell.com/#check`.

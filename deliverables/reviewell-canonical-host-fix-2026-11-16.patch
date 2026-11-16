@@ -1,0 +1,67 @@
+diff --git a/app/layout.tsx b/app/layout.tsx
+--- a/app/layout.tsx
++++ b/app/layout.tsx
+@@ -4,7 +4,9 @@
+ import { CookieConsent } from "../components/cookie-consent";
+ import { JsonLd } from "../components/json-ld";
+ 
+-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://reviewell-removal-preview.vercel.app";
++const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://reviewell-removal-preview.vercel.app")
++  .replace(/^https:\/\/reviewell\.com(?=\/|$)/, "https://www.reviewell.com")
++  .replace(/\/$/, "");
+ 
+ export const metadata: Metadata = {
+   metadataBase: new URL(siteUrl),
+diff --git a/app/robots.ts b/app/robots.ts
+--- a/app/robots.ts
++++ b/app/robots.ts
+@@ -1,8 +1,9 @@
+ import type { MetadataRoute } from "next";
+ 
+ export default function robots(): MetadataRoute.Robots {
+-  const baseUrl =
+-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://reviewell-removal-preview.vercel.app";
++  const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://reviewell-removal-preview.vercel.app")
++    .replace(/^https:\/\/reviewell\.com(?=\/|$)/, "https://www.reviewell.com")
++    .replace(/\/$/, "");
+ 
+   return {
+     rules: [
+diff --git a/app/sitemap.ts b/app/sitemap.ts
+--- a/app/sitemap.ts
++++ b/app/sitemap.ts
+@@ -9,7 +9,9 @@
+ const LEGAL = ["/privacy", "/gdpr", "/cookies", "/imprint", "/engagement-policy", "/terms"];
+ 
+ export default function sitemap(): MetadataRoute.Sitemap {
+-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.reviewell.com";
++  const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.reviewell.com")
++    .replace(/^https:\/\/reviewell\.com(?=\/|$)/, "https://www.reviewell.com")
++    .replace(/\/$/, "");
+   const entry = (route: string, priority: number) => ({ url: `${baseUrl}${route}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority });
+   return [
+     ...CORE.map((route) => entry(route, route === "" ? 1 : 0.9)),
+diff --git a/app/about/page.tsx b/app/about/page.tsx
+--- a/app/about/page.tsx
++++ b/app/about/page.tsx
+@@ -3,7 +3,7 @@
+ import { SiteFooter, SiteNav } from "../../components/chrome";
+ import { Reveal } from "../../components/reveal";
+ 
+-export const metadata: Metadata = { title: "About", description: "Reviewell BV is a Bruges-based company assessing content-removal and reputation cases by hand, never automatically." };
++export const metadata: Metadata = { title: "About", description: "Reviewell BV is a Bruges-based company assessing content-removal and reputation cases by hand, never automatically.", alternates: { canonical: "/about" } };
+ 
+ const principles = [
+   { label: "01", title: "Human-checked, always", copy: "Every case is assessed by a specialist before anything is submitted. Automated tools may draft a suggestion; they never make the decision." },
+diff --git a/app/contact/page.tsx b/app/contact/page.tsx
+--- a/app/contact/page.tsx
++++ b/app/contact/page.tsx
+@@ -5,7 +5,7 @@
+ import { ContactForm } from "../../components/contact-form";
+ import { Reveal } from "../../components/reveal";
+ 
+-export const metadata: Metadata = { title: "Contact", description: "Contact Reviewell about pricing, partnerships, press, or a question that doesn't fit the case flow." };
++export const metadata: Metadata = { title: "Contact", description: "Contact Reviewell about pricing, partnerships, press, or a question that doesn't fit the case flow.", alternates: { canonical: "/contact" } };
+ 
+ export default function ContactPage() {
+   return <><SiteNav /><main>

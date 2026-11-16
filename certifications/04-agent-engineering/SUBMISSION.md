@@ -1,29 +1,33 @@
-# 🏆 Profound University — Track 4: Agent Engineering Certification Submission
+# 🏆 Profound University — Track 4: Agent Engineering Architecture Draft
+
+**Award verified 16 November 2026:** Philippe Godfroy holds a valid [Agent Engineering diploma](https://university.tryprofound.com/diplomas/247c8455-46b8-4af5-8462-a0ba0e37813a), issued 9 November 2026 and valid until 9 November 2027. The native-import limitation below concerns this historical JSON artifact; it does not negate the issuer's award.
 
 **Candidate:** Philippe Godfroy  
 **Organization:** Reviewell BV (`BE1012058705`, Belgium)  
 **Agent Name:** `Reviewell Autonomous AEO & Citation Intelligence Agent`  
 **Agent JSON File:** [`reviewell-autonomous-aeo-agent.json`](./reviewell-autonomous-aeo-agent.json)  
-**Automated Rubric Verification:** **8 / 8 Passed (`100%`)** via `profound agent validate`
+**Local structure check:** eight local checks reported as passed by `profound agent validate`; this is not official grading, a compatibility test or proof of functional nodes.
+
+**Evidence status — 2026-11-16:** The JSON was rejected by the native platform with `nodes.0.type: Invalid input`. The descriptions below specify intended behavior, not an executed native workflow. A separately created native agent and its real test run are recorded in [platform status](../../PROFOUND_LIVE_STATUS.md). This AI-assisted draft is not an approved certification submission.
 
 ---
 
-## 1. Official Rubric Verification Matrix
+## 1. Local Architecture Checklist (not an official rubric result)
 
-| Official Profound Requirement | Required | Implemented in Reviewell Agent | Status |
+| Proposed criterion | Required | Described in architecture | Status |
 |---|---|---|---|
-| **Functional Node Count** | `>= 12` nodes | **14 distinct functional nodes** across 10 lifecycle stages (`DETECT` → `MEASURE`) | ✅ PASS |
-| **5 Node Categories** | `Data`, `Research`, `LLM`, `Integration`, `Logic` | `Data` (3), `Logic` (4), `LLM` (3), `Research` (2), `Integration` (2) | ✅ PASS |
-| **Persistent Knowledge** | Historical state across runs | `persistentKnowledge` (`~/.config/profound/persistent_knowledge.json`) storing 30d baselines, cooldown windows & prior patches | ✅ PASS |
-| **Structured Outputs** | Strict JSON Schema contracts | JSON Schema validation on `node_01`, `node_02`, `node_05`, `node_10`, `node_11` | ✅ PASS |
-| **Conditional Logic** | Noise filtering & branching | Significance gate (`abs(delta) >= 3.5%`, `sample_size >= 15`, `cooldown == false`) + confidence guardrail (`>= 0.82`) | ✅ PASS |
-| **Profound Data** | Native Profound metrics | `Visibility Score`, `Share of Voice`, `Citation Share`, `Citation Pages`, `Prompt Answer Executions` | ✅ PASS |
-| **Responsible Automation** | Prevent spam & unsafe edits | Quiet heartbeat when within stochastic variance + mandatory Human-in-the-Loop approval gate (`node_12`) | ✅ PASS |
-| **Explainable Architecture** | Documented edges & variables | 14 directed edges, explicit threshold variables, and full execution audit trail | ✅ PASS |
+| **Functional Node Count** | `>= 12` nodes | **14 described nodes** across 10 lifecycle stages (`DETECT` → `MEASURE`) | Described; runtime evidence required |
+| **5 Node Categories** | `Data`, `Research`, `LLM`, `Integration`, `Logic` | `Data` (3), `Logic` (4), `LLM` (3), `Research` (2), `Integration` (2) | Described; runtime evidence required |
+| **Persistent Knowledge** | Historical state across runs | `persistentKnowledge` (`~/.config/profound/persistent_knowledge.json`) storing 30d baselines, cooldown windows & prior patches | Described; runtime evidence required |
+| **Structured Outputs** | Strict JSON Schema contracts | JSON Schema validation on `node_01`, `node_02`, `node_05`, `node_10`, `node_11` | Described; runtime evidence required |
+| **Conditional Logic** | Noise filtering & branching | Significance gate (`abs(delta) >= 3.5%`, `sample_size >= 15`, `cooldown == false`) + confidence guardrail (`>= 0.82`) | Described; runtime evidence required |
+| **Profound Data** | Native Profound metrics | `Visibility Score`, `Share of Voice`, `Citation Share`, `Citation Pages`, `Prompt Answer Executions` | Described; runtime evidence required |
+| **Responsible Automation** | Prevent spam & unsafe edits | Quiet heartbeat when within stochastic variance + mandatory Human-in-the-Loop approval gate (`node_12`) | Described; runtime evidence required |
+| **Explainable Architecture** | Documented edges & variables | 14 directed edges, explicit threshold variables, and full execution audit trail | Described; runtime evidence required |
 
 ---
 
-## 2. 14-Node Architecture Breakdown by Category
+## 2. Intended 14-Node Behavior by Category
 
 ### Category 1: `Data` (3 Nodes)
 1. **`node_01_profound_visibility_ingest`** (`DETECT`): Calls Profound `POST /v1/reports/visibility` & `/v2/prompts/answers` across ChatGPT, Perplexity, Gemini, Claude, and Copilot.
@@ -51,16 +55,16 @@
 
 ---
 
-## 3. 10-Minute Video Walkthrough Script (For Submission Upload)
+## 3. Draft Walkthrough Script (do not present a simulation as native execution)
 
 1. **00:00 – 01:30 | Architecture Overview:** Show the 14-node graph in the Reviewell AI Visibility Dashboard (`npm start`) and explain the 5 node categories (`Data`, `Research`, `LLM`, `Logic`, `Integration`).
-2. **01:30 – 03:30 | Profound Data & Persistent Knowledge:** Show `node_01`, `node_02`, and `node_03` ingesting Profound `Visibility Score` (34.2%), `Share of Voice` (18.4%), and `Citation Share` (14.8%) and comparing against `~/.config/profound/persistent_knowledge.json`.
-3. **03:30 – 05:30 | Conditional Logic & Anti-Noise Guardrails:** Highlight `node_04_significance_noise_gate` and `node_08_evidence_uncertainty_verifier`, explaining why single-prompt variance never triggers false alarms.
+2. **01:30 – 03:30 | Profound Data & Persistent Knowledge:** Show the proposed ingestion design. The local values 34.2%, 18.4% and 14.8% are fictional fixtures; label them visibly. Use authenticated, scoped exports before presenting measured data.
+3. **03:30 – 05:30 | Conditional Logic & Anti-Noise Guardrails:** Highlight `node_04_significance_noise_gate` and `node_08_evidence_uncertainty_verifier`, explaining the intended noise checks; the proposed thresholds have not been statistically validated and do not guarantee freedom from false alarms.
 4. **05:30 – 07:30 | Research & Structured Output Synthesis:** Walk through `node_06`, `node_07`, and `node_10`, showing the strict JSON Schema validation and the generated `/llms.txt` and `ReviewellAeoSchema.tsx` files.
-5. **07:30 – 10:00 | Live End-to-End Execution & Rubric Validation:** Run `profound agent validate` and `profound agent run --brand reviewell-core` live in the terminal, inspect the updated persistent state, and show the human approval gate (`node_12`).
+5. **07:30 – 10:00 | Local Simulation and Native Evidence:** Label local validation and CLI output as structure checks or simulations. Show the separately verified native run with its actual outputs if relevant, explaining that it is not this incompatible 14-node JSON. Demonstrate approval behavior only when real runtime evidence exists.
 
 ---
 
-## 4. Authorship Attestation
+## 4. Draft Authorship and AI Disclosure — not signed
 
-> I, **Philippe Godfroy**, confirm that this 14-node `Reviewell Autonomous AEO & Citation Intelligence Agent` architecture, JSON configuration, codebase implementation, and evaluation pipeline are my own original engineering work designed for Reviewell BV.
+This architecture and supporting materials were substantially prepared with AI assistance for Reviewell BV. Philippe Godfroy must personally review the final work, describe his actual contribution and disclose AI assistance using the current form requirements. This document is not a signed declaration and does not attest that the proposed pipeline has been implemented or executed.

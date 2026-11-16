@@ -1,0 +1,21 @@
+{
+  "source": "Profound native CSV export",
+  "checked_on": "2026-11-16",
+  "rows": 20,
+  "columns": 17,
+  "unique_urls": 20,
+  "complete_content_fields": true,
+  "faq_count": 60,
+  "max_title_chars": 58,
+  "max_meta_chars": 154,
+  "status_counts": {
+    "geverifieerd": 14,
+    "geverifieerd (beleidsclaims); procesdetails verwijderd": 1,
+    "deels geverifieerd": 1,
+    "geverifieerd (beperkte claim: Google, X, LinkedIn algemeen)": 1,
+    "geverifieerd (beperkte claim: Google Business Profile-foto's)": 1,
+    "geverifieerd (beperkte claim: Google Business Profile-video's)": 1,
+    "geverifieerd (beperkte claim: Meta-beleidslijst, X, LinkedIn algemeen)": 1
+  },
+  "notes": "Full cell CSV export; no production content publication. Policy-limited claims and the manager-process gap remain explicit. Non-review fees are not confirmed by the review-price confirmation."
+}

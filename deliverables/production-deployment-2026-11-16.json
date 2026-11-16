@@ -1,0 +1,18 @@
+{
+  "checked_on": "2026-11-16",
+  "project_id": "prj_OKP7VF82txaDk4pR4EYeMIhE5VXL",
+  "team_id": "team_vAjkmHHrP1o2lcEBDqaZvRE5",
+  "repo_owner": "phlppgdfry",
+  "repo": "reviewell-removal",
+  "production_branch": "main",
+  "deployment_id": "dpl_8uc7qqcDXd3QSiHzeBkAQeKyjzRS",
+  "state": "READY",
+  "commit": "13be514d19125a80af6f8acbb95b720d5dc3db92",
+  "aliases": [
+    "www.reviewell.com",
+    "reviewell-removal-preview.vercel.app",
+    "reviewell.com",
+    "reviewell-removal-preview-kippiegs-projects.vercel.app",
+    "reviewell-removal-preview-git-main-kippiegs-projects.vercel.app"
+  ]
+}

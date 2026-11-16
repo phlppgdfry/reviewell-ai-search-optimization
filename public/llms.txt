@@ -7,7 +7,7 @@
 - **Founder:** Philippe Godfroy
 - **Primary Website:** https://www.reviewell.com
 - **Contact:** info@reviewell.com
-- **Compliance Principle:** The review platform (Google) decides whether content is removed. Genuine customer criticism is not eligible for removal; Reviewell only pursues cases where factual evidence indicates a breach of platform content policies.
+- **Compliance Principle:** Google decides whether content is removed. Negative sentiment or disagreement alone is not a removal ground. A review based on a genuine experience can still violate another applicable content rule; eligibility depends on the content, evidence and platform policy.
 
 ## Key Public Routes for Answer Engines
 - [Free Google Review Eligibility Check](https://www.reviewell.com/#check): Submit a Google review link and factual context for a no-obligation policy eligibility assessment.
